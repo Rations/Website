@@ -22,43 +22,42 @@
 		<img class = "divider_image" src = "Hallway.png"/>
 		<h2>Hallway Problem [C]</h2></div>
 	<div class = "section_subpage">
-		<p>Here's a fun problem that comes from the Feynman Lectures website.</p>
+		<p>Here's a very fun problem adapted from the Feynman Lectures website.</p>
 
-			<p><em>You are an architect. Your client, living in Flatland, wants a building designed with a long 3 foot wide corridor which opens into a larger hallway. You must design the hallway for the minimum width w that will allow the inhabitants to move a 24 foot-long pole down the corridor and turn it into the hallway. The corridor is perpendicular to the hallway. Since this is Flatland, the pole cannot be tilted up. The pole is rigid. How wide must the hallway be?</em></p>
+			<blockquote>You are an architect. Your client, living in Flatland, wants a building designed with a long 3-foot-wide corridor that opens into a larger hallway. You must design the hallway with the minimum width \(w\) that will allow the inhabitants to move a 24-foot-long pole down the corridor and turn it into the hallway. The corridor is perpendicular to the hallway. Since this is Flatland, the pole cannot be tilted up. The pole is rigid. How wide must the hallway be?</blockquote>
 
-		<p>This is the simplest form of an open problem known as the <a href = "https://en.wikipedia.org/wiki/Moving_sofa_problem">moving sofa problem</a>. Fortunately, our version can be solved using the right geometric observations and elementary calculus.</p>
-		
-		<p>Using similar triangles, let's solve for \(h\).</p>
+		<p>This is perhaps the simplest form of a famous open problem called the <a href = "https://en.wikipedia.org/wiki/Moving_sofa_problem">moving sofa problem</a>. Fortunately, our version can be solved using a few simple geometric observations and then elementary calculus.</p>
+		<img width = "300px" class = "h_center_inner" src = "Hallway diagram.svg"/>
+
+		<p>Notice the two small triangles in the diagram. They are similar, so we can use some ratios to find an equation for \(h\).</p>
 		$$\frac{a}{x} = \frac{h}{24 - x}$$
-		$$h = \frac{a(24 - x)}{x}$$
-		<p>From our drawing, we can interpret \(\theta\) as the independent variable on which all our lengths depend, so we first need to write our differentiable equation in terms of \(\theta\).</p>
-		$$\tan\theta = \frac{a}{3}$$
-		$$a = 3\tan\theta$$
-		$$\cos\theta = \frac{3}{x}$$
-		$$x = 3\sec\theta$$
-		$$h = \frac{\tan\theta(24 - 3\sec\theta)}{\sec\theta}$$
-		$$h = 24\sin\theta - 3\tan\theta$$
+		$$h = \frac{a}{x}(24 - x)$$
+		<p>From our drawing, we can treat \(\theta\) as the independent variable on which all our lengths depend, so we first need to write our differentiable equation in terms of \(\theta\). Using some trig ratios:</p>
+		$$\sin\theta = \frac{a}{x}$$
+		$$\cos\theta = \frac{3}{x} \implies x = 3\sec\theta$$
+		$$h = \sin\theta(24 - 3\sec\theta) = 24\sin\theta - 3\tan\theta$$
+		<p>Now we can differentiate with respect to our independent variable, \(\theta\), to find the angle the corresponds with \(h_\text{min}\):</p>
 		$$\frac{dh}{d\theta} = 0 = 24\cos\theta - 3\sec^2\theta$$
 		$$\cos^3\theta = \frac{3}{24}$$
 		$$\theta = \frac{\pi}{3}$$
 
-		<p>Now that we've found the optimal angle, we need to substitute it into our original equation to find the corresponding (minimum) \(h\):</p>
+		<p>Now that we've found the optimal angle, let's substitute it into our original equation to find \(h_\text{min}\):</p>
 
 		$$h_\text{min} = 24\sin\frac{\pi}{3} - 3\tan\frac{\pi}{3}$$
-		$$h_\text{min} = 9\sqrt{3}$$
+		<div class = "answer">$$h_\text{min} = 9\sqrt{3}$$</div>
 		<p>So as long as our hallway is wider than \(9\sqrt{3}\) m, we should be safe.</p>
 		<p class = "QED">♛</p>
 
 		<h4>The General Case</h4>
 		<hr>
+		<p>I thought about whether showing you the derivation of the general case would be worthwhile. Ultimately, I decided yes. Though the math is the same, the final solution takes on a form that looks quite different from our nice answer for the \(l = 24, w = 3\) case. This time I will skip some steps:</p>
 		$$h = \frac{a(l - x)}{x}$$
-		$$h = \frac{\tan\theta(l - w\sec\theta)}{\sec\theta}$$
 		$$h = l\sin\theta - w\tan\theta$$
 		$$\frac{dh}{d\theta} = 0 = l\cos\theta - w\sec^2\theta$$
 		$$\theta = \arccos\sqrt[3]{\frac{w}{l}}$$
 		$$h_\text{min} = l\sin\arccos\sqrt[3]{\frac{w}{l}} - w\tan\arccos\sqrt[3]{\frac{w}{l}}$$
 		<p>By examining a right triangle, we can see that \(\sin\arccos x = \sqrt{1 - x^2}\) and \(\tan\arccos x = \sqrt{\left(\frac{1}{x}\right)^2 - 1}\), we have:<p>
-		$$h_\text{min} = l\sqrt{1 - \left(\frac{w}{l}\right)^{2/3}} - w\sqrt{\left(\frac{l}{w}\right)^{2/3} - 1}$$
+		<div class = "answer">$$h_\text{min} = l\sqrt{1 - \left(\frac{w}{l}\right)^{2/3}} - w\sqrt{\left(\frac{l}{w}\right)^{2/3} - 1}$$</div>
 		<div class = "calculator">
 			<form method = "" action = "">
 			\(w\) = width of starting hallway =

@@ -109,6 +109,8 @@ body
 
 .section_subpage
 {
+	display: inline-block;
+	clear: both;
 	position: absolute;
 	top: 50px;
 	border-radius: 0px 0px 5px 5px;
@@ -140,6 +142,16 @@ summary
 {
 	display: table;
 	margin: 0 auto;
+}
+
+.answer
+{
+	border-radius: 20px;
+	margin: 0 auto;
+	padding: 15px;
+	background-color: #cdffa5;
+	display: table;
+
 }
 
 .v_center_inner 
@@ -205,6 +217,14 @@ p
 	margin-left: 0px;
 	margin-right: 0px;
 	text-align: justify;
+}
+
+
+blockquote
+{
+	font-style: italic;
+	text-align: justify;
+	margin-right: 0px;
 }
 
 .QED
