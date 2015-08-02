@@ -2,182 +2,150 @@
 <html lang = "en">
 
 <head>
-    <meta http-equiv = "content-type" content = "text/html; charset = utf-8">
-    <meta name = "Author" content = "Owen Zhang">
-    <link type = "text/css"; rel = "stylesheet"; href = "stylesheet.css"/>
+    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
+    <meta name = "Author" content = "Owen Zhang"/>
+    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
     <title>Raskolnikov's Realm</title>
-	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico">
+	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
+	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 
 <body>
-	<div id="header">
+	<div ID = "header">
 		<div ID = "masthead_background">
-			<img ID = "masthead_image"; src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/>
+			<img ID = "masthead_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/>
 			<h1>Raskolnikov's Realm</h1>
+			<p><em>Physics, music, writing, and more!</em></p>
 		</div>
 	</div>
 
 	<div class = "left outer">
-		<a href = "cnn.com" class = "button_link"><div class = "button h_center_inner v_center_inner">Physics Fun</div></a>
-		<a href = "cnn.com" class = "button_link"><div class = "button h_center_inner v_center_inner">Music Madness</div></a>
-		<a href = "cnn.com" class = "button_link"><div class = "button h_center_inner v_center_inner">Writing</div></a>
-		<a href = "mailto:r4tions@gmail.com" class = "button_link"><div class = "button h_center_inner v_center_inner">Contact Webmaster</div></a>
+		<a href = "physicsFun.html" class = "button_link"><div class = "button h_center_inner v_center_inner">Physics Fun</div></a>
+		<a href = "cnn.com" class = "button_link"><div class = "button_follow h_center_inner v_center_inner">Math, Music, Madness</div></a>
+		<a href = "cnn.com" class = "button_link"><div class = "button_follow h_center_inner v_center_inner"><em>Reflections</em> from <em>Rodion</em></div></a>
+		<a href = "mailto:r4tions@gmail.com" class = "button_link"><div class = "button_follow h_center_inner v_center_inner">E-mail Webmaster</div></a>
 	</div>
 	
 	<div class = "middle"><div class = "divider_right"><h2>Webmaster's Welcome</h2></div></div>
-	<div class = "right"><p>Hello, and welcome to my Internet home. This website will host a variety of miscellaneous projects, ideas—even haphazard thoughts. As you can probably tell, it is currently under construction, but should soon be fully functional!</p><p style = "text-align: right"><em>—R. R. Raskolnikov, 2015</em></p>
+	<div class = "right">
+		<p>Greetings! You have stumbled upon a website that will (hopefully) come to encompass a variety of useful resources for high-school students and beyond. Feedback, of course, is always welcome. Special thanks to <a href = "http://ruina.tam.cornell.edu/research/MatthewKelly/index.html">Matthew Kelly</a>.</p>
+		<p style = "text-align: right"><em>—RRR, 2015</em></p>
 	</div>
 	
-	<div class = "divider"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/><h2>The Latest Physics Fun</h2></div>
+	<div class = "divider"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/><h2>Physics Fun</h2></div>
 	<details open>
-	<summary>Collapse/expand</summary>
+	<summary>+/−</summary>
+
 	<div class = "section">
-		<h3>The Ballistic Pendulum</h3>
-		<em><p>23 June 2013</p></em>
-		<p>Let's say we're having a Nerf gun war in physics class. Suddenly, your friend Bobby interrupts with an intriguing inquiry: <em>How fast does a Nerf bullet travel?</em></p>
-		<p>Unfortunately, since we're in high-school physics class, we don't have any fancy radar guns or echolocation gizmos. Fortunately, we do have access to basic lab items. But how exactly can we accurately measure the speed of something as fast as a bullet?</p>
-		
-		<p><em>A ballistic pendulum!</em></p>
-		<p>Don't worry if you've never heard of it—the name might make this brilliant device sound super complex, but the real reason for its brilliance is the elegant simplicity of its design.</p>
-		
-		<h4>How does it work?</h4>
-		In fact, operating a ballistic pendulum is as simple as one-two-three:
-		<ol>
-			<li>Measure the mass of your projectile and that of the object (preferably a block or cannister) at the end of your pendulum. Fire the projectile at the pendulum's block/cannister/ball and hope that it sticks.</li>
-			<li>The pendulum should swing! All you need to do is measure the maximum angle to which the pendulum swings from the vertical axis.</li>
-			<li>Plug your data into this equation and solve for the unknowns. [Insert LaTeX here!]</li>
-		</ol>
-		
-		<h4>Why does it work?</h4>
-		<p>Whoa—hold on! Why does that equation work?</p>
-		<p>It may look complicated, but that ugly equation in step 3 actually comes from two of the most fundamental concepts in mechanics: conservation of energy and conservation of momentum. Let's work through why our ballistc pendulum works.</p>
-		<p>First, we know for sure that a collision occurs between our bullet and the block/cannister/ball at the end of the pendulum. You might be tempted to think that energy is conserved, but remember: energy can be lost if either of our two objects deforms or if heat or sound or unmeasurable vibrations are released as a result of the collision.</p>
-		<p>Fortunately, we still have another concept at our disposal: momentum! Remember that linear momentum is conserved in a collision as long as there is no net external force acting on the objects in our system—looks okay so far. And the beauty of the ballistic pendulum is, since we know that our projectile "sticks" to the block/cannister/ball, we can simplify things and say that the bullet and mass become one—in other words, one blob with one mass and one velocity.</p>
-		<p>Okay. That means we can use our equation for conservation of momentum to solve for the final velocity of the bullet–pendulum blob. Take a moment here to try to solve the equation yourself.</p>
-		<hr>
-		<p>Cool. So we have the velocity of the blob. Now, time for our friend conservation of energy. Remember how the kinetic energy equation only contains the variables of mass and velocity? Since we've just found the velocity of the blob and know that its mass is just the sum of the masses of the bullet and the block/cannister/ball, we can calculate its kinetic energy. But wait—there's more! After the pendulum starts swinging, the only force that has a component acting in the direction of its swing is gravity, a conservative force. This means that energy is conserved, and the kinetic energy of the blob right after its formation should be equal to the potential energy of the blob at the top of its swing!</p>
-		<p>Now we can use the conservation of energy equation, coupled with a bit of trigonometry from our swing angle, to solve for the blob's starting velocity in terms of its maximum angle. And since the starting velocity of the blob was itself calculated from the initial momentum of the bullet, we can solve for the initial speed of the bullet in terms of the angle. Done!</p>
-		
-		<h4>Follow-up questions</h4>
-		<ol>	
-			<li>Is it possible to make the pendulum swing completely around if the bullet is fast enough? If so, will the pendulum keep on spinning in a circle?</li>
-			<li>Does it matter if the bullet sticks firmly to the container or if the bullet merely flies in and can wiggle around?</li>
-			<li>Gravity is acting on the bullet during the collision, so the bullet is technically accelerating downwards in the instant of the collision. Doesn't this mean linear momentum is not necessarily conserved?</li>
-		</ol>
-		<hr>
-		<table border = "1px"">
+		<table>
 			<thead>
-				<tr>
-					<th colspan = "4">Archives: coming soon!</th>
-				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td width = "167.5px">Kinematic constraints</td>
-					<td width = "167.5px">Ladder</td>
-					<td width = "167.5px">Double pendulum</td>
-					<td width = "167.5px">Air resistance</td>
+					<td width = "167.5px" align = "left"><a href = "ballisticPendulum.html" class = "button_link"><div class = "button_square"><img src = "Ballistic pendulum.png"/>Ballistic pendulum</div></a></td>
+					<td width = "167.5px" align = "center"><a href = "scale.html" class = "button_link"><div class = "button_square"><img src = "Scale.png"/>Jumping on a scale</div></a></td>
+					<td width = "167.5px" align = "center"><a href = "projectileMotion.html" class = "button_link"><div class = "button_square"><img src = "Projectile motion.png"/>Projectile motion</div></a></td>
+					<td width = "167.5px" align = "right"><div class = "button_square"><img src = "Pulleys.png"/>Ropes and pulleys</div></td>
 				</tr>
 				<tr>	
-					<td width = "167.5px">Range on a hill</td>
-					<td width = "167.5px">Pulleys</td>
-					<td width = "167.5px">Banking car</td>
-					<td width = "167.5px">Dropping chain</td>
+					<td width = "167.5px" align = "left"><a href = "bankingCar.html" class = "button_link"><div class = "button_square"><img src = "Car.png"/>Banking car</div></a></td>
+					<td width = "167.5px" align = "center"><div class = "button_square"><img src = "Water rocket.png"/>Water rocket</div></td>
+					<td width = "167.5px" align = "center"><a href = "hallway.html"><div class = "button_square"><img src = "Hallway.png"/>Hallway problem</div></a></td>
+					<td width = "167.5px" align = "right"><div class = "button_square"><img src = "Double pendulum.png"/>Double pendulum</div></td>
 				</tr>
 				<tr>	
-					<td width = "167.5px">Sliding loop</td>
-					<td width = "167.5px">Ballistic pendulum</td>
-					<td width = "167.5px">Marble and super-ball</td>
-					<td width = "167.5px">Slipping string</td>
+					<td width = "167.5px" align = "left"><div class = "button_square"><img src = "Superball.png"/>Small ball and super ball</div></td>
+					<td width = "167.5px" align = "center"><div class = "button_square"><img src = "Tetrahedrons.png"/>Tetrahedrons</div></td>
+					<td width = "167.5px" align = "center"><div class = "button_square">Rolling and slipping</div></td>
+					<td width = "167.5px" align = "right"><div class = "button_square"><img src = "Ropes.png"/>Crazy ropes</div></td>
 				</tr>
 				<tr>	
-					<td width = "167.5px">Rolling and slipping</td>
+					<td width = "167.5px" align = "left"><div class = "button_square">Ring and beads</div></td>
+					<td width = "167.5px" align = "center"><div class = "button_square">Roller coaster</div></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	</details>
 	
-	<div class = "divider outer"><div class "v_align_center"><img src = "https://dl.dropboxusercontent.com/u/31253437/Piano%20keys.png" class = "divider_image"/></div><h2>The Latest Music Madness</h2></div>
+	<div class = "divider outer"><div class "v_align_center"><img src = "https://dl.dropboxusercontent.com/u/31253437/Piano%20keys.png" class = "divider_image"/></div><h2>Music Madness: The Latest</h2></div>
 	<details open>
-	<summary>Collapse/expand</summary>
+	<summary>+/−</summary>
 	<div class = "section">
-		<p><a href = "">Desert Island Disks</a></p>
-		<p><a href = "">Recommended Records: Dvorak Cello Concerto</a></p>
+		<a href = "">Desert Island Disks</a><br>
+		<a href = "">Recommended Records: Dvorak Cello Concerto</a>
 	</div>
 	</details>
 	
-	<div class = "divider outer"><div class "v_align_center"><img src = "https://dl.dropboxusercontent.com/u/31253437/Quill.png" class = "divider_image"/></div><h2>The Latest Writing</h2></div>
+	<div class = "divider outer"><div class "v_align_center"><img src = "https://dl.dropboxusercontent.com/u/31253437/Quill.png" class = "divider_image"/></div><h2>Reflections from Rodion: The Latest</h2></div>
 	<details open>
-	<summary>Collapse/expand</summary>
+	<summary>+/−</summary>
 	<div class = "section">
-		<p><a href = "">Testing</a></p>
-		<p><a href = "Dvorak.html">Testing 1</a></p>
-		
+		<h3><em>Ithaca Voice</em> publications:</h3>
+		<ul>
+		<li><a href = "http://ithacavoice.com/2015/04/inside-look-ithaca-high-schools-500000-student-run-tv-studio/">An inside look at Ithaca High School's $500,000 student-run TV studio</a></li>
+		<li><a href = "http://ithacavoice.com/2014/08/sunbathing-sharks-sci-fi-robots-colorful-snails-give-ithacas-electrical-boxes-new-power/">Colorful snails, sci-fi robots, and sunbathing sharks give Ithaca's electrical boxes new power</a></li>
+		<li><a href = "http://ithacavoice.com/2014/07/ithaca-officials-simeons-crash-factors-delay-completion-date-commons-redesign/">Officials: Simeon’s crash, other factors again delay completion date for Commons redesign</a></li>
+		<li><a href = "http://ithacavoice.com/2014/07/don-quixote-coming-ithaca-will-probably-get-lost-tcat/">Don Quixote coming to Ithaca</a></li>
+		<li><a href = "http://ithacavoice.com/2014/07/trumansburgs-first-clothesline-art-show-relaxed-unpretentious/">Trumansburg's first Clothesline Art Show to be "relaxed, unpretentious"</a></li>
+		<li><a href = "http://ithacavoice.com/2014/07/swordfights-soliloquies-stagecraft-ithaca-summer-shakespeare/">Sword fights, soliloquies and stagecraft: An Ithaca summer of Shakespeare</a></li>
+		<li><a href = "http://ithacavoice.com/2014/07/number-booths-ithaca-artists-market-doubling-year-popularity-surges/">As popularity surges, Ithaca Artists Market substantially increases number of artists</a></li>
+		<li><a href = "http://ithacavoice.com/2014/07/indie-rock-band-spoon-coming-ithacas-state-theatre-august/">Indie rock band Spoon coming to Ithaca's State Theatre this August</a></li>
+		<li><a href = "http://ithacavoice.com/2014/07/art-heart-city-11-new-exhibits-unveiled-ithaca-tonight/">"Art in the Heart of the City": 11 new exhibits to be unveiled in Ithaca tonight</a></li>
+		<li><a href = "http://ithacavoice.com/2014/07/groucho-marxs-next-act-reincarnation-58-ithacans/">Groucho Marx's next act: Reincarnation as 58 Ithacans</a></li>
+		<li><a href = "http://ithacavoice.com/2014/07/ithacas-purple-valley/">Ithaca's Purple Valley: "Play the music you love with people you really, really like"</a></li>
+		</ul>
 	</div>
 	</details>
 	
-	<div class = "divider outer"><div class "v_align_center"><img src = "https://dl.dropboxusercontent.com/u/31253437/Name%20tag.PNG" class = "divider_image"/></div><h2>About Us</h2></div>
+	<div class = "divider outer"><div class "v_align_center"><img src = "https://dl.dropboxusercontent.com/u/31253437/Name%20tag.PNG" class = "divider_image"/></div><h2>About the Webmaster</h2></div>
 	<details open>
-	<summary>Collapse/expand</summary>
-	<div class = "section">
-	<p>Welcome, and thanks for stopping by! You have stumbled upon a budding collaboration, a modest work in progress. My hope is that this website will come to house a variety of useful physics articles and interactive simulations for high-school physics students as well as brief personal musings here and there. This project began early in the summer of 2015 when I began learning HTML, CSS, and JavaScript under the auspices of Codeacademy and, of course, <a href = "http://ruina.tam.cornell.edu/research/MatthewKelly/index.html">my mentor Matthew Kelly</a>. Of course, feedback or advice is always welcome.</p>
-	<p>I was born in New Haven, CT, but have lived in everywhere from Albany, NY, to Taipei, Taiwan. For the rest of this summer, I will be residing in Ithaca, NY, where I attended high school grades 10–12.</p>
-	<p>My academic interests are currently physics and economics, though I am intrigued by everything from computer science to Dostoyevsky to moral philosophy. In the past, I've been thoroughly involved in journalism and the publication process; at different times during last year, I wrote for the <em>Ithaca Voice</em> and served as the editor-in-chief of the Ithaca High School <em>Tattler</em>. In general, a good discussion on ethics or debate over current events never disappoints.</p>
-	<p>In my free time, I enjoy listening to everything from classical music to classic rock. The piano is my primary instrument, though I must confess that my primary joy in life is derived from pretending to sing and harmonize like Freddie Mercury when no one's looking.
-	</div>
+		<summary>+/−</summary>
+		<div class = "section">
+			<p>RRR currently resides in Ithaca, NY, but has lived in everywhere from Albany, NY, to Taipei, Taiwan. In his free time, he enjoys listening to classical music and classic rock. The piano is his primary instrument, though his joy in life is pretending to sing like Freddie Mercury when no one's looking.</p>
+		</div>
 	</details>
 	
-	<div class = "divider"><img src = "https://dl.dropboxusercontent.com/u/31253437/Link.png" class = "divider_image"/><h2>Cool Links, Resources, and More!</h2></div>
+	<div class = "divider"><img src = "https://dl.dropboxusercontent.com/u/31253437/Link.png" class = "divider_image"/><h2><em>Still</em> reading? Here, have some cool links!</h2></div>
 	<details open>
-	<summary>Collapse/expand</summary>
-	<div class = "section">
-		<a href = "http://betterexplained.com/">BetterExplained:</a>
-			Intuition does indeed lead to better explanations. <br>
-		<a href = "http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html">HyperPhysics:</a>
-			The high-school physics quick-reference Bible. <br>
-		<a href = "http://imslp.org/wiki">IMSLP:</a>
-			Free and <em>legal</em> classical music scores! <br>
-		<a href = "https://www.khanacademy.org/">Khan Academy:</a>
-			The future of education? <br>
-		<a href = "http://www.politifact.com/truth-o-meter/">PolitiFact:</a>
-			Fact-checking politics: a must in today's society. <br>
-		<a href = "https://projecteuler.net/archives">Project Euler:</a>
-			If AP Computer Science was/is too easy for you. . . .<br>
-		<a href = "http://codingbat.com/">CodingBat:</a>
-			If AP CS was/is not so easy for you. Practice makes perfect, after all! <br>
-		<a href = "http://protobowl.com/">Protobowl:</a>
-			Think you're good at trivia? Try your hand at academic quiz bowl. <br>
-		<a href = "http://stackexchange.com/">Stack Exchange:</a>
-			The best nerd forums. <br>
-		<a href = "http://www.reddit.com/">Reddit:</a>
-			Don't get hooked. . . . and don't say I didn't warn you! <br>
-		<a href = "http://www.wegmans.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&storeId=10052&catalogId=10002&productId=359001">Elixir of life:</a>
-		<em>Highly compatible with <a href = "http://www.almondbreeze.com/?navid=329&pid=574">this</a>.</em>  
-	</div>
+		<summary>+/−</summary>
+		<div class = "section">
+			<a href = "http://betterexplained.com/">BetterExplained:</a>
+				Better explanations with better intuition. <br>
+			<a href = "http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html">HyperPhysics:</a>
+				The high-school physics quick-reference Bible. <br>
+			<a href = "http://imslp.org/wiki">IMSLP:</a>
+				Free and <em>legal</em> classical music scores! <br>
+			<a href = "https://www.khanacademy.org/">Khan Academy:</a>
+				The future of education? <br>
+			<a href = "http://www.politifact.com/truth-o-meter/">PolitiFact:</a>
+				Fact-checking politics: a must in today's society. <br>
+			<a href = "https://projecteuler.net/archives">Project Euler:</a>
+				If AP Computer Science was/is too easy for you. . . .<br>
+			<a href = "http://codingbat.com/">CodingBat:</a>
+				If AP CS was/is not so easy for you. Practice makes perfect, after all! <br>
+			<a href = "http://protobowl.com/">Protobowl:</a>
+				Think you're good at trivia? Try your hand at academic quiz bowl. <br>
+			<a href = "http://stackexchange.com/">Stack Exchange:</a>
+				The best nerd forums. <br>
+			<a href = "http://www.reddit.com/">Reddit:</a>
+				Don't get hooked! <br>
+			<a href = "http://www.wegmans.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&storeId=10052&catalogId=10002&productId=359001">Elixir of life:</a>
+			<em>Highly compatible with <a href = "http://www.almondbreeze.com/?navid=329&pid=574">this</a>.</em>
+			<hr>
+			<strong>Indispensible software freebies:</strong><br>
+				<a href = "http://www.foobar2000.org/">foobar2000</a>, <em>a minimalist, speedy music player</em><br>
+				<a href = "https://inkscape.org/en/">InkScape</a> <em>for vector graphics</em><br>
+				<a href = "https://www.mathjax.org/#docs">MathJax</a> <em>for in-browser LaTeX (like on this site!)</em><br>
+				<a href = "http://www.sublimetext.com/">Sublime Text</a> <em>for editing plain-text documents</em><br>
+				<a href = "http://www.texstudio.org/">TeXstudio</a> <em>for editing LaTeX documents</em><br>
+		</div>
 	</details>
-	
-	<div id = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
+
+	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
 		<div class = "v_center_inner">
 		<em>
-			<script language = "JavaScript">
-				var monthNames = ["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
-				var now = new Date();
-				var hour = now.getHours();
-				if (hour < 10)
-				{
-					hour = "0" + hour;
-				}
-				var minute = now.getMinutes();
-				if (minute < 10)
-				{
-					minute = "0" + minute;
-				}
-				var day = now.getDate();
-				var monthIndex = now.getMonth();
-				var year = now.getFullYear();
-				document.write("Designed for Chrome. Last modified on " + day + " " + monthNames[monthIndex] + " " + year + " at " + hour + ":" + minute + ".");
-			</script>
+			<script src = "lastModified.js"></script>
 		</em>
 		</div>
 	</div>

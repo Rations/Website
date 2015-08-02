@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
+    <meta name = "Author" content = "Owen Zhang"/>
+    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
+    <title>Raskolnikov's Realm: Jumping on a scale</title>
+	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
+	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+	<div class = "divider_subpage">
+		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Scale.png"/>
+		<h2>Jumping on a scale</h2></div>
+	<div class = "section_subpage">
+		<h1>NOTE THIS HAS NOT BEEN EDITED / COMPLETELY WRITTEN AT ALL</h1>
+		<h3>Jumping on a scale</h3> 
+		<em><p>11 July 2015</p></em>
+		<p>
+			We've all jumped onto a scale and seen the needle spike momentarily to a very high reading. But how can we use our knowledge of physics to model the relationship between a falling object and its maximum scale reading? 
+
+			We have a few known relationships at our disposal. 
+			<ul>
+				<li>Hooke's law says that a normal spring's force is directly proportional to its displacement: \(F = kx\)</li>
+				<li>Integrating the above relationship can help us find the equation for spring potential energy: \(U = \frac{1}{2}kx^2\)
+			</ul>
+			It turns out that our seemingly simple scenario can be very difficult to model without making some fairly generous assumptions. For instance:
+			<ol>
+				<li>We must assume that our scale behaves like a Hooke spring, so the displayed weight reading \(R\) is directly proportional to the spring displacement. In other words, \(Rg = kx\).</li>
+			</ol>
+			Interestingly, the theoretical behavior of the spring might not be what you're used to. Let's begin with a base case. Suppose we have a spring set vertically on a table. 
+			<ol>
+				<li>We then gently place a mass \(m\) on the spring. We can predict its maximum displacement \(x\) using conservation of energy:</li>
+				$$U_g = U_\text{spring}$$
+				$$mgx = \frac{1}{2}kx^2$$
+				$$x = \frac{2mg}{k}$$
+				<li>Let's use this new information with our equation for displayed weight:</li>
+				$$Rg = kx$$
+				$$Rg = k\left(\frac{2mg}{k}\right)$$
+				$$R = 2m$$
+				What does this mean? It means that when the dropped mass is momentarily at rest and the spring is at its most displaced position, the scale reading should be twice the actual mass of the mass.
+				<li>Here's the slightly weird part. If a perfectly ideal spring is used, the mass won't just rest there; the spring force at the bottom is twice the magnitude of the mass's weight, so the mass will accelerate upwards. If energy is conserved, it will overshoot its equilibrium position, then accelerate downwards, then upwards, and so on: it will oscillate!
+				<p>This is where our model is not so accurate. In real life, spring scales are not ideal, and energy is not conserved. Thus, a spring might oscillate for a while, but it will eventually be damped and settle around the equilibrium value, that is, the reading that corresponds with the actual mass of the mass.</p></li>
+			</ol>
+
+			Now, suppose we dropped the mass from above the scale. There are now two distances we must consider: (1) the initial height of the mass in relation to the top of the spring and (2) the maximum distance by which the spring compresses after the mass falls on it. 
+
+			Here is where we make our most critical assumption. We know a collision occurs between the falling mass and the top of the spring. Normally, we would want to apply conservation of momentum, but we are missing the mass of the top of the scale. We could modify the following derivation to include the unknown mass of the scale board, but the mass is likely so small that it is negligible. Let us then assume that the scale effortlessly "accepts" / "becomes one" with the falling mass without any loss of energy. Then:
+
+			$$U_g = U_\text{spring}$$
+			$$mg(h + y) = \frac{1}{2}ky^2$$
+			$$0 = \frac{1}{2}ky^2 - mgy - mgh$$
+			$$y = \frac{mg \pm \sqrt{mg\left( mg + 2hk\right)}}{k}$$
+
+			Since our spring is a Hooke spring, displacement and mass displayed are proportional. This means that the relationship between our old and new spring displacements is equivalent to that between our old and new displayed masses.
+
+			$$y = cx$$
+			In other words, how many times greater is \(y\) than \(x\)?
+			$$\frac{mg \pm \sqrt{mg\left( mg + 2hk\right)}}{k} = b \frac{2mg}{k}$$
+			Solving for \(b\) (after some simplification):
+			$$b = \frac{1}{2}\left(1 \pm \sqrt{1 + \frac{2hk}{mg}} \right)$$
+			And because
+			$$y = bx = b(2d)$$
+			$$m_d = b(2m)$$
+			$$m_d = m\left(1 + \sqrt{1 + \frac{2hk}{mg}}\right)$$
+		</p>
+		<h4>Follow-up questions</h4>
+		<ol>
+			<li>What's with the \(\pm\)?</li>
+			We're only interested in the plus, really, but the minus case should make sense, too. Since the mass begins oscillating once it becomes one with the spring, there will be two "extreme" cases: when the mass is at the bottommost position in the cycle and when it is at the top. 
+			<li>What about jumping on the scale? Would the scale read the same on the way up and down?</li>
+			<li>Did you make a mistake? Why are the results of calculations so high?</li>
+			<li>What if the mass bounces off</li>
+			Indeed, this activity involved a lot of big assumptions. 
+		</ol>
+		<hr>
+	</div>
+
+	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
+		<div class = "v_center_inner">
+		<em>
+			<script src = "lastModified.js"></script>
+		</em>
+		</div>
+	</div>
+</body>
+</html>

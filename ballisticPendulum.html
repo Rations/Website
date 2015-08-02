@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
+	<meta name = "Author" content = "Owen Zhang"/>
+	<link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
+	<title>Raskolnikov's Realm: Ballistic Pendulum</title>
+	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
+	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type = "text/JavaScript">    
+		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
+	</script>
+</head>
+
+<body>
+	<div class = "divider_subpage">
+		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Ballistic%20pendulum.png"/>
+		<h2>Ballistic Pendulum</h2></div>
+	<div class = "section_subpage">
+		<p>You're having a Nerf gun war in physics class. Suddenly, Bobby interrupts with an intriguing inquiry: <em>How fast does a Nerf bullet travel?</em></p>
+		<p>Unfortunately, since we're in high-school physics, we don't have any fancy radar guns or echolocation gizmos. Fortunately, we do have basic lab items. But how exactly can we determine the speed of something as fast as a Nerf bullet?</p>
+		
+		<p><em>A ballistic pendulum!</em></p>
+		
+		<hr>
+
+		<h4><em>How</em> it works:</h4>
+		<ol>
+			<li>Measure the mass of your bullet, the mass of the pendulum "bob" (whatever block or cannister hangs from it), and the length of your pendulum.</li>
+			<li>Fire your bullet at the bob (and hope it sticks!).</li>
+			<li>Measure the angle the pendulum sweeps out with respect to the vertical axis.</li>
+			<li>Plug your data into this: 
+			$$v_0 = \frac{2gl}{m}(m + M)(1 - \cos\theta)$$
+		<div class = "calculator">
+			<form method = "" action = "">
+				\(m\) = projectile mass = 
+				<input type = "text" name = "m1" value = "" size = "6" onChange = ballisticPendulum()>
+				kg<br>
+				\(M\) = pendulum mass = 
+				<input type = "text" name = "m2" value = "" size = "6" onChange = ballisticPendulum()>
+				kg<br>
+				\(l\) = pendulum arm length = 
+				<input type = "text" name = "arm" value = "" size = "6" onChange = ballisticPendulum()>
+				m<br>
+				\(\theta\) = angle = 
+				<input type = "text" name = "angle" value = "" size = "6" onChange = ballisticPendulum()> 
+				degrees<br>
+				\(v_0\) =  
+				<input type = "text" name = "velocity" value = "" size = "6" onChange = ballisticPendulum()>
+				m/s<br>
+			</form>
+		</div></li>
+		</ol>
+
+		<script>
+		function ballisticPendulum()
+		{
+			fm = document.forms[0];
+			m = fm.m1.value;
+			M = fm.m2.value;
+			l = fm.arm.value;
+			theta = fm.angle.value;
+			g = 9.8;
+			fm.velocity.value = 2 * g * l * (m + M) * (1 - Math.cos(theta * Math.PI / 180)) / m;
+		}
+		</script>
+
+		<h4><em>Why</em> it works:</h4>
+		<p>It may look ugly, but the equation above actually comes from two of the most fundamental concepts in physics: conservation of energy and conservation of momentum. Let's see why.</p>
+		<p>First, we know that a collision occurs between our bullet and the pendulum bob. It's tempting to think that energy is conserved, but remember: energy can be lost through heat, sound, and unmeasurable vibrations. </p>
+		<p>Momentum to the rescue! Recall that the linear momentum of a system is conserved as long as no external force acts upon our system. The beauty of the ballistic pendulum is, since our bullet "sticks" to the pendulum bob, we can essentially say the bullet and bob combine into one big "blob" with the same mass and velocity.</p>
+		<p>We can use our equation for conservation of linear momentum to solve for the velocity of our blob after the collision. Take a moment to try it. </p>		
+		$$m = \text{mass of bullet}$$
+		$$M = \text{mass of pendulum mass}$$
+		$$mv_0 + M(0 \text{ m/s}) = (m + M)v_{0, \text{ blob}}$$
+
+		<hr>
+		
+		<p>Cool. Now for our friend conservation of energy. Since we now know both the blob's mass and velocity, we have an expression for its kinetic energy. After the blob begins swinging, the only force that can affect its velocity is gravity, a conservative force, meaning energy is conserved. Specifically:</p>
+		$$KE = U_g$$
+		$$\frac{1}{2}(m + M){v_{0, \text{ blob}}}^2 = (m + M)gh$$
+		
+		<p>Here is where our angle comes in. A diagram helps.</p>
+		$$\cos\theta = \frac{r - h}{r}$$
+		$$h = r(1 - \cos\theta)$$
+		<p>Now it's just a matter of solving our energy equation for \(v_{0, \text{ blob}}\). And since \(v_{0, \text{ blob}}\) was calculated from the momentum, \(mv_0\), of our bullet, we can easily solve for \(v_0\) in terms of \(\theta\).</p>
+		<p class = "QED">♛</p>
+		
+		<hr>
+		
+		<h4>Follow-ups:</h4>
+		<ol>	
+			<li>Is it possible to make the pendulum swing completely around if the bullet is fast enough? If so, will the pendulum keep on spinning in a circle?</li>
+			<p>We know that centripetal force for uniform circular motion can be modeled:</p>
+			$$F_\text{rad} = m \frac{v^2}{r}$$
+			<p>The point in time we're interested in is when our blob swings all the way to the top of its circular path. If it is moving too slowly in the first place, it will never make it. It is also possible for the blob to be moving quicker than it has to: it will still complete the circular path without problems, but will have excess speed.</p>
+
+			<p>The sweet spot turns out to be when the blob is in free fall for <em>just one moment</em> at the top of the circle. This makes sense: if it had been in free fall before the apex, it would sort of arc downwards from there instead of following the circle all the way through. If it were not in free fall there, the arm of the pendulum would be contributing a radial normal force towards the center of the circle, meaning gravity alone was not enough to force the blob in a circular path, which in turn implies that we had too much speed to begin with.</p>
+
+			<p>Working backwards:</p>
+
+			$$F_\text{rad} = (m + M) \frac{{v_\text{apex}}^2}{r} = F_g = (m + M)g$$
+			$$v_\text{apex} = \sqrt{gr}$$
+
+			<p>Okay—our blob has to be moving at \( \sqrt{gr} \) at the top of the circle. Using our friend energy conservation again, we can work backwards to find the initial kinetic energy, and therefore velocity, of the blob . . . </p>
+			$$KE_i = KE_\text{apex} + U_{g, \text{ apex}}$$
+			$$\frac{1}{2}(m + M){v_{0, \text{ blob}}}^2 = \frac{1}{2}(m + M){v_\text{apex}}^2 + (m + M)g(2r)$$
+			$$v_{0, \text{ blob}} = \sqrt{5gr}$$
+
+			<p>. . . all the way until we're back in terms of conservation of momentum:</p>
+
+			$$mv_0 = (m + M)v_{0, \text{ blob}}$$
+			$$v_0 = \frac{(m + M)\sqrt{5gr}}{m}$$
+
+			<div class = "calculator">
+			<form method = "" action = "">
+				\(m\) = projectile mass = 
+				<input type = "text" name = "m1" value = "" size = "6" onChange = ballsticPendulum2()>
+				kg<br>
+				\(M\) = pendulum mass = 
+				<input type = "text" name = "m2" value = "" size = "6" onChange = ballsticPendulum2()>
+				kg<br>
+				\(l\) = pendulum arm length = 
+				<input type = "text" name = "arm" value = "" size = "6" onChange = ballsticPendulum2()>
+				m<br>
+				\(v_0\) =  
+				<input type = "text" name = "velocity" value = "" size = "6" onChange = ballsticPendulum2()>
+				m/s<br>
+			</form>
+			</div>
+
+		<script>
+		function ballsticPendulum2()
+		{
+			fm = document.forms[1];
+			m = fm.m1.value;
+			M = fm.m2.value;
+			l = fm.arm.value;
+			g = 9.8;
+			fm.velocity.value = (m + M) * Math.sqrt(5 * g * l) / m;
+		}
+		</script>
+			<p class = "QED">♛</p>
+
+			<li>Does it matter if the bullet sticks firmly to the container or if the bullet merely flies in and can wiggle around?</li>
+			<p>It's nice when our bullet sticks in place, but even if it moves around, we can still apply the aforementioned conservation concepts. As long as we use the center of mass in our calculations (meaning we might have to adjust our distance measurements), our calculations should yield reasonable results. It is worth mentioning, however, that energy might be dissipated if the bullet repeatedly richochets from the walls of the container.</p>
+			<li>But gravity is exerting a downwards force on the bullet during the collision. Doesn't this mean linear momentum isn't conserved?</li>
+			<p>We assume that our collision is instanteous. There is no time over which gravity can significantly affect the motion of the objects in our system.</p>
+		</ol>
+	</div>
+
+	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
+		<div class = "v_center_inner">
+		<em>
+			<script src = "lastModified.js"></script>
+		</em>
+		</div>
+	</div>
+</body>
+</html>
