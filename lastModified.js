@@ -15,4 +15,4 @@ var m = lm.getMonth();
 	m = months[m];
 var y = lm.getFullYear();
 
-document.write("Designed for Chrome • Typeset in Roboto • Last modified " + d + " " + m + " " + y + ".");
+document.write("Designed for Chrome • Typeset in Roboto • Last modified " + d + " " + m + " " + y);

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
+    <meta name = "Author" content = "Owen Zhang"/>
+    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
+    <title>Raskolnikov's Realm: Small Ball and Superball</title>
+	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
+	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type = "text/JavaScript">    
+  		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
+	</script>
+</head>
+
+<body>
+	<div class = "divider_subpage">
+		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<img class = "divider_image" src = "superball.svg"/>
+		<h2>Small ball and Superball</h2></div>
+	<div class = "section_subpage">
+		<p>Here is a peculiar experiment for you. Stacking two balls, a small ball on a big ball. Then drop the two together. What happens to the small ball?</p>
+		<p>Most people find that while both balls bounce, the small ball often shoots upwards with surprising speed. Let's see if physics can explain this curious experiment.</p>
+		<p>The results are coolest when we make several assumptions. Let us assume that all collisions that occur are elastic, meaning energy is not lost through deformations, vibrations, heat, sound, etc.</p>
+		<p>To begin, we drop both balls from \(h_0\). We can find the final speed of the balls using energy conservation:</p>
+		$$mgh_0 = \frac{1}{2}mv^2$$
+		$$v = \sqrt{2gh_0}$$
+		<p>We can be somewhat sloppy with defining our \(m\) and \(h_0\) here, because mass is irrelevant to acceleration by gravity, and both balls will fall (and thus accelerate) over the same distance, even though one is stacked above the other. What follows is a series of collisions.</p>
+		<h4>The first collision</h4>
+		<hr>
+		<p>First, the large ball impacts the ground. Since we have defined all collisions to be elastic, the big ball will rebound upwards with the exact same velocity, \(\sqrt{2gh_0}\), it possessed on the way down.</p>
+		<p>For convenience, let us assume that this rebound occurs instantaneously. It helps to imagine a microscopic gap between the small ball and the big ball, such that there is a single moment after our first collision during which the big ball is moving upwards while the small ball is still moving downwards.</p>
+		<h4>The second collision</h4>
+		<hr>
+		<p>This means that there is a second collision: between the upwards moving big ball and the downwards moving little ball. This happens to be the tricky part of the solution. Imagine that you are a bacterium on the top of the big ball looking upwards. From this perspective, it appears that the small ball is moving towards you at \(2\sqrt{2gh_0}\), because you are moving in opposite directions at \(\sqrt{2gh_0}\).</p>
+		<p>Then there is a collision between the big ball and the small ball. Consider what would happen if the big ball was <em>much, much, much, much</em> more massive than the little ball. When a massive object (like a truck) collides with a miniscule object (like a bug), the truck hardly loses any momentum while the bug experiences a massive (often fatal) change in momentum. In fact, the same thing happened during the first collision: the big ball bounced back from the earth with the same speed, but the earth hardly budged! If we assume the little ball is much less massive than the big ball, it will rebound from the big ball with the same speed. From your perspective as a bacterium, the little ball rebounds upwards with a speed of \(2\sqrt{2gh_0}\).</p>
+		<p>But that is from your perspective. You yourself are moving upwards in relation to the earth at a speed of \(\sqrt{2gh_0}\) while this all happens. If the little ball is now moving away from you at \(2\sqrt{2gh_0}\) while you yourself are moving away from the earth at \(\sqrt{2g_0}\), the little ball must be moving away from the earth at a speed of \(3\sqrt{2gh_0}\), provided this all occurs in the same direction.</p>
+		<p>Now we can return to our friend conservation of energy to find the final height of the little ball.</p>
+		$$\frac{1}{2}m\left(3\sqrt{2gh_0}\right)^2 = mgh$$
+		<div class = "answer">$$9h_0 = h$$</div>
+		<p>So the little ball will rebound to a height nine times greater than its original height!</p>
+	</div>
+
+	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
+		<div class = "v_center_inner">
+		<em>
+			<script src = "lastModified.js"></script>
+		</em>
+		</div>
+	</div>
+</body>
+</html>

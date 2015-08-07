@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
+    <meta name = "Author" content = "Owen Zhang"/>
+    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
+    <title>Raskolnikov's Realm: Rolling and Slipping</title>
+	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
+	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type = "text/JavaScript">    
+  		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
+	</script>
+</head>
+
+<body>
+	<div class = "divider_subpage">
+		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<img class = "divider_image" src = "Rolling and slipping.svg"/>
+		<h2>Rolling and Slipping</h2></div>
+	<div class = "section_subpage">
+		<h4>The bowling ball</h4>
+		<hr>
+		<p>You're playing Friday-night bowling when physics strikes again! This time, you throw a bowling ball 
+		</p>
+		$$-\mu mg = ma_{CM}$$
+		$$a_{CM} = -\mu mg$$
+		$$\sum \tau = I\alpha$$
+		$$\mu mgr = \frac{2}{5}mr^2\alpha$$
+		$$\alpha = \frac{5\mu g}{r}$$
+		$$v = v_0 -\mu mgt$$
+		$$\omega = \frac{5\mu g}{r}t$$
+		$$v = \frac{5\mu g}t$$
+		$$t = \frac{2v_0}{7\mu g}$$
+		$$v = v_0 - \mu g \left(\frac{2v_0}{7\mu g}\right)$$
+		<div class = "answer">$$v = \frac{5v_0}{7}$$</div>
+		$$x = x_0 + v_0t + \frac{1}{2}at^2$$
+		$$x = v_0\left(\frac{2v_0}{7\mu g}\right) -\frac{1}{2}\mu g \left(\frac{2v_0}{7\mu g}\right)^2$$
+		<div class = "answer">$$x = \frac{12{v_0}^2}{49\mu g}$$</div>
+<div class = "calculator">
+			<form method = "" action = "">
+			If you throw a bowling ball with \(v_0\) = initial velocity =
+				<input type = "text" name = "v_i" value = "" size = "6" onChange = rollingSlipping()>
+			m/s on an alley with \(\mu\) = coefficient of kinetic friction = 
+			<input type = "text" name = "mukf" value = "" size = "6" onChange = rollingSlipping()> 
+			<br>
+			after \(x\) distance = 
+			<input type = "text" name = "distance" value = "" size = "6" onChange = rollingSlipping()>
+			the ball will ultimately start rolling at \(v\) = final velocity = 
+			<input type = "text" name = "v_f" value = "" size = "6" onChange = rollingSlipping()>
+			m/s<br>
+			</form>
+		</div>
+		<script>
+			function rollingSlipping()
+			{
+				fm = document.forms[0];
+				g = 9.8;
+				v_0 = fm.v_i.value;
+				mu = fm.mukf.value;
+				fm.distance.value = (12 * Math.pow(v_0, 2)) / (49 * mu * g);
+				fm.v_f.value = (5 * v_0) / 7;
+			}
+		</script>
+
+	</div>
+
+	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
+		<div class = "v_center_inner">
+		<em>
+			<script src = "lastModified.js"></script>
+		</em>
+		</div>
+	</div>
+</body>
+</html>

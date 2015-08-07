@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
+    <meta name = "Author" content = "Owen Zhang"/>
+    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
+    <title>Raskolnikov's Realm: Springs, springs, everywhere!</title>
+	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
+	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type = "text/JavaScript">    
+  		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
+	</script>
+</head>
+
+<body>
+	<div class = "divider_subpage">
+		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Scale.png"/>
+		<h2>Springs, springs, everywhere!</h2></div>
+	<div class = "section_subpage">
+		<p>Have you ever wondered what would happen if you cut a spring in half? Would it become weaker or stronger?</p>
+		<h4>1. Springs in parallel</h4>
+		<hr>
+		<p>Suppose we have two springs with spring constants \(k_1\) and \(k_2\), respectively. Remember that the force exerted by a Hooke spring can be modeled using \(F_\text{spring} = kx\), where \(x\) is the stretch or compression. We hang both from the ceiling and then use a special hook device to connect both to the same mass \(m\). In other words, the device distributes the weight of the mass in such a way that both springs will stretch the same distance.</p>
+		<p>Drawing a free-body diagram of \(m\) and defining the upwards direction to be positive, we can easily see:</p>
+		$$F_\text{spring 1} + F_\text{spring 2} = mg$$
+		$$k_1x + k_2x = mg$$
+		$$(k_1 + k_2)x = mg$$
+		<p>This result is very interesting. Notice that when the equation is written in this form, it resembles the generic Hooke spring equation, \(F_\text{spring} = kx\), except we have \(k_1 + k_2\) instead of \(k\). </p>
+		<p>In fact, this means that hanging a mass from two (or more) springs with different spring constants is essentially the same as hanging the mass from a single spring with an effective spring constant \(k_\text{eff}\) of \(k_1 + k_2 + . . . \).</p>
+		<div class = "answer">$$k_\text{eff} = k_1 + k_2 + . . . k_n$$</div>
+
+		<h4>2. Springs in series</h4>
+		<hr>
+		<p>What if you had a bunch of springs hanging from each other? What would \(k_\text{eff}\) be?</p>
+		<p>Let's start with two springs, again with spring constants \(k_1\) and \(k_2\), respectively. As long as we assume that our springs are massless, we can use the same free-body-diagram-driven analysis technique. Since our system is in equilibrium, we can write three force equations, though only the following two are important to us:</p>
+		$$k_1x_1 - k_2x_2 = 0$$
+		$$k_2x_2 - mg = 0$$
+		<p>Notice that we must assign different \(x\) values to the two springs now: because they are in series, they don't have to stretch by the same amount.</p>
+		<p>We seek an expression of the form \(k_\text{eff}x = mg\). In our case, the total stretch will be equal to the stretch of the first spring plus the stretch of the second spring. Therefore, we have:</p>
+		$$k_\text{eff}(x_1 + x_2) = mg$$
+		<p>Rearranging the first equation, we have \(x_1 = \frac{k_2x_2}{k_1}\). Rearranging the second equation, we have \(x_2 = \frac{mg}{k_2}\). Substituting our new expression for \(x_2\) into that for \(x_1\), we have:</p>
+		$$k_\text{eff}(x_1 + x_2) = k_\text{eff}\frac{k_2mg}{k_1k_2} + \frac{mg}{k_2} = mg$$
+		$$k_\text{eff} = \frac{k_1 + k_2}{k_1k_2}$$
+
+
+		<div class = "answer">$$k_\text{eff} = \frac{k_1 + k_2 + . . . k_n}{k_1k_2 . . . k_n}$$</div>
+		<p>Now, you might have noticed that this is equivalent to cutting a spring into multiple parts. If you cut the spring, the total stretch \(x\) should not change.</p>
+		<h4>3. Springs with mass</h4>
+		<h4>4. Spring pyramid</h4>
+	</div>
+
+	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
+		<div class = "v_center_inner">
+		<em>
+			<script src = "lastModified.js"></script>
+		</em>
+		</div>
+	</div>
+</body>
+</html>

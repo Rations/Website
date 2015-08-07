@@ -20,7 +20,7 @@
 		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
 		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
 		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Projectile%20motion.png"/>
-		<h2>Projectile Motion Fun [C]</h2></div>
+		<h2>Projectile Motion Fun</h2><a href = "physicsFun.html#howTo"><img class = "icon_right" src = "Calc.svg"/></a></div>
 	<div class = "section_subpage">
 		<h4>1. Throwing seashells from a cliff</h4>
 		<hr>
@@ -102,11 +102,12 @@
 		$$-\tan\beta = \frac{\sin\alpha}{\cos\alpha} - \frac{1}{2\sin\alpha\cos\alpha}$$
 		$$-\tan\beta = \frac{2\sin^2\alpha - 1}{2\sin\alpha\cos\alpha}$$
 
-		Now, recognizing that 
+		<p>Now, recognizing that \(2\sin\cos\theta = \sin 2\theta\) and \(2\sin^2\theta - 1 = \cos 2\theta\):</p>
 
 		$$-\tan\beta = -\frac{\cos2\alpha}{\sin2\alpha} = -\cot2\alpha$$
-		$$2\alpha = \cot^-1\tan\beta$$
-		
+
+		$$2\alpha = \text{arc}\cot\tan\beta$$
+		<p>From right triangle geometry:</p>
 		<div class = "answer">$$\alpha = \frac{\pi}{4} - \frac{\beta}{2}$$</div>
 
 <div class = "calculator">
@@ -154,8 +155,8 @@
 		$$y = h + v\sin\theta t - \frac{1}{2}gt^2$$
 		$$\frac{1}{2}gt^2 = h + v\sin\theta t$$
 		$$gt\frac{dt}{d\theta} = 0 + v\left(\cos\theta t + \frac{dt}{d\theta}\sin\theta\right)$$
-		Perhaps not too surprisingly, once agai, we have upon simplifying:
-		$$\theta = \arccos 0 = \frac{\pi}{2}$$
+		Perhaps not too surprisingly, once again, we have upon simplifying:
+		<div class = "answer">$$\theta = \arccos 0 = \frac{\pi}{2}$$</div>
 
 		What about even fancier. What if you are on a downwards-sloping hill of angle \(\beta\)?
 

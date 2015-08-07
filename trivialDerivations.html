@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
+    <meta name = "Author" content = "Owen Zhang"/>
+    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
+    <title>Raskolnikov's Realm: Trivial Derivations</title>
+	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
+	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type = "text/JavaScript">    
+  		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
+	</script>
+</head>
+
+<body>
+	<div class = "divider_subpage">
+		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Scale.png"/>
+		<h2>A Few Trivial Derivations</h2><a href = "physicsFun.html#howTo"><img class = "icon_right" src = "Calc.svg"/></a></div>
+	<div class = "section_subpage">
+	<p>Here you will find derivations of a few physics equations we often take for granted:</p>
+	<ol>
+		<li>Equations of 1-D motion with constant acceleration</li>
+		<li>Exchange of relative velocities in elastic collisions</li>
+		<li>Deriving \(g\)</li>
+		<li>Parallel axis theorem for non-uniform mass distributions</li>
+	</ol>
+	<h4 ID = "1D">1-D motion, constant acceleration</h4>
+	<hr>
+	For aesthetic purposes, let's say \(t_0 = 0\), \(v_0 = v(0)\), and \(v = v(t)\). Then, given a constant acceleration \(a\):
+	<ol>
+		<li>$$v = \int_{0}^{t}adt = a\int_{0}^{t}dt = \left. at \right|_0^t = at + c$$
+			<p>When \(t = 0\), \(v = c = v_0\), so:</p>
+			<div class = "answer"><p>\(v = v_0 + at\)</p></div>
+		</li>
+		<li>$$x = \int_{0}^{t}vdt = \int_{0}^{t}(v_0 + at)dt = \left(\left. v_0t + \frac{1}{2}at^2 \right)\right|_0^t = v_0t + \frac{1}{2}at^2 + c$$
+			<p>When \(t = 0\), \(x = c = x_0\), so:</p>
+			<div class = "answer"><p>\(x = x_0 + v_0t + \frac{1}{2}at^2\)
+		</li>
+		<li><p>The Third Equation: The One Without Time.</p>
+			\(v = v_0 + at \implies v^2 = {v_0}^2 + 2atv_0 + a^2t^2\)
+			\(= {v_0}^2 + 2a(v_0t + \frac{1}{2}at^2)\)
+			<p>Moving \(x_0\) to the other side of equation 2 implies \(\Delta x = v_0t + \frac{1}{2}at^2\). Substituting into our equation here leads to:</p>
+			<div class = "answer">\(v^2 = {v_0}^2 + 2a\Delta x\)</div>
+		</li>
+	</ol>
+
+	<h4 ID = "relVel">In an elastic collision, the relative velocity between the two objects flips: remains equal in magnitude but opposite in direction</h4>
+	<hr>
+		<p>Given two masses, \(m\) initially with velocity \(v_0\) and \(M\) with velocity \(V_0\), we have from conservation of momentum and energy:</p>
+		$$mv_0 + MV_0 = mv + MV$$
+		$$\frac{1}{2}m{v_0}^2 + \frac{1}{2}M{V_0}^2 = \frac{1}{2}mv^2 + \frac{1}{2}MV^2$$
+		<p>Manipulating the first equation, we have:</p>
+		$$m(v_0 - v) = M(V - V_0)$$
+		$$\frac{m}{M} = \frac{V - V_0}{v_0 - v}$$
+		<p>Simplifying and rearranging the second euqation in the same manner, we have:</p>
+		$$\frac{m}{M} = \frac{V^2 - {V_0}^2}{{v_0}^2 - v^2}$$
+		<p>Combining the two, we have:</p>
+		$$\frac{V - V_0}{v_0 - v} = \frac{V^2 - {V_0}^2}{{v_0}^2 - v^2}$$
+		<p>Recognizing that \(a^2 - b^2 = (a + b)(a - b)\):</p>
+		$$\frac{V - V_0}{v_0 - v} = \frac{(V + V_0)(V - V_0)}{(v_0 + v)(v_0 - v)}$$
+		$$v_0 + v = V_0 + V$$
+		<div class = "answer">$$v_0 - V_0 = -(v - V)$$</div>
+		<p>Hence the difference between the initial velocities, a.k.a. the initial relative velocity, is equal in magnitude but opposite in direction to the final relative velocity.</p>
+
+	<h4 ID = "g">Deriving \(g\) from universal gravitation</h4>
+	<hr>
+	<p>\(g\) can be easily derived from Newton's law of universal gravitation:</p>
+	\begin{align}
+	F_g &= G\frac{m_1m_2}{r^2} \\
+	ma &= G\frac{m_\text{earth}m}{{r_\text{earth}}^2} \\
+	a &= G\frac{m_\text{earth}}{{r_\text{earth}}^2} \\
+	a &= g = \left(6.67 \times 10^{-11} \frac{\text{ m}^3}{\text{kg}\cdot\text{s}^{2}}\right)\frac{(5.97 \times 10^{24} \text{ kg})}{(6.37 \times 10^6 \text{ m})^2} \\
+	\end{align}
+	<div class = "answer">$$g = 9.81 \frac{\text{m}}{\text{s}^2}$$</div>
+	
+	<h4 ID = "momentDisk">Moment of inertia of a uniform thin disk</h4>
+	<hr>
+	<p>Let us find the moment of inertia of a thin disk rotating about its center. A disk can be viewed as a bunch of concentric onion rings placed neatly together. For each of these rings, if \(r\) is the radius, the circumference is \(2\pi r\) and the area is \(2\pi rdr\).</p>
+	$$I = \int dmr^2$$
+	<p>We need to find \(dm\). If the entire disk has mass \(M\) and radius \(R\), we can say the following about its mass-area density, or how much mass is concentrated in a given area:</p>
+	$$\rho = \frac MA = \frac{M}{\pi R^2}$$
+	<p>Meaning each ring has mass:</p>
+	$$dm = \rho dA = \frac{M}{\pi R^2}2\pi rdr$$
+	<p>Now we integrate from the smallest onion ring—radius 0—to the largest—with radius \(R\):</p>
+	$$I = \int_0^R \frac{2M}{R^2}r^3dr$$
+	$$= \frac{2M}{R^2}\left(\left.\frac{r^4}{4}\right|_0^R\right)$$
+	<div class = "answer">$$I = \frac{1}{2}MR^2$$</div>
+
+	<h4 ID = "momentSphere">Moment of inertia of a uniform solid sphere</h4>
+	<hr>
+	<p>Imagine looking at a spherical watermelon of radius \(R\) and uniform mass centered at the origin. Cut it into thin circular slices—each resembles a thin disk! This suggests that we can use the moment of inertia of a thin disk, \(I = \frac{1}{2}mr^2\), to find the watermelon's moment of inertia:</p> 
+	$$I = \int_{-R}^{R}\frac{1}{2}dmr^2$$
+
+	<p>The radius \(r\) of each slice depends on the position of the slice along the \(x\)-axis. From triangle geometry, we see that:</p>
+	$$x^2 + r^2 = R^2$$
+	$$r = \sqrt{R^2 - x^2}$$
+	<p>In order to take mass into consideration, we must find the volumetric mass density of the watermelon. Since our watermelon is of uniform mass, the density at any space in it will be proportional to the total mass over the total volume:</p>
+	$$\rho = \frac{M}{V} = \frac{M}{\frac{4}{3}\pi R^3} = \frac{3M}{4\pi R^3}$$
+	<p>Now, let us find the mass of one slice in terms of its position along the \(x\)-axis. Actually, the mass is dependent on volume, which is dependent on area, which is dependent on \(x\)-position!</p>
+	\begin{align}
+	dm &= \rho dV \\
+	&= \rho(dAdx) \\
+	&= \rho\left(\pi r^2x\right) \\
+	&= \rho\left(\pi \left(\sqrt{R^2 - x^2}\right)^2dx\right) \\
+	&= \left(\frac{3M}{4 R^3}\right)\left(R^2 - x^2\right)dx \\
+	\end{align}
+
+	\begin{align}
+	I &= \int_{-R}^{R}\frac{1}{2}dmr^2 \\
+	&= \int_{-R}^{R}\frac{1}{2}\left[\left(\frac{3M}{4 R^3}\right)\left(R^2 - x^2\right)dx\right] \left(R^2 - x^2\right) \\
+	&= \frac{3M}{8R^3} \int_{-R}^{R} (R^2 - x^2)^2dx \\
+	&= \frac{3M}{8R^3} \left(R^4\int_{-R}^{R}dx - 2R^2\int_{-R}^{R}x^2dx + \int_{-R}^{R}x^4dx)\right) \\
+	&= \frac{3M}{8R^3} \left(\left.R^4\right|_{-R}^{R} - 2R^2\left.\frac{x^3}{3}\right|_{-R}^{R} + \left.\frac{x^5}{5}\right|_{-R}^{R}\right) \\
+	&= \frac{3M}{8R^3} \left(R^4(2R) - 2R^2\left(\frac{2R^3}{3}\right) + \frac{2R^5}{5}\right) \\
+	&= \frac{2}{5}MR^2 \\
+	\end{align}
+
+
+
+
+	<h4 ID = "pat">Parallel axis theorem for non-uniform mass distributions</h4>
+	<hr>
+	<p>By definition, we know the moment of inertia about the center of mass of an object is:</p>
+	$$I_{\text{CM}} = \int dm{\boldsymbol{r_0}}^2$$
+	<p>But what if you wanted to rotate the object not about the center of mass, but some other point?</p>
+	<p>In high-school physics, you learn to apply the parallel axis theorem in such cases. Chances are, your teacher skipped the derivation. Even if you know the parallel axis theorem by heart, you may want to follow along to remind yourself why it is valid for not only generic, nice-looking mass distributions, but also weird-looking non-uniform mass distributions. To start, considering the following (arbitrarily shaped) object.</p>
+	<img class = "diagram" src = "PAT.svg"/>
+	<p>\(CM\) is the object's center of mass. Now, we wish to find the moment of inertia about a new point, \(C\). Let's indicate the distance between \(CM\) and \(C\) using the position vector \(\textbf{d}\).</p>
+	<p>Now consider a generic point—any point, really—on the object, and call it \(P\). If the distance from \(CM\) to \(P\) can be represented by the position vector \(\textbf{r}_0}\), then by vector geometry, the distance from the new center \(C\) to \(P\) is \(\boldsymbol{r_0} - \boldsymbol{d}\). This will hold true for each point \(P\) in the object.</p>
+	<p>So, from the definition of moment of inertia, we have:</p>
+	\begin{align}
+	I_C &= \int dm(\boldsymbol{r_0} - \boldsymbol{d})^2 \\
+	 &= \int dm(\boldsymbol{r_0}^2 - 2\boldsymbol{r_0d} + \boldsymbol{d}^2) \\
+	 &= \int dm\boldsymbol{r_0}^2 - \int 2\boldsymbol{r_0d}dm + \int dm\boldsymbol{d}^2 \\
+	\end{align}
+
+	<p>The first term in our expression is simply the moment of inertia about the center of mass: \(I_{CM} = \int dm\boldsymbol{r}^2\)! ✓</p>
+	<p>Since the center of mass is like a weighted average of the positions of all the small mass elements (\(dm\)), adding together all the \(dmr_0\)s should equal zero (remember, we are dealing with vectors, and there are little \(dm\)s on all sides of the \(CM\). Thus, the second term disappears. ✓</p>
+	<p>In the third term, summing all the \(dm\)s returns the total mass of the object. ✓</p>
+	<div class = "answer">$$I_\text{C} = I_\text{CM} + md^2$$</div>
+	
+	<h4>\(\sin\theta \approx \theta\) and other small-angle approximations</h4>
+	<hr>
+	\begin{align}
+	\sin\theta &= \frac{h}{r} \\
+	\theta &= \frac{s}{r} = \frac{r\theta}{r} \\
+	\text{error} &= \frac{\theta}{\sin\theta} \\
+	1.01 &= 0.244 \rad \\ 
+	\end{align}
+	</div>
+
+	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
+		<div class = "v_center_inner">
+		<em>
+			<script src = "lastModified.js"></script>
+		</em>
+		</div>
+	</div>
+</body>
+</html>
