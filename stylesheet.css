@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Roboto");
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400);
 
 body
 {
@@ -6,6 +6,7 @@ body
     width: 720px;
 	margin: auto;
 	font-family: "Roboto";
+	font-weight: 300;
 }
 
 #header 
@@ -20,7 +21,7 @@ body
 #masthead_background
 {
 	width: 540px;
-	border-radius: 5px;
+	border-radius: 0px;
 	background-color: gainsboro;
 	float: left;
 	margin-right: 15px;
@@ -36,6 +37,10 @@ body
 	margin: 15px;
 }
 
+.footnote
+{
+	font-size: 0.5em;
+}
 .updates
 {
 	font-size: 0.5em;
@@ -44,17 +49,17 @@ body
 .left 
 {
 	display: inline-block;
-	padding: 15px;
-	width: 205px;
+	width: 210px;
 	background-color: #aadcdc;
 	float: left;
 	margin-bottom: 10px;
+	padding: 15px;
 }
 
 .right 
 {
 	display: inline-block;
-	height: 159px;
+	height: 170px;
 	width: 420px;
 	background-color: #f0f0dc;
 	padding: 15px 25px 15px 25px;
@@ -69,7 +74,7 @@ body
 	display: table;
 	height: 50px;
 	width: 100%;
-	background-color: #64d2dc;
+	background-color: #50bec8;
 	border-radius: 5px 5px 0px 0px;
 }
 
@@ -81,7 +86,7 @@ body
 	height: 50px;
 	width: 720px;
 	z-index: 100;
-	background-color: #64d2dc;
+	background-color: #50bec8;
 	border-radius: 5px 5px 0px 0px;
 }
 
@@ -114,8 +119,8 @@ body
 	float: right;
 	width: 470px;
 	display: table;
-	height: 50px;
-	background-color: #64d2dc;
+	height: 56px;
+	background-color: #50bec8;
 	border-radius: 5px 5px 0px 0px;
 }
 
@@ -133,16 +138,16 @@ body
 	display: inline-block;
 	padding: 15px 30px 15px 30px;
 	width: 660px;
+	margin-bottom: 10px;
 }
 
 .section_subpage
 {
 	background-color: #f0f0dc;
-	border-radius: 0px 0px 5px 5px;
+	border-radius: 0px;
 	display: inline-block;
 	padding: 15px 30px 15px 30px;
 	width: 660px;
-	margin-bottom: 10px;
 	margin-top:50px;
 }
 
@@ -193,6 +198,7 @@ h1
 
 h2
 {
+	font-weight: 400;
 	display: table-cell;
 	text-align: center;
 	vertical-align: middle;
@@ -244,7 +250,6 @@ p
 	text-align: justify;
 }
 
-
 blockquote
 {
 	font-style: italic;
@@ -269,51 +274,29 @@ a
     color: #5050c8;
 }
 
-a:hover 
-{
-    font-weight: bold;
-}
-
-a:visited 
-{
-    color: #7f007f;
-}
-
 .button_link
 {
-	color: #64d2dc;
+	color: #43afb4;
 	text-decoration: none;
 }
 
-.button_link:hover
-{
-	color: #e1ffff;
-	text-decoration: none;
-}
+
 
 .button
 {
-    height: 46px;
-	width: 205px;
+    height: 50px;
+	width: 209px;
 	background-color: #e1ffff;
-	border-color: #64d2dc;
-	border-style: solid;
 	font-size: 20px;
 	text-align: center;
-	border-width: 2px;
+	border-width: 0px;
+	border-radius: 0px;
+	margin: 0px;
 }
 
-.button_follow
+.button_outer
 {
 	display: inline-block;
-    height: 46px;
-	width: 205px;
-	background-color: #e1ffff;
-	border-color: #64d2dc;
-	border-style: solid;
-	font-size: 20px;
-	text-align: center;
-	border-width: 2px;
 	margin-top: 3px;
 }
 
@@ -326,22 +309,22 @@ a:visited
 	border-style: solid;
 	font-size: 0.8em;
 	text-align: center;
-	font-weight: bold;
-	border-width: 2px;
+	border-width: 1px;
+	border-radius: 0px;
 	display: inline-block;
 }
 
 .button_rect
 {
-	height: 30px;
+	height: 45px;
 	width: 320px;
 	background-color: #e1ffff;
 	border-color: #64d2dc;
 	border-style: solid;
 	font-size: 0.8em;
 	text-align: center;
-	font-weight: bold;
-	border-width: 2px;
+	border-width: 1px;
+	border-radius: 0px;
 	display: inline-block;
 }
 
@@ -351,32 +334,28 @@ a:visited
 	max-width: 150px;
 }
 
+.button_rect img
+{
+	max-height: 80px;
+	max-width: 317px;
+}
+
 .button:hover
 {
-	font-weight: bold;
-	background-color: #64d2dc;
-	border-color: #e1ffff;
+	font-weight: 400;
+	background-color: #f0f0f0;
 }
 
 .button_square:hover
 {
-	font-weight: bold;
-	background-color: #64d2dc;
-	border-color: #e1ffff;
+	font-weight: 400;
+	background-color: #f0f0f0;
 }
 
 .button_rect:hover
 {
-	font-weight: bold;
-	background-color: #64d2dc;
-	border-color: #e1ffff;
-}
-
-.button_follow:hover
-{
-	font-weight: bold;
-	background-color: #64d2dc;
-	border-color: #e1ffff;
+	font-weight: 400;
+	background-color: #f0f0f0;
 }
 
 .padded_image
@@ -394,8 +373,7 @@ a:visited
 	height: 50px;
 	width: 100%;
 	background-color: #ff9b37;
-	border-radius: 5px;
-	padding: 15px 25px 15px 25x;
+	border-radius: 0px 0px 5px 5px;
 }
 
 -------------
@@ -407,12 +385,14 @@ a:visited
 }
 
 svg 
-	{
-		background: GRAY;
-	}
+{
+	background: GRAY;
+}
 
-	circle {
+circle 
+{
 	fill: steelblue;
 	stroke: #fff;
 	stroke-width: 3px;
 }
+

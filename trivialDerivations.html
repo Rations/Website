@@ -2,14 +2,14 @@
 <html lang = "en">
 
 <head>
-    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
-    <meta name = "Author" content = "Owen Zhang"/>
-    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: Trivial Derivations</title>
+	<meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
+	<meta name = "Author" content = "Owen Zhang"/>
+	<link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
+	<title>Raskolnikov's Realm: Trivial Derivations</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
-  		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
+	MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
 	</script>
 </head>
 
@@ -19,147 +19,228 @@
 		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
 		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
 		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Scale.png"/>
-		<h2>A Few Trivial Derivations</h2><a href = "physicsFun.html#howTo"><img class = "icon_right" src = "Calc.svg"/></a></div>
+		<img class = "divider_image" src = "Trivial derivations.svg"/>
+	
+	<h2>A Few Trivial Derivations</h2><a href = "physicsFun.html#howTo"><img class = "icon_right" src = "Calc.svg"/></a></div>
 	<div class = "section_subpage">
-	<p>Here you will find derivations of a few physics equations we often take for granted:</p>
-	<ol>
-		<li>Equations of 1-D motion with constant acceleration</li>
-		<li>Exchange of relative velocities in elastic collisions</li>
-		<li>Deriving \(g\)</li>
-		<li>Parallel axis theorem for non-uniform mass distributions</li>
-	</ol>
-	<h4 ID = "1D">1-D motion, constant acceleration</h4>
+		<p>Here you will find derivations of a few physics equations we often take for granted.</p>
+
+<details>
+	<summary>\(g\)</summary>
 	<hr>
-	For aesthetic purposes, let's say \(t_0 = 0\), \(v_0 = v(0)\), and \(v = v(t)\). Then, given a constant acceleration \(a\):
-	<ol>
-		<li>$$v = \int_{0}^{t}adt = a\int_{0}^{t}dt = \left. at \right|_0^t = at + c$$
-			<p>When \(t = 0\), \(v = c = v_0\), so:</p>
-			<div class = "answer"><p>\(v = v_0 + at\)</p></div>
-		</li>
-		<li>$$x = \int_{0}^{t}vdt = \int_{0}^{t}(v_0 + at)dt = \left(\left. v_0t + \frac{1}{2}at^2 \right)\right|_0^t = v_0t + \frac{1}{2}at^2 + c$$
-			<p>When \(t = 0\), \(x = c = x_0\), so:</p>
-			<div class = "answer"><p>\(x = x_0 + v_0t + \frac{1}{2}at^2\)
-		</li>
-		<li><p>The Third Equation: The One Without Time.</p>
-			\(v = v_0 + at \implies v^2 = {v_0}^2 + 2atv_0 + a^2t^2\)
-			\(= {v_0}^2 + 2a(v_0t + \frac{1}{2}at^2)\)
-			<p>Moving \(x_0\) to the other side of equation 2 implies \(\Delta x = v_0t + \frac{1}{2}at^2\). Substituting into our equation here leads to:</p>
-			<div class = "answer">\(v^2 = {v_0}^2 + 2a\Delta x\)</div>
-		</li>
-	</ol>
-
-	<h4 ID = "relVel">In an elastic collision, the relative velocity between the two objects flips: remains equal in magnitude but opposite in direction</h4>
+			<p>\(g\) can easily be derived from Newton's law of universal gravitation:</p>
+			$$F_g = G\frac{m_1m_2}{r^2}$$
+			<p>In our case, we have a mass \(m\) that acted upon by gravity close to the Earth's surface:</p>
+			\begin{align}
+			ma &= G\frac{m_\text{earth}m}{{r_\text{earth}}^2} \\
+			a &= G\frac{m_\text{earth}}{{r_\text{earth}}^2} \\
+			a &= \left(6.67 \times 10^{-11} \frac{\text{ m}^3}{\text{kg}\cdot\text{s}^{2}}\right)\frac{\left(5.97 \times 10^{24} \text{ kg}\right)}{\left(6.37 \times 10^6 \text{ m}\right)^2} \\
+			\end{align}
+			<div class = "answer">$$g = 9.81 \frac{\text{m}}{\text{s}^2}$$</div>
 	<hr>
-		<p>Given two masses, \(m\) initially with velocity \(v_0\) and \(M\) with velocity \(V_0\), we have from conservation of momentum and energy:</p>
-		$$mv_0 + MV_0 = mv + MV$$
-		$$\frac{1}{2}m{v_0}^2 + \frac{1}{2}M{V_0}^2 = \frac{1}{2}mv^2 + \frac{1}{2}MV^2$$
-		<p>Manipulating the first equation, we have:</p>
-		$$m(v_0 - v) = M(V - V_0)$$
-		$$\frac{m}{M} = \frac{V - V_0}{v_0 - v}$$
-		<p>Simplifying and rearranging the second euqation in the same manner, we have:</p>
-		$$\frac{m}{M} = \frac{V^2 - {V_0}^2}{{v_0}^2 - v^2}$$
-		<p>Combining the two, we have:</p>
-		$$\frac{V - V_0}{v_0 - v} = \frac{V^2 - {V_0}^2}{{v_0}^2 - v^2}$$
-		<p>Recognizing that \(a^2 - b^2 = (a + b)(a - b)\):</p>
-		$$\frac{V - V_0}{v_0 - v} = \frac{(V + V_0)(V - V_0)}{(v_0 + v)(v_0 - v)}$$
-		$$v_0 + v = V_0 + V$$
-		<div class = "answer">$$v_0 - V_0 = -(v - V)$$</div>
-		<p>Hence the difference between the initial velocities, a.k.a. the initial relative velocity, is equal in magnitude but opposite in direction to the final relative velocity.</p>
+</details>
 
-	<h4 ID = "g">Deriving \(g\) from universal gravitation</h4>
+		<details>
+	<summary>\(x = x_0 + v_0t + \frac{1}{2}at^2\) and other 1-D motion equations</summary>
 	<hr>
-	<p>\(g\) can be easily derived from Newton's law of universal gravitation:</p>
-	\begin{align}
-	F_g &= G\frac{m_1m_2}{r^2} \\
-	ma &= G\frac{m_\text{earth}m}{{r_\text{earth}}^2} \\
-	a &= G\frac{m_\text{earth}}{{r_\text{earth}}^2} \\
-	a &= g = \left(6.67 \times 10^{-11} \frac{\text{ m}^3}{\text{kg}\cdot\text{s}^{2}}\right)\frac{(5.97 \times 10^{24} \text{ kg})}{(6.37 \times 10^6 \text{ m})^2} \\
-	\end{align}
-	<div class = "answer">$$g = 9.81 \frac{\text{m}}{\text{s}^2}$$</div>
-	
-	<h4 ID = "momentDisk">Moment of inertia of a uniform thin disk</h4>
+		<p>Many students consider these equations for 1-D motion under <em>constant</em> acceleration to be some of the simplest in mechanics; equally many can never quite remember them. They are actually not difficult to memorize if one understands their origins in calculus, which will be our goal here.</p>
+		<p>For aesthetic purposes, when I write the function \(v\), I really mean \(v(t)\). Let's also agree that writing \(v_0\) is the same as writing \(v(0)\) and that \(t_0 = 0\).</p>
+		<p>Then, given a constant acceleration \(a\):</p>
+		<ol>
+			<li>$$v = \int_{0}^{t}adt = a\left(\left.t \right|_0^t\right) = at + c_1$$
+				<p>When \(t = 0\), \(v = c_1 = v_0\), so:</p>
+				<div class = "answer"><p>\(v = v_0 + at\)</p></div>
+			</li>
+			<li>$$x = \int_{0}^{t}vdt = \int_{0}^{t}(v_0 + at)dt = \left(\left. v_0t + \frac{1}{2}at^2 \right)\right|_0^t = v_0t + \frac{1}{2}at^2 + c_2$$
+				<p>When \(t = 0\), \(x = c_2 = x_0\), so:</p>
+				<div class = "answer"><p>\(x = x_0 + v_0t + \frac{1}{2}at^2\)
+				</li>
+				<li><p><strong>Eliminating \(t\) from the equations</strong></p>
+					<p>Note that our equation for \(x\) can be rewritten like:</p>
+					$$x - x_0 = v_0t + \frac{1}{2}at^2 = \Delta x$$ 
+					<p>If we square our equation for \(v\) and then factor, we find that:</p>
+					\begin{align}
+					v &= v_0 + at \\
+					v^2 &= {v_0}^2 + 2av_0t + a^2t^2 \\
+					&= {v_0}^2 + 2a(v_0t + \frac{1}{2}at^2) \\
+					\end{align}
+					<p>Notice that the stuff in the parentheses is our rewritten equation for \(x\)! Therefore:</p>
+					<div class = "answer">\(v^2 = {v_0}^2 + 2a\Delta x\)</div>
+				</li>
+			</ol>
+			<hr>
+		</details>
+
+<details>
+	<summary>\(I_A = I_{CM} + md^2\): The parallel axis theorem</summary>
 	<hr>
-	<p>Let us find the moment of inertia of a thin disk rotating about its center. A disk can be viewed as a bunch of concentric onion rings placed neatly together. For each of these rings, if \(r\) is the radius, the circumference is \(2\pi r\) and the area is \(2\pi rdr\).</p>
-	$$I = \int dmr^2$$
-	<p>We need to find \(dm\). If the entire disk has mass \(M\) and radius \(R\), we can say the following about its mass-area density, or how much mass is concentrated in a given area:</p>
-	$$\rho = \frac MA = \frac{M}{\pi R^2}$$
-	<p>Meaning each ring has mass:</p>
-	$$dm = \rho dA = \frac{M}{\pi R^2}2\pi rdr$$
-	<p>Now we integrate from the smallest onion ring—radius 0—to the largest—with radius \(R\):</p>
-	$$I = \int_0^R \frac{2M}{R^2}r^3dr$$
-	$$= \frac{2M}{R^2}\left(\left.\frac{r^4}{4}\right|_0^R\right)$$
-	<div class = "answer">$$I = \frac{1}{2}MR^2$$</div>
+			<p>By definition, we know the moment of inertia about the center of mass of an object is:</p>
+			$$I_{\text{CM}} = \int dm{\boldsymbol{r_0}}^2$$
+			<p>But what if you wanted to rotate the object not about the center of mass, but some other point?</p>
+			<p>In high-school physics, you learn to apply the parallel axis theorem in such cases. Chances are, your teacher skipped the derivation. Even if you know the parallel axis theorem by heart, you may want to follow along to remind yourself why it is valid for not only generic, nice-looking mass distributions, but also weird-looking non-uniform mass distributions. To start, considering the following (arbitrarily shaped) object.</p>
+			<img class = "diagram" src = "PAT.svg"/>
+			<p>\(CM\) is the object's center of mass. Now, we wish to find the moment of inertia about a new point, \(C\). Let's indicate the distance between \(CM\) and \(C\) using the position vector \(\textbf{d}\).</p>
+			<p>Now consider a generic point—any point, really—on the object, and call it \(P\). If the distance from \(CM\) to \(P\) can be represented by the position vector \(\textbf{r}_0}\), then by vector geometry, the distance from the new center \(C\) to \(P\) is \(\boldsymbol{r_0} - \boldsymbol{d}\). This will hold true for each point \(P\) in the object.</p>
+			<p>So, from the definition of moment of inertia, we have:</p>
+			\begin{align}
+			I_C &= \int dm(\boldsymbol{r_0} - \boldsymbol{d})^2 \\
+			&= \int dm(\boldsymbol{r_0}^2 - 2\boldsymbol{r_0d} + \boldsymbol{d}^2) \\
+			&= \int dm\boldsymbol{r_0}^2 - \int 2\boldsymbol{r_0d}dm + \int dm\boldsymbol{d}^2 \\
+			\end{align}
 
-	<h4 ID = "momentSphere">Moment of inertia of a uniform solid sphere</h4>
+			<p>The first term in our expression is simply the moment of inertia about the center of mass: \(I_{CM} = \int dm\boldsymbol{r}^2\)! ✓</p>
+			<p>Since the center of mass is like a weighted average of the positions of all the small mass elements (\(dm\)), adding together all the \(dmr_0\)s should equal zero (remember, we are dealing with vectors, and there are little \(dm\)s on all sides of the \(CM\). Thus, the second term disappears. ✓</p>
+			<p>In the third term, summing all the \(dm\)s returns the total mass of the object. ✓</p>
+			<div class = "answer">$$I_\text{C} = I_\text{CM} + md^2$$</div>
+			<hr>
+</details>
+
+<details>
+	<summary>Moment of inertia of a uniform rod about an axis through its center</summary>
 	<hr>
-	<p>Imagine looking at a spherical watermelon of radius \(R\) and uniform mass centered at the origin. Cut it into thin circular slices—each resembles a thin disk! This suggests that we can use the moment of inertia of a thin disk, \(I = \frac{1}{2}mr^2\), to find the watermelon's moment of inertia:</p> 
-	$$I = \int_{-R}^{R}\frac{1}{2}dmr^2$$
+	<p>Since our rod is uniform, its mass-length ("linear") density is the same at every point along its length: \(\lambda = \frac ML\). Using this info, we can find the mass element \(dm\) of every small length of rod \(dr\):</p>
+			$$dm = \lambda dr = \frac{M}{L}dr$$
+	<p>It's just integration from there. We are finding the moment of inertia about the rod's center, so half the rod lies in the positive direction and half the rod lies in the negative direction. Thus:</p>
+			\begin{align}
+			I &= \int dmr^2 \\
+			&= \int_{-L/2}^{L/2} \frac{M}{L}dr r^2 \\
+			&= \frac{M}{L}\left(\left.\frac{r^3}{3}\right|_{-L/2}^{L/2}\right) \\\
+			\end{align}
+			<div class = "answer">$$I = \frac{1}{12}ML^2$$</div>
+			<hr>
+</details>
 
-	<p>The radius \(r\) of each slice depends on the position of the slice along the \(x\)-axis. From triangle geometry, we see that:</p>
-	$$x^2 + r^2 = R^2$$
-	$$r = \sqrt{R^2 - x^2}$$
-	<p>In order to take mass into consideration, we must find the volumetric mass density of the watermelon. Since our watermelon is of uniform mass, the density at any space in it will be proportional to the total mass over the total volume:</p>
-	$$\rho = \frac{M}{V} = \frac{M}{\frac{4}{3}\pi R^3} = \frac{3M}{4\pi R^3}$$
-	<p>Now, let us find the mass of one slice in terms of its position along the \(x\)-axis. Actually, the mass is dependent on volume, which is dependent on area, which is dependent on \(x\)-position!</p>
-	\begin{align}
-	dm &= \rho dV \\
-	&= \rho(dAdx) \\
-	&= \rho\left(\pi r^2x\right) \\
-	&= \rho\left(\pi \left(\sqrt{R^2 - x^2}\right)^2dx\right) \\
-	&= \left(\frac{3M}{4 R^3}\right)\left(R^2 - x^2\right)dx \\
-	\end{align}
-
-	\begin{align}
-	I &= \int_{-R}^{R}\frac{1}{2}dmr^2 \\
-	&= \int_{-R}^{R}\frac{1}{2}\left[\left(\frac{3M}{4 R^3}\right)\left(R^2 - x^2\right)dx\right] \left(R^2 - x^2\right) \\
-	&= \frac{3M}{8R^3} \int_{-R}^{R} (R^2 - x^2)^2dx \\
-	&= \frac{3M}{8R^3} \left(R^4\int_{-R}^{R}dx - 2R^2\int_{-R}^{R}x^2dx + \int_{-R}^{R}x^4dx)\right) \\
-	&= \frac{3M}{8R^3} \left(\left.R^4\right|_{-R}^{R} - 2R^2\left.\frac{x^3}{3}\right|_{-R}^{R} + \left.\frac{x^5}{5}\right|_{-R}^{R}\right) \\
-	&= \frac{3M}{8R^3} \left(R^4(2R) - 2R^2\left(\frac{2R^3}{3}\right) + \frac{2R^5}{5}\right) \\
-	&= \frac{2}{5}MR^2 \\
-	\end{align}
-
-
-
-
-	<h4 ID = "pat">Parallel axis theorem for non-uniform mass distributions</h4>
+<details>
+	<summary>Moment of inertia of a uniform disk about an axis through its center</summary>
 	<hr>
-	<p>By definition, we know the moment of inertia about the center of mass of an object is:</p>
-	$$I_{\text{CM}} = \int dm{\boldsymbol{r_0}}^2$$
-	<p>But what if you wanted to rotate the object not about the center of mass, but some other point?</p>
-	<p>In high-school physics, you learn to apply the parallel axis theorem in such cases. Chances are, your teacher skipped the derivation. Even if you know the parallel axis theorem by heart, you may want to follow along to remind yourself why it is valid for not only generic, nice-looking mass distributions, but also weird-looking non-uniform mass distributions. To start, considering the following (arbitrarily shaped) object.</p>
-	<img class = "diagram" src = "PAT.svg"/>
-	<p>\(CM\) is the object's center of mass. Now, we wish to find the moment of inertia about a new point, \(C\). Let's indicate the distance between \(CM\) and \(C\) using the position vector \(\textbf{d}\).</p>
-	<p>Now consider a generic point—any point, really—on the object, and call it \(P\). If the distance from \(CM\) to \(P\) can be represented by the position vector \(\textbf{r}_0}\), then by vector geometry, the distance from the new center \(C\) to \(P\) is \(\boldsymbol{r_0} - \boldsymbol{d}\). This will hold true for each point \(P\) in the object.</p>
-	<p>So, from the definition of moment of inertia, we have:</p>
-	\begin{align}
-	I_C &= \int dm(\boldsymbol{r_0} - \boldsymbol{d})^2 \\
-	 &= \int dm(\boldsymbol{r_0}^2 - 2\boldsymbol{r_0d} + \boldsymbol{d}^2) \\
-	 &= \int dm\boldsymbol{r_0}^2 - \int 2\boldsymbol{r_0d}dm + \int dm\boldsymbol{d}^2 \\
-	\end{align}
+			<p>A disk is like a slice of onion—a bunch of concentric rings placed neatly together. For each of these rings, if \(r\) is the radius, then the circumference is \(2\pi r\) and the area \(dA\) is \(2\pi rdr\) (remember, we are dealing with rings, not circles).</p>
+			$$I = \int dmr^2$$
+			<p>We need to find \(dm\). If the entire disk has uniform mass \(M\) and radius \(R\), its area density, or how much mass is "spread" across a given area, is:</p>
+			$$\rho = \frac MA = \frac{M}{\pi R^2}$$
+			<p>Meaning each of our concentric rings has mass:</p>
+			$$dm = \rho dA = \frac{M}{\pi R^2}2\pi rdr = \frac{2Mrdr}{R^2}$$
+			<p>Now we substitute \(dm\) into our equation for \(I\) and integrate from the smallest ring (\(r = 0\)) to the largest (\(r = R\)):</p>
+			\begin{align}
+			I &= \int_0^R \frac{2M}{R^2}r^3dr \\
+			&= \frac{2M}{R^2}\left(\left.\frac{r^4}{4}\right|_0^R\right) \\
+			\end{align}
+			<div class = "answer">$$I = \frac{1}{2}MR^2$$</div>
+			<hr>
+</details>
 
-	<p>The first term in our expression is simply the moment of inertia about the center of mass: \(I_{CM} = \int dm\boldsymbol{r}^2\)! ✓</p>
-	<p>Since the center of mass is like a weighted average of the positions of all the small mass elements (\(dm\)), adding together all the \(dmr_0\)s should equal zero (remember, we are dealing with vectors, and there are little \(dm\)s on all sides of the \(CM\). Thus, the second term disappears. ✓</p>
-	<p>In the third term, summing all the \(dm\)s returns the total mass of the object. ✓</p>
-	<div class = "answer">$$I_\text{C} = I_\text{CM} + md^2$$</div>
-	
-	<h4>\(\sin\theta \approx \theta\) and other small-angle approximations</h4>
+<details>
+	<summary>Moment of inertia of a uniform solid sphere about an axis through its center</summary>
 	<hr>
-	\begin{align}
-	\sin\theta &= \frac{h}{r} \\
-	\theta &= \frac{s}{r} = \frac{r\theta}{r} \\
-	\text{error} &= \frac{\theta}{\sin\theta} \\
-	1.01 &= 0.244 \rad \\ 
-	\end{align}
-	</div>
+			<p>Imagine a spherical watermelon of radius \(R\) and uniform mass \(M\) centered at the origin. Cut it into thin circular slices—each resembles a thin disk! This suggests that we can use the moment of inertia of a disk about an axis through its center, \(I = \frac{1}{2}mr^2\), to find the watermelon's moment of inertia:</p>
+			$$I = \int_{-R}^{R} \frac{1}{2}dmr^2$$ 
+			<p>First, the radius \(r\) of each slice depends on the position of the slice along the \(x\)-axis. From triangle geometry, we see that:</p>
+			$$x^2 + r^2 = R^2$$
+			$$r = \sqrt{R^2 - x^2}$$
+			<p>Next, let's find \(dm\). Actually, the mass of each infinitesimal piece of watermelon is dependent on the volume \(dV\) . . . which is dependent on the area \(dA\) . . .  which is dependent on the radius \(r\) . . . which is dependent on \(x\)!</p>
+			<p>We need the volumetric mass density of the watermelon, or how much mass is spread throughout a given volume. Since our watermelon is uniform, the density at any space within it is \(\rho = \frac{M}{\frac{4}{3}\pi R^3} = \frac{3M}{4\pi R^3}\).</p>
+			<p>Now, for some quick substitutions:</p>
+			\begin{align}
+			dm &= \rho dV \\
+			&= \rho(dAdx) \\
+			&= \rho\left(\pi r^2dx\right) \\
+			&= \rho\left(\pi \left(\sqrt{R^2 - x^2}\right)^2dx\right) \\
+			&= \left(\frac{3M}{4 R^3}\right)\left(R^2 - x^2\right)dx \\
+			\end{align}
+			<p>At last, we can integrate from \(x = -R\) (one end of the watermelon) to \(x = R\) (the other end)!</p>
+			\begin{align}
+			I &= \int_{-R}^{R}\frac{1}{2}dmr^2 \\
+			&= \int_{-R}^{R}\frac{1}{2}\left[\left(\frac{3M}{4 R^3}\right)\left(R^2 - x^2\right)dx\right] \left(R^2 - x^2\right) \\
+			&= \frac{3M}{8R^3} \int_{-R}^{R} (R^2 - x^2)^2dx \\
+			\end{align}
+			<p>Expanding the stuff in the integral, we have:</p>
+			\begin{align}
+			&= \frac{3M}{8R^3} \left(\int_{-R}^{R}R^4dx - \int_{-R}^{R}2R^2x^2dx + \int_{-R}^{R}x^4dx\right) \\
+			&= \frac{3M}{8R^3} \left(R^4\left(\left.x\right|_{-R}^{R}\right) - 2R^2\left(\left.\frac{x^3}{3}\right|_{-R}^{R}\right) + \left.\frac{x^5}{5}\right|_{-R}^{R}\right) \\
+			\end{align}
+			<div class = "answer">$$I = \frac{2}{5}MR^2$$</div>
+			
+<hr>
+</details>
 
-	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
-		<div class = "v_center_inner">
-		<em>
-			<script src = "lastModified.js"></script>
-		</em>
+		<details ID = "relativeVelocityReversal">
+	<summary>"Reversal" of relative velocity in elastic collisions</summary>
+	<hr>
+			<p>Given two masses—\(m\) and \(M\) with initial velocities \(v_0\) and \(V_0\), respectively—we have from conservation of momentum and energy:</p>
+			$$mv_0 + MV_0 = mv + MV$$
+			$$\frac{1}{2}m{v_0}^2 + \frac{1}{2}M{V_0}^2 = \frac{1}{2}mv^2 + \frac{1}{2}MV^2$$
+			<p>Rearranging the first equation, we find:</p>
+			$$\frac{m}{M} = \frac{V - V_0}{v_0 - v}$$
+			<p>Simplifying and rearranging the second euqation in the same manner, we find:</p>
+			$$\frac{m}{M} = \frac{V^2 - {V_0}^2}{{v_0}^2 - v^2}$$
+			<p>Setting the two equal, we have:</p>
+			$$\frac{V - V_0}{v_0 - v} = \frac{V^2 - {V_0}^2}{{v_0}^2 - v^2}$$
+			<p>Recognizing that \(a^2 - b^2 = (a + b)(a - b)\):</p>
+			\begin{align}
+			\frac{V - V_0}{v_0 - v} &= \frac{(V + V_0)(V - V_0)}{(v_0 + v)(v_0 - v)} \\
+			v_0 + v &= V_0 + V \\
+			\end{align}
+			<div class = "answer">$$v_0 - V_0 = -(v - V)$$</div>
+			<p>Hence the difference between the initial velocities, a.k.a. the initial relative velocity, is equal in magnitude but opposite in direction to the final relative velocity.</p>
+			<hr>
+		</details>
+
+<details>
+	<summary>\(\sin\theta \approx \theta\) and other small-angle approximations</summary>
+	<hr>
+			<p>A useful trick that can be applied in many derivations is small-angle approximation. It is easiest for sine:</p>
+			$$\sin\theta = \frac{h}{r}$$
+			<p>From geometry, we can see that the arc length swept by \(\theta\) is only slightly longer than \(h\). If \(\theta\) is very small, they will be almost exactly the same. Substituting \(s\) in place of \(h\) leads us to . . . wait! \(\frac{s}{r}\) is just the definition of an angle in radians! So:</p>
+			$$\sin\theta = \frac{h}{r} \approx \frac{s}{r} = \theta$$
+			<div class = "answer">$$\sin\theta \approx \theta$$</div>
+			<p>We can get a better sense of how valid this approximiation is by finding the percent error.</p>
+			$$\text{% error} = \frac{\theta - \sin\theta}{\sin\theta} \times 100$$
+			$$= 1 \text{ if }\theta = 0.244$$
+			<p>So we won't even be one percent off as long as our angle is less than 0.244 radians, or 14 degrees!</p>
+			<p>There are several ways to derive the corresponding approximiation for cosine (involving various expansions, Taylor series), but one method that leads to the same results involves using our result for sine. Recalling that:</p>
+			\begin{align}
+			\cos(2\theta) &= \cos^2\theta - \sin^2\theta \\
+			\cos\theta &= \cos^2\left(\frac \theta 2\right) - \sin^2\left(\frac \theta 2\right) \\
+			&= 1 - 2\sin^2\frac \theta 2 \\
+			&\approx 1 - 2\left(\frac \theta 2\right)^2\\
+			\end{align}
+			<div class = "answer">$$\cos\theta \approx 1 - \frac{\theta^2}{2}$$</div>
+			<hr>
+</details>
+<details>
+	<summary>\(\omega\) for simple harmonic motion</summary>
+	<hr>
+			<h4>Regular vs. angular frequency</h4>
+			<hr>
+			<p>Frequency is how many cycles something completes in a unit of time (in SI units, \(\frac{1}{\text{s}}\), or \(\text{hz}\)).</p>
+			<p>Angular frequency is an extension of this concept: it is the angle something covers in a given unit of time. "Covers" can mean the angle swept by a rotating object or the "percent completion" of a periodic function, like a sine wave, in the middle of a cycle. More precisely, it can be written as \(\frac{2\pi}{T}\), where \(T\) is the period of the motion. For circles, \(2\pi\) is one complete revolution (kind of like a cycle). For periodic functions, it is the time the function spends doing something before it repeats itself.</p>
+			<h4>Angular frequency and simple harmonic motion</h4>
+			<hr>
+			<p>We know that an object in simple harmonic motion, like one on the end of a spring, oscillates. Its position can be represented by a sinusoidal function, meaning it is periodic and thus has angular frequency.</p>
+			<p>To derive the angular frequency of an object in SHS, we first have to recognize that an object attached to a spring experiences a force \(F = -kx\), for the spring force is always in the direction opposite to the object's displacement relative to its equilibrium position.</p>
+
+			<p>We know that smart people have solved the second-order differential equations to find that an object in SHS's position can be modeled by an equation of the form:</p>
+			$$x = B\sin(\omega t) + A\cos(\omega t)$$
+			<p>The unknowns in this equation depend on the initial conditions of the system. Let's construct our coordinate system such that the equilibrium position is at the origin. Let's also say that at \(t = 0\), we release the spring from a given amplitude \(A\), thus beginning its oscillation.</p>
+			<p>\(\sin0 = 0\), which simplifies things nicely. From differentiation:</p>
+			\begin{align} 
+			x &= A\cos(\omega t) \\
+			v &= -A\omega\sin (\omega t) \\
+			a &= -A\omega^2 \cos(\omega t) \\
+			\end{align}
+			<p>Now that we have expressions for \(x\) and \(a\) in terms of \(t\), we can substitute these into our original force equation and discover new relationships.</p>
+			$$m(-B\omega^2 \cos(\omega t)) = -k(B\cos(\omega t))$$
+			<div class = "answer">$$\omega = \sqrt{\frac{k}{m}}$$</div>
+			<p>So the angular frequency of an object oscillating at the end of a spring is dependent solely on the spring constant \(k\) and its own mass \(m\), <em>not</em> the amplitude.</p>
+			<hr>
+</details>
 		</div>
-	</div>
-</body>
-</html>
+
+		<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
+			<div class = "v_center_inner">
+				<em>
+					<script src = "lastModified.js"></script>
+				</em>
+			</div>
+		</div>
+	</body>
+	</html>

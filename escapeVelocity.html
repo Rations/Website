@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
+    <meta name = "Author" content = "Owen Zhang"/>
+    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
+    <title>Raskolnikov's Realm: Escape Velocity</title>
+	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
+	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type = "text/JavaScript">    
+  		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
+	</script>
+	<script type = "text/javascript" src = "http://mbostock.github.com/d3/d3.js"></script>
+</head>
+
+<body>
+	<div class = "divider_subpage">
+		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Scale.png"/>
+		<h2>Escape Velocity</h2></div>
+	<div class = "section_subpage">
+		<p>Given a particle of mass \(m\) and a planet of mass \(M\):</p>
+		\begin{align}
+			U_g &= \int_{r_0}^{r} F_gdr \\
+				&= \int_{\infty}^{R} G\frac{Mm}{r^2}dr \\
+				&= GMm \left.\left(-\frac{1}{r}\right|_{\infty}^{R}\right) \\
+				&= GMm \left(-\frac{1}{R} - 0\right) \\
+				&= -\frac{GMm}{R} \\ 
+		\end{align}
+		<p>Now, at launch, the particle must possess at least as much kinetic energy as potential energy; otherwise, sooner or later, it would "fall back" to the planet. Somehow, it must make its way to a point where its potential energy is zero:</p>
+		$$KE_i + PE_i = KE_f$$
+		<p>Now, it doesn't matter what velocity we have at the end. We should be alright as long as there is no potential energy. We are trying to find the cutoff, the velocity that will just allow us to escape the gravitational field of the planet, so we can set \(v_f\), and thus \(KE_f\), to zero.</p>
+		\begin{align}
+			KE_i + PE_i &= 0 \\
+			\frac{1}{2}m{v_\text{escape}}^2 &= \frac{GMm}{R} \\
+			v_\text{escape} = \sqrt{\frac{2GM}{R}} \\
+		\end{align}
+
+		<h4>The case of two planets</h4>
+		<hr>
+		<p>What if we are transported to a binary star system, where two stars orbit about each other? Would the escape velocity of a mass on the surface of one of the stars be different?</p>
+		<p>Fortunately, the problem is not too difficult to tackle. It turns out that we can analyze the gravitational potential energy the mass in relation to each of the stars separately. If star 1 is the one on which whose surface the mass rests:</p>
+		$$U_{1} = -\frac{GMm}{R}$$
+		<p>In other words, it is identical to the expression in the previous problem.</p>
+		<p>Now we can find the potential energy of the mass in relation to the second star. All we need to know is the radius, \(d\):</p>
+		$$U_{2} = -\frac{GMm}{d}$$
+		<p>Now, to find the total potential energy:<p>
+			$$KE_i + U_1 + U_2 = 0$$
+			$$\frac{1}{2}m{v_\text{escape}}^2 = GMm\left(\frac{1}{R} + \frac{1}{d}\right)$$
+			$$v_\text{escape} = \sqrt{2GM\left(\frac{1}{R} + \frac{1}{d}\right)}$$
+	</div>
+		
+	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
+		<div class = "v_center_inner">
+		<em>
+			<script src = "lastModified.js"></script>
+		</em>
+		</div>
+	</div>
+</body>
+</html>

@@ -28,12 +28,11 @@
 		
 		<p><em>A ballistic pendulum!</em></p>
 		
-		<hr>
-
 		<h4><em>How</em> it works:</h4>
+		<hr>
 		<ol>
 			<li>Measure the mass of your bullet, the mass of the pendulum "bob" (whatever block or cannister hangs from it), and the length of your pendulum.</li>
-			<li>Fire your bullet at the bob (and hope it sticks!).</li>
+			<li>Fire your bullet at the bob (and hope it sticks<sup>1</sup>)!</li>
 			<li>Measure the angle the pendulum sweeps out with respect to the vertical axis.</li>
 			<li>Plug your data into this: 
 			<div class = "answer">$$v_0 = \frac{2gl}{m}(m + M)(1 - \cos\theta)$$</div>
@@ -71,52 +70,12 @@
 		}
 		</script>
 
-		<div id ="viz"></div>
-		<div id = "bullet"></div>
-	<script type="text/javascript">
-		//Make an SVG Container
- 		var container = d3.select("#bullet")
- 			.append("svg")
- 			.attr("width", 690)
- 			.attr("height", 345);
-
- 		//Draw the Rectangle
- 		var rectangle = container.append("rect")
- 			.attr("x", 0)
- 			.attr("y", 300)
- 			.attr("width", 25)
- 			.attr("height", 10)
- 			.attr("rx", 5)
- 			.on("mousedown", animateFirstStep);
-
-function animateFirstStep(){
-    d3.select(this)
-      .transition()            
-        .delay(0)            
-        .duration(1000)
-        .attr("x", 300)
-        .each("end", animateSecondStep);
-};
-
-function animateSecondStep(){
-    d3.select(this)
-      .transition()
-        .duration(1000)
-        .attr("y", 100)
-        .attr("x", 500);
-};
-
- 		var circle = container.append("circle")
- 			.attr("cx", 300)
- 			.attr("cy", 300)
- 			.attr("r", 10)
-</script>
-
+	
 		<h4><em>Why</em> it works:</h4>
 		<hr>
 		<p>It may look ugly, but the equation above actually comes from two of the most fundamental concepts in physics: conservation of energy and conservation of momentum. Let's see why.</p>
 		<p>First, we know that a collision occurs between our bullet and the pendulum bob. It's tempting to think that energy is conserved, but remember: energy can be lost through heat, sound, and unmeasurable vibrations. </p>
-		<p>Momentum to the rescue! Recall that the linear momentum of a system is conserved as long as no external force acts upon our system. The beauty of the ballistic pendulum is, since our bullet "sticks" to the pendulum bob, we can essentially say the bullet and bob combine into one big "blob" with the same mass and velocity.</p>
+		<p>Momentum to the rescue! Recall that the linear momentum of a system is conserved as long as no external force acts upon our system<sup>2</sup>. The beauty of the ballistic pendulum is, since our bullet "sticks" to the pendulum bob, we can essentially say the bullet and bob combine into one big "blob" with the same mass and velocity.</p>
 		<p>We can use our equation for conservation of linear momentum to solve for the velocity of our blob after the collision. Take a moment to try it. </p>		
 		$$m = \text{mass of bullet}$$
 		$$M = \text{mass of pendulum mass}$$
@@ -134,11 +93,9 @@ function animateSecondStep(){
 		<p>Now it's just a matter of solving our energy equation for \(v_{0, \text{ blob}}\). And since \(v_{0, \text{ blob}}\) was calculated from the momentum, \(mv_0\), of our bullet, we can easily solve for \(v_0\) in terms of \(\theta\).</p>
 		<p class = "QED">♛</p>
 		
+		<h4>Up and over</h4>
 		<hr>
-		
-		<h4>Follow-ups:</h4>
-		<ol>	
-			<li>Is it possible to make the pendulum swing completely around if the bullet is fast enough? If so, will the pendulum keep on spinning in a circle?</li>
+		<p>Is it possible to make the pendulum swing completely around if the bullet is fast enough? If so, will the pendulum keep on spinning in a circle?</p>
 			<p>We know that centripetal force for uniform circular motion can be modeled:</p>
 			$$F_\text{rad} = m \frac{v^2}{r}$$
 			<p>The point in time we're interested in is when our blob swings all the way to the top of its circular path. If it is moving too slowly in the first place, it will never make it. It is also possible for the blob to be moving quicker than it has to: it will still complete the circular path without problems, but will have excess speed.</p>
@@ -190,11 +147,14 @@ function animateSecondStep(){
 		</script>
 			<p class = "QED">♛</p>
 
-			<li>Does it matter if the bullet sticks firmly to the container or if the bullet merely flies in and can wiggle around?</li>
-			<p>It's nice when our bullet sticks in place, but even if it moves around, we can still apply the aforementioned conservation concepts. As long as we use the center of mass in our calculations (meaning we might have to adjust our distance measurements), our calculations should yield reasonable results. It is worth mentioning, however, that energy might be dissipated if the bullet repeatedly richochets from the walls of the container.</p>
-			<li>But gravity is exerting a downwards force on the bullet during the collision. Doesn't this mean linear momentum isn't conserved?</li>
-			<p>We assume that our collision is instanteous. There is no time over which gravity can significantly affect the motion of the objects in our system.</p>
-		</ol>
+		<h4>Notes</h4>
+		<hr>
+		<div class = "footnote">
+			<p><sup>1</sup> What if the bullet flies into the container and bounces around rather than sticking?</p>
+			<p>We can still use momentum conservation in our calculations—as long as we use the center of mass of the blob, meaning we might have to adjust our distances. Some energy might be dissipated, however, if the bullet repeatedly richochets from the walls of the container.</p>
+			<p><sup>2</sup> But gravity is exerting a downwards force on the bullet during the collision. Doesn't this mean momentum isn't conserved?</p>
+			<p>We assume our collision is instanteous, meaning there is no time over which gravity can significantly affect the motion of the objects in our system.</p>
+		</div>
 	</div>
 
 	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
