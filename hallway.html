@@ -31,22 +31,27 @@
 			<img class = "diagram" src = "Hallway diagram.svg"/>
 
 			<p>Notice the two small triangles in the diagram. They are similar, so we can use some ratios to find an equation for \(h\).</p>
-			$$\frac{a}{x} = \frac{h}{24 - x}$$
-			$$h = \frac{a}{x}(24 - x)$$
+			\begin{align}
+			\frac{a}{x} &= \frac{h}{24 - x} \\
+			h &= \frac{a}{x}(24 - x) \\
+			\end{align}
 			<p>From our drawing, we can treat \(\theta\) as the independent variable on which all our lengths depend, so we first need to write our differentiable equation in terms of \(\theta\). Using some trig ratios:</p>
-			$$\sin\theta = \frac{a}{x}$$
-			$$\cos\theta = \frac{3}{x} \implies x = 3\sec\theta$$
-			$$h = \sin\theta(24 - 3\sec\theta) = 24\sin\theta - 3\tan\theta$$
+			\begin{align}
+			\sin\theta &= \frac{a}{x} \\
+			\cos\theta &= \frac{3}{x} \implies x = 3\sec\theta \\
+			h &= \sin\theta(24 - 3\sec\theta) = 24\sin\theta - 3\tan\theta \\
+			\end{align}
 			<p>Now we can differentiate with respect to our independent variable, \(\theta\), to find the angle the corresponds with \(h_\text{min}\):</p>
-			$$\frac{dh}{d\theta} = 0 = 24\cos\theta - 3\sec^2\theta$$
-			$$\cos^3\theta = \frac{3}{24}$$
-			$$\theta = \frac{\pi}{3}$$
-
+			\begin{align}
+			\frac{dh}{d\theta} &= 0 = 24\cos\theta - 3\sec^2\theta \\
+			\cos^3\theta &= \frac{3}{24} \\
+			\theta &= \frac{\pi}{3} \\
+			\end{align}
 			<p>Now that we've found the optimal angle, let's substitute it into our original equation to find \(h_\text{min}\):</p>
 
 			$$h_\text{min} = 24\sin\frac{\pi}{3} - 3\tan\frac{\pi}{3}$$
 			<div class = "answer">$$h_\text{min} = 9\sqrt{3}$$</div>
-			<p>So as long as our hallway is wider than \(9\sqrt{3}\) m, we should be safe.</p>
+			<p>So as long as our hallway is wider than \(9\sqrt{3} \text{ m}\), we should be safe.</p>
 			<p class = "QED">♛</p>
 
 			<h4>The General Case</h4>
@@ -55,10 +60,10 @@
 			\begin{align}
 			h &= \frac{a(l - x)}{x} = l\sin\theta - w\tan\theta \\
 			\frac{dh}{d\theta} &= 0 = l\cos\theta - w\sec^2\theta \\
-			\theta &= \arccos\sqrt[3]{\frac{w}{l}} \\
-			h_\text{min} &= l\sin\left(\arccos\sqrt[3]{\frac{w}{l}}\right) - w\tan\left(\arccos\sqrt[3]{\frac{w}{l}}\right) \\
+			\theta &= \arccos\left(\sqrt[3]{\frac{w}{l}}\right) \\
+			h_\text{min} &= l\sin\left[\arccos\left(\sqrt[3]{\frac{w}{l}}\right)\right] - w\tan\left[\arccos\left(\sqrt[3]{\frac{w}{l}}\right)\right] \\
 			\end{align}
-			<p>By examining a right triangle, we can see that \(\sin\arccos x = \sqrt{1 - x^2}\) and \(\tan\arccos x = \sqrt{\left(\frac{1}{x}\right)^2 - 1}\), we have:<p>
+			<p>By examining a right triangle, we can see that \(\sin\left(\arccos x\right) = \sqrt{1 - x^2}\) and \(\tan\left(\arccos x\right) = \sqrt{\left(\frac{1}{x}\right)^2 - 1}\), we have:<p>
 				<div class = "answer">$$h_\text{min} = l\sqrt{1 - \left(\frac{w}{l}\right)^{2/3}} - w\sqrt{\left(\frac{l}{w}\right)^{2/3} - 1}$$</div>
 				<div class = "calculator">
 					<form method = "" action = "">
@@ -81,8 +86,8 @@
 		function calculateWidth()
 		{
 			fm = document.forms[0];
-			w = fm.width.value;
-			l = fm.length.value;
+			w = Number(fm.width.value);
+			l = Number(fm.length.value);
 			fm.height.value = l * Math.sqrt(1 - Math.pow((w / l), (2 / 3))) - w * Math.sqrt(Math.pow((l / w), (2 / 3)) - 1);
 		}
 		</script>

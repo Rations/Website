@@ -49,7 +49,7 @@
 				m<br>
 				\(\theta\) = angle = 
 				<input type = "text" name = "angle" value = "" size = "6" onChange = ballisticPendulum()> 
-				degrees<br>
+				°<br>
 				\(v_0\) =  
 				<input type = "text" name = "velocity" value = "" size = "6" onChange = ballisticPendulum()>
 				m/s<br>
@@ -61,10 +61,10 @@
 		function ballisticPendulum()
 		{
 			fm = document.forms[0];
-			m = fm.m1.value;
-			M = fm.m2.value;
-			l = fm.arm.value;
-			theta = fm.angle.value;
+			m = Number(fm.m1.value);
+			M = Number(fm.m2.value);
+			l = Number(fm.arm.value);
+			theta = Number(fm.angle.value);
 			g = 9.8;
 			fm.velocity.value = 2 * g * l * (m + M) * (1 - Math.cos(theta * Math.PI / 180)) / m;
 		}
@@ -138,9 +138,9 @@
 		function ballsticPendulum2()
 		{
 			fm = document.forms[1];
-			m = fm.m1.value;
-			M = fm.m2.value;
-			l = fm.arm.value;
+			m = Number(fm.m1.value);
+			M = Number(fm.m2.value);
+			l = Number(fm.arm.value);
 			g = 9.8;
 			fm.velocity.value = (m + M) * Math.sqrt(5 * g * l) / m;
 		}

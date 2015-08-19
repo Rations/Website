@@ -23,20 +23,20 @@
 	
 	<h2>A Few Trivial Derivations</h2><a href = "physicsFun.html#howTo"><img class = "icon_right" src = "Calc.svg"/></a></div>
 	<div class = "section_subpage">
-		<p>Here you will find derivations of a few physics equations we often take for granted.</p>
+		<p>Here you will find derivations of equations we often take for granted.</p>
 
 <details>
-	<summary>\(g\)</summary>
+	<summary>\(g\): acceleration due to gravity</summary>
 	<hr>
-			<p>\(g\) can easily be derived from Newton's law of universal gravitation:</p>
+			<p>\(g\) is easily derived from Newton's law of universal gravitation:</p>
 			$$F_g = G\frac{m_1m_2}{r^2}$$
-			<p>In our case, we have a mass \(m\) that acted upon by gravity close to the Earth's surface:</p>
+			<p>For a mass \(m\) close to the Earth's surface:</p>
 			\begin{align}
-			ma &= G\frac{m_\text{earth}m}{{r_\text{earth}}^2} \\
+			F_g = ma &= G\frac{m_\text{earth}m}{{r_\text{earth}}^2} \\
 			a &= G\frac{m_\text{earth}}{{r_\text{earth}}^2} \\
-			a &= \left(6.67 \times 10^{-11} \frac{\text{ m}^3}{\text{kg}\cdot\text{s}^{2}}\right)\frac{\left(5.97 \times 10^{24} \text{ kg}\right)}{\left(6.37 \times 10^6 \text{ m}\right)^2} \\
+			&= \left(6.67 \times 10^{-11} \frac{\text{ m}^3}{\text{kg}\cdot\text{s}^{2}}\right)\frac{\left(5.97 \times 10^{24} \text{ kg}\right)}{\left(6.37 \times 10^6 \text{ m}\right)^2} \\
 			\end{align}
-			<div class = "answer">$$g = 9.81 \frac{\text{m}}{\text{s}^2}$$</div>
+			<div class = "answer">$$g = 9.8 \frac{\text{m}}{\text{s}^2}$$</div>
 	<hr>
 </details>
 
@@ -72,6 +72,24 @@
 		</details>
 
 <details>
+	<summary>\(a_\text{rad} = \frac{v^2}{r}\): Centripetal force in uniform circular motion</summary>
+	<hr>
+	<p><em>Note: this is an unrigorous proof.</em></p>
+	<p>Let's assume our object is in perfect uniform circular motion—its speed is constant—for one whole rotation along a circle of radius \(r\). This assumption means that over one period \(T\), the magnitude of the object's average acceleration \(a\) will be equal to that of the object's instantaneous acceleration \(a_\text{rad}\) at any given moment within \(T\).</p>
+	<p>Using geometry and the definition of velocity, we can find the period \(T\) in terms of \(v\) and \(r\):<p>
+		\begin{align}
+		v &= \frac{\Delta x}{\Delta t} \\
+		\Delta t &= \frac{\Delta x}{v} = \frac{2\pi r}{v} \\
+		\end{align}
+		<p>Remember that we are dealing with vectors, which have direction. After one period, the object's velocity vector has completed one full rotation, or \(2\pi\). Thus:</p>
+		\begin{align}
+		a &= \frac{\Delta v}{\Delta t} \\
+		&= \frac{2\pi v}{\frac{2\pi r}{v}} \\
+		\end{align}
+		<div class = "answer">$$a_\text{rad} = \frac{v^2}{r}$$</div>
+		<hr>
+</details>
+<details>
 	<summary>\(I_A = I_{CM} + md^2\): The parallel axis theorem</summary>
 	<hr>
 			<p>By definition, we know the moment of inertia about the center of mass of an object is:</p>
@@ -96,7 +114,7 @@
 </details>
 
 <details>
-	<summary>Moment of inertia of a uniform rod about an axis through its center</summary>
+	<summary>\(I_{CM}\) of a uniform rod</summary>
 	<hr>
 	<p>Since our rod is uniform, its mass-length ("linear") density is the same at every point along its length: \(\lambda = \frac ML\). Using this info, we can find the mass element \(dm\) of every small length of rod \(dr\):</p>
 			$$dm = \lambda dr = \frac{M}{L}dr$$
@@ -111,7 +129,7 @@
 </details>
 
 <details>
-	<summary>Moment of inertia of a uniform disk about an axis through its center</summary>
+	<summary>\(I_{CM}\) of a uniform disk</summary>
 	<hr>
 			<p>A disk is like a slice of onion—a bunch of concentric rings placed neatly together. For each of these rings, if \(r\) is the radius, then the circumference is \(2\pi r\) and the area \(dA\) is \(2\pi rdr\) (remember, we are dealing with rings, not circles).</p>
 			$$I = \int dmr^2$$
@@ -129,7 +147,7 @@
 </details>
 
 <details>
-	<summary>Moment of inertia of a uniform solid sphere about an axis through its center</summary>
+	<summary>\(I_{CM}\) of a uniform solid sphere</summary>
 	<hr>
 			<p>Imagine a spherical watermelon of radius \(R\) and uniform mass \(M\) centered at the origin. Cut it into thin circular slices—each resembles a thin disk! This suggests that we can use the moment of inertia of a disk about an axis through its center, \(I = \frac{1}{2}mr^2\), to find the watermelon's moment of inertia:</p>
 			$$I = \int_{-R}^{R} \frac{1}{2}dmr^2$$ 
@@ -206,13 +224,28 @@
 			<div class = "answer">$$\cos\theta \approx 1 - \frac{\theta^2}{2}$$</div>
 			<hr>
 </details>
+
+	<details>
+		<summary>\(U_S = \frac{1}{2}kx^2\): spring potential energy for Hooke's springs</summary>
+		<hr>
+			<p>Hooke's law states that the force exerted by a spring is directly proportional to how far the spring is stretched or compressed:</p>
+			$$F_S = kx$$
+			<p>If \(x = 0\) is our spring's equilibrium position, integrating \(F_S\) over any stretch or compression \(x\) will tell us the potential energy \(U_S\) stored:</p>
+			\begin{align}
+			U_S &= \int_{0}^{x}kx \\
+			&= k\left(\left.\frac{x^2}{2}\right|_0^x\right) \\
+			\end{align}
+			<div class = "answer">$$U_S = \frac{1}{2}kx_2$$</div>
+		<hr>
+	</details>
 <details>
-	<summary>\(\omega\) for simple harmonic motion</summary>
+	<summary>\(\omega\) and \(T\) for simple harmonic motion</summary>
 	<hr>
 			<h4>Regular vs. angular frequency</h4>
 			<hr>
-			<p>Frequency is how many cycles something completes in a unit of time (in SI units, \(\frac{1}{\text{s}}\), or \(\text{hz}\)).</p>
-			<p>Angular frequency is an extension of this concept: it is the angle something covers in a given unit of time. "Covers" can mean the angle swept by a rotating object or the "percent completion" of a periodic function, like a sine wave, in the middle of a cycle. More precisely, it can be written as \(\frac{2\pi}{T}\), where \(T\) is the period of the motion. For circles, \(2\pi\) is one complete revolution (kind of like a cycle). For periodic functions, it is the time the function spends doing something before it repeats itself.</p>
+			<p>Frequency describes how many cycles something completes in a unit of time (\(\frac{1}{\text{s}}\) or \(\text{hz}\) in SI units).</p>
+			<p>Angular frequency is an extension of this concept: it is the angle something covers in a unit of time. "Covers" can mean the angle swept by object spinning in a circle (rotating) or the fraction of a cycle a periodic function, like a sine wave, completes in that time.</p>
+			<p>More precisely, it can be written as \(\frac{2\pi}{T}\), where \(T\) is the period of the motion. For circles, \(2\pi\) is one complete revolution (kind of like a cycle). For periodic functions, it is the time the function spends doing something before it repeats itself.</p>
 			<h4>Angular frequency and simple harmonic motion</h4>
 			<hr>
 			<p>We know that an object in simple harmonic motion, like one on the end of a spring, oscillates. Its position can be represented by a sinusoidal function, meaning it is periodic and thus has angular frequency.</p>
@@ -231,8 +264,18 @@
 			$$m(-B\omega^2 \cos(\omega t)) = -k(B\cos(\omega t))$$
 			<div class = "answer">$$\omega = \sqrt{\frac{k}{m}}$$</div>
 			<p>So the angular frequency of an object oscillating at the end of a spring is dependent solely on the spring constant \(k\) and its own mass \(m\), <em>not</em> the amplitude.</p>
+			<p>And since \(\omega = \frac{2\pi}{T}\), we can solve for \(T\):</p>
+			<div class = "answer">$$T = 2\pi \sqrt{\frac{m}{k}}$$</div>
 			<hr>
 </details>
+
+<details>
+	<summary>\(y - y_1 = m(x - x_1)\): point-slope form</summary>
+	<hr>
+			<p>Point-slope form is useful for quickly writing linear equations when given a slope \(m\) and coordinates \((x_1, y_1)\) of a point. Its derivation is astonishingly simple:</p>
+			$$\frac{\Delta y}{\Delta x} = \frac{y - y_1}{x - x_1} = m$$
+			<div class = "answer">$$y - y_1 = m(x - x_1)$$</div>
+	<hr>
 		</div>
 
 		<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>

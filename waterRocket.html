@@ -5,7 +5,7 @@
     <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
     <meta name = "Author" content = "Owen Zhang"/>
     <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: [Title]</title>
+    <title>Raskolnikov's Realm: Water Rocket</title>
     <link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
     <script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type = "text/JavaScript">    
@@ -20,10 +20,76 @@
         <img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
         <a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
         <img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-        <img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Scale.png"/>
-        <h2>[Title]</h2></div>
+        <img class = "divider_image" src = "Water rocket.svg"/>
+        <h2>Water Rocket</h2><a href = "physicsFun.html#howTo"><img class = "icon_right" src = "Calc.svg"/></a></div>
     <div class = "section_subpage">
+<p>A rocket is a prime example of a device that exploits Newton's third law (for every action, there exists an equal and opposite reaction): propellant ejected downwards from the fuel tank exerts an upwards force on the rocket. If said force exceeds the downwards gravitational force, the rocket accelerates upwards.</p>
+
+<p>In the case of the water rocket, air in the bottle is pressurized using an external pump. During launch, the pressurized air expands, ejecting the water from the bottle.</p>
+
+<p>An important design factor is the composition of the propellant. A mixture primarily composed of air is easily pressurized but lacks mass, meaning it is less capable of exerting a large force on the rocket; even if a large volume of air rapidly exits the nozzle, its effect on the acceleration of the rocket will be minimal. Conversely, water is difficult to compress and expand but possesses fluidity and mass. A finely tuned combination of air and water is thus the most effective propellant.</p>
+
+<h4>Predicting the altitude of the rocket</h4>
+<hr>
+<p>Calculating the maximum altitude acquired by a rocket is simple if you neglect air resistance, more interesting otherwise. All one needs to make a rough approximation is the time between when the rocket has expelled all its propellant and when it reaches its peak height. Here, we will explore three different techniques.</p> 
+<p>The first is the simplest: neglect air resistance, use kinematics and energy conservation. Defining upwards to be the positive direction:<p>
+    \begin{align}
+    v &= v_0 + at \\
+    v_0 &= v - at \\
+    &= gt \\
+    \end{align}
+
+    <p>By energy conservation, again because we are neglecting air resistance:</p>
+    \begin{align}
+    \frac{1}{2}m{v_0}^2 &= mgh \\
+    h &= \frac{{v_0}^2}{2g} \\
+    &= \frac{\left(gt\right)^2}{2g} \\
+    \end{align}
+
+    <p>The primary assumption---that drag can be neglected without significantly affecting the validity of the calculations---is, however, deserving of greater scrutiny.</p>
     
+    <p>The simplest drag model is a linear relation between the projectile's velocity and the drag force it experiences (i.e., \(F_d = -cv\), where \(c\) is a dimensionless constant that depends on the material properties of the projectile and the surrounding fluid). Perhaps not surprisingly, applying this model to a non-particle-sized water rocket produces extremely questionable results. Assuming a drag coefficient of \(c = 0.75\), as recommended by NASA, and that the upwards direction is positive:</p>
+    
+    \begin{align}
+    \Sigma F &= F_g + F_d = ma \\
+    -mg - cv &= m \frac{dv}{dt} \\
+    \int_{0}^{t_f} dt &= \int_{v_i}^{0}\frac{mdv}{-mg - cv} \\
+    &= -\frac{m}{c} \int_{u_i}^{u_f}\frac{du}{u}    \text{, where } u = mg + cv \\
+    t_f &= -\frac{m}{c} \ln \left| \frac{mg}{mg + cv_i} \right| \\
+    v_i &= \frac{mg \left(e^{\frac{ct_f}{m}} - 1 \right)}{c} \\
+    &= \frac{(\SI{0.35}{kg})g   \left(e^{\frac{0.75(\SI{1.4}{s})}{\SI{0.35}{kg}}} - 1 \right)}{0.75} \\
+    &= \SI{87}{m/s}
+    \end{align}
+    
+    A calculation with the full drag equation---$F_d = \frac{1}{2}\rho Acv^2$, where $\rho$ is the air density and $A$ is the cross-sectional area of the projectile---yields very reasonable results.
+    
+    First, we must use the ideal gas law to calculate air density from air pressure $(p)$ and temperature $(T)$. Using Weather Underground data from 11 June and a known specific gas constant ($R_{\text{specific}}$) of $\SI{287.058}{J/(\kilogram\kelvin)}$:
+    \begin{align*}
+    \rho &= \frac{p}{R_{\text{specific}}T} \\
+    &= \frac{\SI{1.014e5}{Pa}}{(\SI{287.058}{J/(\kilogram\kelvin)})(\SI{298}{K})} \\
+    &= \SI{1.18}{kg/m^3}
+    \end{align*}
+    We can then proceed to the main calculations:
+    \begin{align*}
+    \Sigma F &= F_g + F_d = ma \\
+    -mg - \frac{1}{2}\rho Acv^2 &= m \frac{dv}{dt} \\
+    \int_{0}^{t_f} dt &= \int_{v_i}^{0}\frac{mdv}{-mg - \frac{1}{2}\rho Acv^2} \\
+    &= \int_{v_i}^{0}\frac{mdv}{-mg \left(1 + \frac{\rho Acv^2}{2mg} \right)} \\
+    &= -\frac{1}{g}\sqrt{\frac{2mg}{\rho Ac}}   \int_{u_i}^{u_f}\frac{du}{1 + u^2}  \text{, where } u = v\sqrt{\frac{\rho Ac}{2mg}} \\
+    t_f &= -\frac{1}{g} \sqrt{\frac{2mg}{\rho Ac}} \left(-\arctan \left(v_i \sqrt{\frac{\rho Ac}{2mg}} \right) \right) \\
+    v_i &= \sqrt{ \frac{2mg}{\rho Ac}} \tan \left(gt_f \sqrt{ \frac{\rho Ac}{2mg}} \right) \\
+    &= \sqrt{ \frac{2(\SI{0.35}{kg})g}{ \left(\SI{1.18}{kg/m^3}\right) \left(\SI[parse-numbers = false]{\pi 0.0575^2}{m^2}\right) 0.75}} \tan \left(g(\SI{1.4}{s}) \sqrt{\frac{ \left(\SI{1.18}{kg/m^3}\right) \left(\SI[parse-numbers = false]{\pi 0.0575^2}{m^2}\right) 0.75}{2(\SI{0.35}{kg})g}} \right) \\
+    &= \SI{15}{m/s}
+    \end{align*}
+    Thus, ${KE}_i = \SI{38}{J}$, and because $v = \frac{dx}{dt}$:
+    \begin{align*}
+    \int_{0}^{x_f}dx &= \int_{0}^{t_f}v_idt \\
+    &= \int_{0}^{t_f}\sqrt{ \frac{2mg}{\rho Ac}} \tan \left(gt \sqrt{ \frac{\rho Ac}{2mg}} \right)dt \\
+    &= \frac{2m}{\rho Ac}   \int_{u_i}^{u_f}\tan u du \text{, where } u = gt\sqrt{\frac{\rho Ac}{2mg}} \\
+    x_f &= -\frac{2m}{\rho Ac} \ln \left|\cos \left(gt\sqrt{\frac{\rho Ac}{2mg}} \right) \right| \\
+    &= -\frac{2(\SI{0.35}{kg})}{(\SI{1.18}{kg/m^3})(\SI[parse-numbers = false]{\pi 0.0575^2}{m^2})0.75} \ln \left|\cos \left(g(\SI{1.4}{s})\sqrt{\frac{(\SI{1.18}{kg/m^3})(\SI[parse-numbers = false]{\pi 0.0575^2}{m^2})0.75}{2(\SI{0.35}{kg})g}} \right) \right| \\
+    &= \SI{10.}{m}
+    \end{align*}
     </div>
 
     <div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>

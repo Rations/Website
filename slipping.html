@@ -30,47 +30,117 @@
 		<h4>Linear vs. rotational</h4>
 			<hr>
 		<p>If you haven't ever done so, it's worth your time to consider the basic parallels between linear and rotational motion. This chart might help!</p>
-		<table border = "1px" style = "border-style: solid; border: 2px; border-color: black">
+		<table border = "1px" style = "border-style: solid; border: 2px; border-color: black; margin: 0px auto">
 			<thead>
-				<title>
-					<th colspan = "2">Linear motion vs. rotational motion</th></title>
+				<title>Test</title>
+					<th></th>
+					<th>Linear motion</th>
+					<th>Rotational motion</th>
 			</thead>
 			<tbody>
 			<tr>
-				<td>Equations of motion</td>
-				<td>$$\sum F = ma_{CM}$$</td>
-				<td>$$\sum \tau = I\alpha_{CM}$$</td>
+				<td>Newton's second law</td>
+				<td>$$\sum F = ma_{\text{CM}}$$</td>
+				<td>$$\sum \tau = I\alpha_{\text{CM}}$$</td>
+			</tr>
+
+			<tr>
+				<td>Inertia</td>
+				<td>$$m$$</td>
+				<td>$$I = \sum mr^2$$</td>
 			</tr>
 			<tr>
-				<td>
+				<td>Kinematic equations (constant acceleration)</td>
+				<td>$$x = x_0 + v_0t + \frac{1}{2}at^2$$
+				$$v = v_0 + at$$
+				$$v^2 = {v_0}^2 + 2a\Delta x$$
+			</td>
+				<td>$$\theta = \theta _0 + \omega _0t + \frac{1}{2}\alpha t^2$$
+				$$\omega = \omega _0 + \alpha t$$
+				$$\omega^2 = {\omega _0}^2 + 2a\Delta \theta$$
+			</td>
+			</tr>
+
+			<tr>
+				<td>Kinetic energy</td>
+				<td>$$KE = \frac{1}{2}mv^2$$</td>
+				<td>$$KE = \frac{1}{2}I\omega ^2$$</td>
+			</tr>
+			<tr>
+				<td>Work</td>
+				<td>$$W = \int F \cdot dr$$</td>
+				<td>$$W = \int \tau \cdot d\theta$$</td>
+			</tr>
+			<tr>
+				<td>Momentum</td>
+				<td>$$p = mv$$</td>
+				<td>$$L = I\omega$$</td>
 			</tr>
 		</tbody>
 		</table>
-		<p>In words, the net force applied to an object equals the linear acceleration of its center of mass. Analagously, the net torque, or twist, applied to an object equals its
-		$$-\mu mg = ma_{CM}$$
-		$$a_{CM} = -\mu mg$$
-		$$\sum \tau = I\alpha$$
-		$$\mu mgr = \frac{2}{5}mr^2\alpha$$
-		$$\alpha = \frac{5\mu g}{r}$$
-		$$v = v_0 -\mu mgt$$
-		$$\omega = \frac{5\mu g}{r}t$$
-		$$v = \frac{5\mu g}t$$
-		$$t = \frac{2v_0}{7\mu g}$$
-		$$v = v_0 - \mu g \left(\frac{2v_0}{7\mu g}\right)$$
+		
+		<h4>Rolling without slipping</h4>
+		<hr>
+		<p>We can proceed to analyze the linear and rotational motion of the ball separately. First, we must make sure that we understand the conditions behind rolling without slipping.</p>
+		<img class = "diagram" src = "Rolling and slipping 2.svg"/>
+		<ol>
+			<li>When an object rolls without slipping, it is moving as a whole, so its center of mass has a velocity \(v_\text{CM}\).</li>
+			<li>If a rigid object, like a thin disk, is rotating, every point along its edge is moving at the same velocity \(v_\text{tan}\) <em>with respect to the center of mass</em>.</li>
+			<li>If the object is not slipping, there must be no movement between its bottommost point and the ground. Thus, its bottommost point has \(v = 0\) <em>relative to the ground</em> even though it has a velocity \(v_\text{tan}\) <em>relative to the center of mass</em>. It follows that, in order for the object to be rolling without slipping, \(v_\text{CM} = v_\text{tan}\).</li>
+		</ol>
+		<p><sup>1</sup> If we want to find the velocity \(v\) of any point <em>relative to the Earth</em>, we can treat the contact point between the object and the ground as our center of rotation. Because it is stationary with respect to the Earth, the velocity \(v_\text{tan}\) of any point relative to it will be the same as the velocity \(v\) of that point relative to the Earth.</p>
+		<p>Since our object is rigid, points far away from the center of rotation (i.e., at the top of the object) will have a higher \(v_\text{tan}\) than those closer to the ground. In a small moment of time, the top of the ball moves twice as far as the center of mass; hence, \(v_\text{top} = 2v_\text{CM}\).</p>
+
+		<h4>Bowling ball motion</h4>
+		<hr>
+		<p>We can analyze rotational motion separately from linear motion. When the bowling ball first contacts the alley, it is sort of sliding and spinning simultaneously, but in a way such that it is not exactly <em>rolling</em> per se.</p>
+		<p>At this point, if you examine high-speed camera footage of the bowling ball, you will notice that the ball and floor are moving relative to each other (i.e., the ball is sliding). There is also a normal force \(N\) balancing the weight \(Mg\) of the ball.</p>
+		<p>Therefore, there will be kinetic friction between the two. But since friction is applied at the edge of the ball, a distance \(R\) from the center of mass, it also functions as a torque:</p>
+		\begin{align}
+		F &= \mu Mg \\
+		\tau &= \mu MgR \\
+		\end{align}
+		
+		<p>We know the ball will be rolling nicely—without slippage—when the velocity \(v_{\text{CM}}\) of its center of mass is the same as the tangential velocity \(v_\text{tan}\) of a point on its edge. Remember, if we know the angular velocity \(\omega\) of the ball, we can find \(v_\text{tan}\) thanks to the radian relationship \(\theta = \frac{s}{r}\), which implies \(\omega = \frac{v_\text{tan}}{r}\):</p>
+		<p>We can easily find the linear and angular accelerations. If the direction the ball is moving in is positive and the clockwise direction is positive:</p>
+		$$a_{\text{CM}} = -\mu Mg$$
+		\begin{align}
+		\sum \tau &= I\alpha \\
+		\mu Mgr &= \left(\frac{2}{5}MR^2\right)\alpha \\
+		\alpha &= \frac{5\mu g}{R} \\
+		\end{align}
+		<p>Now we can use our kinematic equations for velocity under constant acceleration:</p>
+		\begin{align}
+		v_\text{CM} &= v_0 - \mu Mgt \\
+		\omega &= \frac{5\mu g}{R}t
+		\end{align}
+		<p>Using the relationship \(\omega = \frac{v_\text{tan}}{R}\), we have:</p>
+		\begin{align}
+		v_\text{tan} &= 5\mu gt \\
+		\end{align}
+		<p>We can solve for the time it takes before \(v_{\text{CM}} = v_\text{tan}\) and then find the two velocities themselves:</p>
+		\begin{align}
+		v_0 - \mu Mgt &= 5\mu gt \\
+		t &= \frac{2v_0}{7\mu g} \\
+		v_{\text{CM}} &= v_\text{tan} = v_0 - \mu g\left(\frac{2v_0}{7\mu g}\right) \\
+		\end{align}
 		<div class = "answer">$$v = \frac{5v_0}{7}$$</div>
+		<p>We can use basic kinematics again to find the displacement at that time:</p>
 		$$x = x_0 + v_0t + \frac{1}{2}at^2$$
 		$$x = v_0\left(\frac{2v_0}{7\mu g}\right) -\frac{1}{2}\mu g \left(\frac{2v_0}{7\mu g}\right)^2$$
 		<div class = "answer">$$x = \frac{12{v_0}^2}{49\mu g}$$</div>
 <div class = "calculator">
 			<form method = "" action = "">
-			If you throw a bowling ball with \(v_0\) = initial velocity =
+			\(v_0\) = initial velocity =
 				<input type = "text" name = "v_i" value = "" size = "6" onChange = rollingSlipping()>
-			m/s on an alley with \(\mu\) = coefficient of kinetic friction = 
+			m/s <br>
+			\(\mu\) = coefficient of kinetic friction = 
 			<input type = "text" name = "mukf" value = "" size = "6" onChange = rollingSlipping()> 
 			<br>
-			after \(x\) distance = 
+			\(x\) = 
 			<input type = "text" name = "distance" value = "" size = "6" onChange = rollingSlipping()>
-			the ball will ultimately start rolling at \(v\) = final velocity = 
+			m <br>
+			\(v\) = final velocity = 
 			<input type = "text" name = "v_f" value = "" size = "6" onChange = rollingSlipping()>
 			m/s<br>
 			</form>
@@ -80,14 +150,15 @@
 			{
 				fm = document.forms[0];
 				g = 9.8;
-				v_0 = fm.v_i.value;
-				mu = fm.mukf.value;
+				v_0 = Number(fm.v_i.value);
+				mu = Number(fm.mukf.value);
 				fm.distance.value = (12 * Math.pow(v_0, 2)) / (49 * mu * g);
 				fm.v_f.value = (5 * v_0) / 7;
 			}
 		</script>
-
 	</div>
+	
+	
 
 	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
 		<div class = "v_center_inner">

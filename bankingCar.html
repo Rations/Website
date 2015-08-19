@@ -19,7 +19,7 @@
 		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
 		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
 		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-		<img class = "divider_image" src = "Car.png"/>
+		<img class = "divider_image" src = "Car.svg"/>
 		<h2>Banking Car</h2></div>
 	<div class = "section_subpage">
 		<p>While driving your Prius, you encounter a turn. A law-abiding citizen, you obey the speed limit and rest assured that you will complete the turn without issue. But what if you were an extreme driver? Would you really be risking your safety by rounding the turn at an improper speed?</p>
@@ -34,11 +34,15 @@
 		</ol>
 		
 		<p>Because we are looking for the boundary ("extreme") cases, we can utilize \(f_\text{max} = \mu N\). Then, examining our free-body diagram, we can translate words into equations:</p>
-			$$F_\text{rad} = \frac{mv^2}{r} = N\sin\theta + \mu N\cos\theta$$
-			$$F_g = mg = N\cos\theta - \mu N\sin\theta$$
+			\begin{align}
+			F_\text{rad} &= \frac{mv^2}{r} = N\sin\theta + \mu N\cos\theta \\
+			F_g &= mg = N\cos\theta - \mu N\sin\theta \\
+			\end{align}
 		<p>We want to eliminate \(N\), so using substitution to solve the system is in order. Starting from the second equation and then substituting into the first:</p>
-			$$N = \frac{mg}{\cos\theta - \mu\sin\theta}$$
-			$$\frac{mv^2}{r} = \frac{mg(\sin\theta + \mu\cos\theta)}{\cos\theta - \mu\sin\theta}$$
+		\begin{align}
+			N &= \frac{mg}{\cos\theta - \mu\sin\theta} \\
+			\frac{mv^2}{r} &= \frac{mg(\sin\theta + \mu\cos\theta)}{\cos\theta - \mu\sin\theta} \\
+			\end{align}
 			<div class = "answer">$$v_\text{max} = \sqrt{\frac{rg(\sin\theta + \mu\cos\theta)}{\cos\theta - \mu\sin\theta}}$$</div>
 		<div class = "calculator">
 			<form method = "" action = "">
@@ -64,22 +68,24 @@
 			function vmax()
 			{
 				fm = document.forms[0];
-				r = fm.radius.value;
-				mu = fm.musf.value;
-				theta = fm.angle.value * Math.PI / 180;
+				r = Number(fm.radius.value);
+				mu = Number(fm.musf.value);
+				theta = Number(fm.angle.value * Math.PI / 180);
 				g = 9.8;
 				fm.velocity.value = r * g * (Math.sin(theta) + mu * Math.cos(theta)) / (Math.cos(theta) - mu * Math.sin(theta));
 			}
 		</script>
 		<h4>2. <em>Speed up, you . . . </em>move too slow?</h4>
 		<hr>
-		<p>Naturally, you might wonder, <em>Is there a minimum speed?</em></p>
+		<p>Naturally, you might wonder, <em>is there a minimum speed?</em></p>
 		<p>Probably the easiest way to justify the fact that a minimum speed limit exists is thinking about a car parked on a steep slope—the most extreme case of "slow-moving car" there is. You can easily imagine this parked car slipping. Indeed, the only thing preventing it from doing so is static friction.</p>
 		<p>Drawing a free-body diagram may help. The most important thing to notice is that, in the case of the slow-moving car, static friction helps the car "fight" gravity by acting upwards along the bank. Once this is clear, the computations should be very familiar:</p> 
-			$$F_\text{rad} = \frac{mv^2}{r} = N\sin\theta - \mu N\cos\theta$$
-			$$F_g = mg = N\cos\theta + \mu N\sin\theta$$
-			$$N = \frac{mg}{\cos\theta + \mu\sin\theta}$$
-			$$\frac{mv^2}{r} = \frac{mg(\sin\theta - \mu\cos\theta)}{\cos\theta + \mu\sin\theta}$$
+		\begin{align}
+			F_\text{rad} &= \frac{mv^2}{r} = N\sin\theta - \mu N\cos\theta \\
+			F_g &= mg = N\cos\theta + \mu N\sin\theta \\
+			N &= \frac{mg}{\cos\theta + \mu\sin\theta} \\
+			\frac{mv^2}{r} &= \frac{mg(\sin\theta - \mu\cos\theta)}{\cos\theta + \mu\sin\theta} \\
+			\end{align}
 			<div class = "answer">$$v_\text{min} = \sqrt{\frac{rg(\sin\theta - \mu\cos\theta)}{\cos\theta + \mu\sin\theta}}$$</div>
 
 		<div class = "calculator">
@@ -106,9 +112,9 @@
 			function vmin()
 			{
 				fm = document.forms[1];
-				r = fm.radius.value;
-				mu = fm.musf.value;
-				theta = fm.angle.value * Math.PI / 180;
+				r = Number(fm.radius.value);
+				mu = Number(fm.musf.value);
+				theta = Number(fm.angle.value * Math.PI / 180);
 				g = 9.8;
 				if (mu >= Math.tan(theta))
 				{
@@ -136,8 +142,10 @@
 		<h4>4. What about flat roads?</h4>
 		<hr>
 		<p>Due to costs, lagging infrastructure, practicality, etc., not all roads are banked. How do turns in flat roads compare to their banked counterparts? Again, a free-body diagram makes determining our force equations easy:</p>
-			$$N = mg$$
-			$$F_\text{rad} = \frac{mv^2}{r} = \mu N = \mu mg$$
+		\begin{align}
+			N &= mg \\
+			F_\text{rad} &= \frac{mv^2}{r} = \mu N = \mu mg \\
+			\end{align}
 			<div class = "answer">$$v_\text{max} = \sqrt{\mu rg}$$</div>
 			
 		<p>Dividing the \(v_\text{max}\) expression from part 1 by this one suggests that a turn with bank \(\theta\) would permit a maximum velocity \(\sqrt{\frac{\sin\theta + \mu\cos\theta}{\mu (\cos\theta - \mu\sin\theta)}}\) times greater than a flat road would.</p>
@@ -161,8 +169,8 @@
 			function vdiff()
 			{
 				fm = document.forms[2];
-				mu = fm.musf.value;
-				theta = fm.angle.value * Math.PI / 180;
+				mu = Number(fm.musf.value);
+				theta = Number(fm.angle.value * Math.PI / 180);
 				fm.times.value = Math.sqrt((Math.sin(theta) + mu * Math.cos(theta)) / (mu * (Math.cos(theta) - mu * Math.sin(theta))));
 			}
 		</script>

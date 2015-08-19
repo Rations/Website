@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
+    <meta name = "Author" content = "Owen Zhang"/>
+    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
+    <title>Raskolnikov's Realm: Ropes</title>
+	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
+	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type = "text/JavaScript">    
+  		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
+	</script>
+	<script type = "text/javascript" src = "http://mbostock.github.com/d3/d3.js"></script>
+</head>
+
+<body>
+	<div class = "divider_subpage">
+		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
+		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<img class = "divider_image" src = "Ropes.svg"/>
+		<h2>Ropes</h2></div>
+	<div class = "section_subpage">
+	<h4>Tension in a hanging rope</h4>
+	<hr>
+	<p>In high-school physics, we are typically fortunate enough to deal with massless ropes only. The tension in such ropes is the same at all points; otherwise parts of the rope would accelerate due to an unequal balance of forces.</p>
+	<p>This, however, is not the case in real ropes. Intuitively, the tension at the top of a hanging rope is the greatest, as it must sustain the entire weight of the rope.</p>
+	<p>Given a uniform rope of mass \(M\) and length \(L\), we know the linear density is \(\rho = \frac{M}{L}\). We want to find the tension \(T\) in the rope at any distance \(x\) from the top.</p>
+	<p>When solving such problems, you can often avoid messy integration by choosing your system wisely. In this case, let's choose the section of rope from the bottom to \(x\) with mass \(m\) and length \(l\). We know several properties of the rope:</p>
+	\begin{align}
+	l &= L - x \\
+	m &= \rho l = \frac{M(L - x)}{L} \\
+	\end{align}
+	<p>Newton's second law takes care of the rest:</p>
+	\begin{align}
+	\sum F &= T_x - mg = 0 \\
+	\end{align}
+	<div class = "answer">$$T_x = \frac{Mg(L - x)}{L}$$</div>
+	<h4>Rope hanging from a tree</h4>
+	<hr>
+	<p>A drooping clothesline or chain fence looks like a parabola, but it's actually not. Because of mass, these hanging objects actually form a shape called a catenary, whose specific derivation is quite complicated.</p>
+	<p>Once again, however, if we choose the right systems, we can find out some properties of the hanging chain with relative ease. For instance, it is easy to measure the angle the rope forms with the horizontal using a protractor. From this, we can find the tension at several important locations in the rope.</p>
+	<p>If we want to know the tension at each end, let's consider the entire rope as our system. Acting on it are gravity on its center of mass as well as tension at each end. Because our rope is not accelerating in the horizontal direction, we know the tension forces must be equal in magnitude, provided the ends are at the same height. Meanwhile, in the vertical direction, we can use a force equation like this:</p>
+	\begin{align}
+	2T_\text{end} \sin\theta - Mg &= 0 \\
+	\end{align}
+	<div class = "answer">$$T_\text{end} = \frac{Mg}{2\sin\theta}$$</div>
+	
+	<p>To find the tension in the middle of the rope, you might think of limits and infintesimals, but the problem is similarly easy to the previous one if we choose our system correctly. Suppose we choose half the rope as our system. The forces acting on it are gravity, \(T_\text{end}\), and \(T_\text{middle}\). \(T_\text{end}\) doesn't change because we are merely looking at a different portion of the rope, and since \(T_\text{middle}\) acts only in the horizontal direction, we need only examine \(F = ma\) in the horizontal<sup>1</sup>:</p>
+	\begin{align}
+	T_\text{middle} &= T_\text{end}\cos\theta  \\
+	&= \frac{Mg}{2\sin\theta}\cos\theta \\
+	\end{align}
+	<div class = "answer">$$T_\text{middle} = \frac{Mg}{2\tan\theta}$$</div>
+	<h4>Notes</h4>
+	<hr>
+	<div class = "footnote"><p><sup>1</sup> You might wonder, how can we be so casual about ignoring the vertical direction considering that we're assuming \(T_\text{end}\) stays the same while the mass of our system changes from \(M\) to \(M/2\)? Well, in the original system, we had two \(T_\text{end}\)s pointing upwards and mass \(M\). With our new system, we have only one \(T_\text{end}\) as well as half the mass. Works out nicely.</p></div>
+
+
+
+
+
+
+	</div>
+
+
+
+	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
+		<div class = "v_center_inner">
+		<em>
+			<script src = "lastModified.js"></script>
+		</em>
+		</div>
+	</div>
+</body>
+</html>

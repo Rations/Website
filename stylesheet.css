@@ -14,7 +14,8 @@ body
 	display: inline-block;
 	width: 690px;
 	padding: 15px;
-	background-color: #ff9b37;
+	/*background-color: #50bec8;#ff9b37*/
+	background-color: lightskyblue;
 	margin-bottom: 10px;
 }
 
@@ -22,7 +23,7 @@ body
 {
 	width: 540px;
 	border-radius: 0px;
-	background-color: gainsboro;
+	background-color: #e1ffff;
 	float: left;
 	margin-right: 15px;
 	display: inline-block;
@@ -50,18 +51,22 @@ body
 {
 	display: inline-block;
 	width: 210px;
-	background-color: #aadcdc;
+	background-color: lightblue;
 	float: left;
 	margin-bottom: 10px;
 	padding: 15px;
 }
 
+.left .button_link
+{
+	color: deepskyblue;
+}
 .right 
 {
 	display: inline-block;
-	height: 170px;
+	height: 176px;
 	width: 420px;
-	background-color: #f0f0dc;
+	background-color: #f0f0e6;
 	padding: 15px 25px 15px 25px;
 	float: right;
 	margin-bottom: 10px;
@@ -74,7 +79,7 @@ body
 	display: table;
 	height: 50px;
 	width: 100%;
-	background-color: #50bec8;
+	background-color: #aadcdc;
 	border-radius: 5px 5px 0px 0px;
 }
 
@@ -86,10 +91,19 @@ body
 	height: 50px;
 	width: 720px;
 	z-index: 100;
-	background-color: #50bec8;
+	background-color: #aadcdc;
 	border-radius: 5px 5px 0px 0px;
 }
 
+.divider_right 
+{
+	float: right;
+	width: 470px;
+	display: table;
+	height: 50px;
+	background-color: #aadcdc;
+	border-radius: 5px 5px 0px 0px;
+}
 
 .divider_image
 {
@@ -114,15 +128,7 @@ body
 	margin: 5px;
 }
 
-.divider_right 
-{
-	float: right;
-	width: 470px;
-	display: table;
-	height: 56px;
-	background-color: #50bec8;
-	border-radius: 5px 5px 0px 0px;
-}
+
 
 .diagram
 {
@@ -133,7 +139,7 @@ body
 
 .section
 {
-	background-color: #f0f0dc;
+	background-color: #f0f0e6;
 	border-radius: 0px 0px 5px 5px;
 	display: inline-block;
 	padding: 15px 30px 15px 30px;
@@ -143,7 +149,7 @@ body
 
 .section_subpage
 {
-	background-color: #f0f0dc;
+	background-color: #f0f0e6;
 	border-radius: 0px;
 	display: inline-block;
 	padding: 15px 30px 15px 30px;
@@ -153,7 +159,7 @@ body
 
 details
 {
-	background-color: #f0f0dc;
+	background-color: #f0f0e6;
 	border-radius: 0px 0px 5px 5px;
 	margin-bottom: 10px;
 }
@@ -272,11 +278,17 @@ li
 a 
 {
     color: #5050c8;
+    text-decoration: none;
+}
+
+a:hover
+{
+	font-weight: 400;
 }
 
 .button_link
 {
-	color: #43afb4;
+	color: darkcyan;
 	text-decoration: none;
 }
 

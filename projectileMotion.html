@@ -30,22 +30,30 @@
 		<p>Recall our general projectile motion equation:</p>
 		$$d = d_0 + v_0t + \frac{1}{2}at^2$$
 		<p>If we conveniently neglect air resistance, we can separate our seashell's motion into \(x\) and \(y\) components:</p>
-		$$x = v\cos\theta t$$
-		$$y = 0 = h + v\sin\theta t - \frac{1}{2}gt^2$$
+		\begin{align}
+		x &= v\cos\theta t \\
+		y &= 0 = h + v\sin\theta t - \frac{1}{2}gt^2 \\
+		\end{align}
 		<p>Since we know our seashell must land somewhere, we can set \(y\) to zero. However, there are still way too many variables. Let's try eliminating \(t\) first. Using our \(x\) equation:</p>
 		$$t = \frac{x}{v\cos\theta}$$
 		<p>We can unify our \(x\) and \(y\) equations by substitution:</p>
-		$$0 = h + v\sin\theta \left(\frac{x}{v\cos\theta}\right) - \frac{1}{2}g\left(\frac{x}{v\cos\theta}\right)^2$$
-		$$0 = h + x\tan\theta - \frac{g}{2v^2}\left(\frac{x^2}{\cos^2\theta}\right)$$
+		\begin{align}
+		0 &= h + v\sin\theta \left(\frac{x}{v\cos\theta}\right) - \frac{1}{2}g\left(\frac{x}{v\cos\theta}\right)^2 \\
+		 &= h + x\tan\theta - \frac{g}{2v^2}\left(\frac{x^2}{\cos^2\theta}\right) \\
+		\end{align}
 		<p>Since we're interested in the <em>maximum</em> range, differentiation is a good idea. We can safely assume that the height of our cliff and our throwing speed remain constant from throw to throw, so let's differentiate with respect to \(\theta\), remembering the chain and product/quotient rules:</p>
 		$$0 = \frac{dh}{d\theta} + \frac{dx}{d\theta}\tan\theta + (\sec^2\theta) x- \frac{g}{2v^2}\left(\frac{2x\frac{dx}{d\theta}\cos^2\theta - 2\cos\theta(-\sin\theta)x^2}{\cos^4\theta}\right)$$
 		<p>This looks exceedingly nasty, but many terms disappear once we realize that (1) the derivative of a constant is zero and (2) we can set \(\frac{dx}{d\theta}\) to zero since we are solving for a maximum:</p>
-		$$0 = x\sec^2\theta - \frac{gx^2\sin\theta\sec^3\theta}{v^2}$$
-		$$x = \frac{v^2\cot\theta}{g}$$
+		\begin{align}
+		0 &= x\sec^2\theta - \frac{gx^2\sin\theta\sec^3\theta}{v^2} \\
+		x &= \frac{v^2\cot\theta}{g} \\
+		\end{align}
 		<p>Now that we have an expression for the maximum range, we can back-solve to find the corresponding throwing angle:</p>
-		$$0 = h + x\tan\theta - \frac{gx^2}{2v^2\cos^2\theta}$$
-		$$0 = h + \left(\frac{v^2\cot\theta}{g}\right)\tan\theta - \frac{g\left(\frac{v^2\cot\theta}{g}\right)^2}{2v^2}$$
-		$$0 = h + \frac{v^2}{g} - \frac{gv^4}{2v^2g^2\sin^2\theta}$$
+		\begin{align}
+		0 &= h + x\tan\theta - \frac{gx^2}{2v^2\cos^2\theta} \\
+		&= h + \left(\frac{v^2\cot\theta}{g}\right)\tan\theta - \frac{g\left(\frac{v^2\cot\theta}{g}\right)^2}{2v^2} \\
+		&= h + \frac{v^2}{g} - \frac{gv^4}{2v^2g^2\sin^2\theta} \\
+		\end{align}
 		<p>Skipping some straightforward algebra:</p>
 		<div class = "answer">$$\theta = \arcsin\left(\sqrt{\frac{v^2}{2\left(gh + v^2\right)}}\right)$$</div>
 		<div class = "calculator">
@@ -69,8 +77,8 @@
 	function cliffAngle()
 	{
 		fm = document.forms[0];
-		v = fm.velocity.value;
-		h = fm.height.value;
+		v = Number(fm.velocity.value);
+		h = Number(fm.height.value);
 		g = 9.8;
 		fm.angle.value = 180 * (Math.asin(Math.sqrt(Math.pow(v, 2) / (2 * (g * h + Math.pow(v, 2)))))) / Math.PI;
 	}
@@ -81,32 +89,40 @@
 		<hr>
 		<p>You have time-traveled to ancient Egypt, and find yourself at the apex of Khufu's Great Pyramid, whose faces slope at angle \(\beta\) above the horizon. Naturally, another contest is in order: who can throw a golden nugget the farthest?</p> 
 		<p>No listening to Will this time—straight to the math!</p>
-		<p>First, draw a picture of our scenario. Notice that there are two lines relevant to our diagram: the slopeitself and the parabolic trajectory of the ball. If we start at the point \((0, h)\), our two lines are:</p>
-			$$y_\text{slope} = h - \tan\beta x$$
-			$$y_\text{nugget} = h + v\sin\alpha t - \frac{1}{2}gt^2$$
+		<p>First, draw a picture of our scenario. Notice that there are two lines relevant to our diagram: the slope itself and the parabolic trajectory of the ball. If we start at the point \((0, h)\), our two lines are:</p>
+		\begin{align}
+			y_\text{slope} &= h - \tan\beta x \\
+			y_\text{nugget} &= h + v\sin\alpha t - \frac{1}{2}gt^2 \\
+			\end{align}
 		<p>In addition, we have the equation for the \(x\) component of the nugget's motion:</p>
 			$$x = v\cos\alpha t$$
 		<p>Immediately, we can see that we can eliminate several unknowns: our first two equations contain \(y\) and \(h\), and all three contain \(t\). Combining the first two leads to:</p>
 			$$-\tan\beta x = v\sin\alpha t - \frac{1}{2}gt^2$$
 		<p>Since we are interested in range, having an equation dependent on \(x\) is more useful than having one dependent on \(t\). Similar to our approach in part 1, we can solve for \(t\) using the third equation and then use that expression in a substitution:</p>
-		$$t = \frac{x}{v\cos\alpha}$$
-		$$-\tan\beta x = v\sin\alpha \frac{x}{v\cos\alpha} - \frac{1}{2}g\left(\frac{x}{v\cos\alpha}\right)^2$$
-		$$-\tan\beta = \tan\alpha - \frac{gx}{2v^2\cos^2\alpha}$$
+		\begin{align}
+		t &= \frac{x}{v\cos\alpha} \\
+		-\tan\beta x &= v\sin\alpha \frac{x}{v\cos\alpha} - \frac{1}{2}g\left(\frac{x}{v\cos\alpha}\right)^2 \\
+		-\tan\beta &= \tan\alpha - \frac{gx}{2v^2\cos^2\alpha} \\
+		\end{align}
 		<p>Now for our friend differentiation again, this time with respect to \(\alpha\), as our throw speed and the slope angle remain constant from throw to throw:</p>
 		$$0 = \sec^2\alpha - \frac{g}{2v^2}\frac{\frac{dx}{d\alpha}\cos^2\alpha - 2\cos\alpha(-\sin\alpha)x}{\cos^4\alpha}$$
 		<p>We simplify, remembering that we can cancel any terms with \(\frac{dx}{d\alpha}\).</p>
-		$$\sec^2\alpha = \frac{gx\sin\alpha\sec^3\alpha}{v^2}$$
-		$$x = \frac{v^2\cot\alpha}{g}$$
+		\begin{align}
+		\sec^2\alpha &= \frac{gx\sin\alpha\sec^3\alpha}{v^2} \\
+		x &= \frac{v^2\cot\alpha}{g} \\
+		\end{align}
 		<p>Looks quite familiar, right? Now let's return to the earlier equation to find the optimal \(\alpha\):</p>
-		$$-\tan\beta = \tan\alpha - \frac{g\frac{v^2\cot\alpha}{g}}{2v^2\cos^2\alpha}$$
-		$$-\tan\beta = \frac{\sin\alpha}{\cos\alpha} - \frac{1}{2\sin\alpha\cos\alpha}$$
-		$$-\tan\beta = \frac{2\sin^2\alpha - 1}{2\sin\alpha\cos\alpha}$$
+		\begin{align}
+		-\tan\beta &= \tan\alpha - \frac{g\frac{v^2\cot\alpha}{g}}{2v^2\cos^2\alpha} \\
+		&= \frac{\sin\alpha}{\cos\alpha} - \frac{1}{2\sin\alpha\cos\alpha} \\
+		&= \frac{2\sin^2\alpha - 1}{2\sin\alpha\cos\alpha} \\
+		\end{align}
 
 		<p>Now, recognizing that \(2\sin\cos\theta = \sin 2\theta\) and \(2\sin^2\theta - 1 = \cos 2\theta\):</p>
-
-		$$-\tan\beta = -\frac{\cos2\alpha}{\sin2\alpha} = -\cot2\alpha$$
-
-		$$2\alpha = \text{arc}\cot\tan\beta$$
+		\begin{align}
+		-\tan\beta &= -\frac{\cos2\alpha}{\sin2\alpha} = -\cot2\alpha \\
+		2\alpha &= \text{arc}\cot\tan\beta \\
+		\end{align}
 		<p>From right triangle geometry:</p>
 		<div class = "answer">$$\alpha = \frac{\pi}{4} - \frac{\beta}{2}$$</div>
 
@@ -127,15 +143,14 @@
 	function slopeAngle()
 	{
 		fm = document.forms[1];
-		b = fm.beta.value
+		b = Number(fm.beta.value)
 		fm.alpha.value = 45 - b / 2;
 
 	}
 </script>
 		<h4>3. Throwing seashells towards the sky</h4>
 		<hr>
-		Pop quiz! 
-		You are standing on level ground in a world without air resistance. Your goal: throw a ball such that the time it spends in the air is maximized. What angle with respect to the horizon should you choose?
+		<p>Pop quiz! You are standing on level ground in a world without air resistance. Your goal: throw a ball such that the time it spends in the air is maximized. What angle with respect to the horizon should you choose?</p>
 		<ol>
 			<li>22.5°</li>
 			<li>45°</li>
@@ -143,35 +158,39 @@
 			<li>90°</li>
 			<li>Depends on the velocity, silly.</li>
 		</ol>
-		Let's see what the math says. Because of gravity, we cannot simply throw a ball and expect it to travel forever. In fact, in our ideal, non-air-resistance world, gravity only affects motion in the vertical axis. Our relevant projectile motion equation is:
+		<p>Let's see what the math says. Because of gravity, we cannot simply throw a ball and expect it to travel forever. In fact, in our ideal, non-air-resistance world, gravity only affects motion in the vertical axis. Our relevant projectile motion equation is:</p>
 		$$y = \left(v\sin\theta\right)t - \frac{1}{2}gt^2$$
-		Solving for \(t\):
-		$$t = \frac{2v\sin\theta}{g}$$
-		$$\frac{dt}{d\theta} = \frac{2v\cos\theta}{g} = 0$$
-		$$\theta = \arccos 0 = \frac{\pi}{2}$$
-
-		Let's make things fancier. What if you are on a cliff of height \(h\)?
-		Relevant equation:
-		$$y = h + v\sin\theta t - \frac{1}{2}gt^2$$
-		$$\frac{1}{2}gt^2 = h + v\sin\theta t$$
-		$$gt\frac{dt}{d\theta} = 0 + v\left(\cos\theta t + \frac{dt}{d\theta}\sin\theta\right)$$
-		Perhaps not too surprisingly, once again, we have upon simplifying:
+		<p>Solving for \(t\):</p>
+		\begin{align}
+		t &= \frac{2v\sin\theta}{g} \\
+		\frac{dt}{d\theta} &= \frac{2v\cos\theta}{g} = 0 \\
+		\theta &= \arccos 0 = \frac{\pi}{2} \\
+		\end{align}
+		<p>Let's make things fancier. What if you are on a cliff of height \(h\)? Relevant equation:</p>
+		\begin{align}
+		y &= h + v\sin\theta t - \frac{1}{2}gt^2 \\
+		\frac{1}{2}gt^2 &= h + v\sin\theta t \\
+		gt\frac{dt}{d\theta} &= 0 + v\left(\cos\theta t + \frac{dt}{d\theta}\sin\theta\right) \\
+		\end{align}
+		<p>Perhaps not too surprisingly, once again, we have upon simplifying:</p>
 		<div class = "answer">$$\theta = \arccos 0 = \frac{\pi}{2}$$</div>
 
-		What about even fancier. What if you are on a downwards-sloping hill of angle \(\beta\)?
-
-		This time things are a little more involved. 
-		$$y = h + v\sin\alpha t - \frac{1}{2}gt^2$$
-		$$y = h - \tan\beta x$$
-		$$x = v\cos\alpha t$$
-		Therefore, our second equation can be rewritten as:
-		$$y = h - \tan\beta (v\cos\alpha t)$$
-		After which we can combine it with the first:
+		<p>What about even fancier. What if you are on a downwards-sloping hill of angle \(\beta\)? This time things are a little more involved.</p>
+		\begin{align}
+		y_\text{seashell} &= h + v\sin\alpha t - \frac{1}{2}gt^2 \\
+		y_\text{slope} &= h - \tan\beta x \\
+		x &= v\cos\alpha t \\
+		\end{align}
+		<p>Therefore, our second equation can be rewritten as:</p>
+		$$y_\text{slope} = h - \tan\beta (v\cos\alpha t)$$
+		<p>After which we can combine it with the first:</p>
 		$$v\sin\alpha t - \frac{1}{2}gt^2 = - \tan\beta (v\cos\alpha t)$$
-		Solving for \(t\), we conveniently receive:
-		$$t = \frac{2v}{g}(\sin\alpha + \tan\beta\cos\alpha)$$
-		$$\frac{dt}{d\alpha} = \frac{2v}{g}(\cos\alpha -\tan\beta\sin\alpha) = 0$$
-		$$\alpha = \text{arccot}\left(\tan\beta\right)$$
+		<p>Solving for \(t\), we conveniently receive:</p>
+		\begin{align}
+		t &= \frac{2v}{g}(\sin\alpha + \tan\beta\cos\alpha) \\
+		\frac{dt}{d\alpha} &= \frac{2v}{g}(\cos\alpha -\tan\beta\sin\alpha) = 0 \\
+		\alpha &= \text{arccot}\left(\tan\beta\right) \\
+		\end{align}
 		<div class = "answer">$$\alpha = \frac{\pi}{2} - \beta$$</div>
 		<div class = "calculator">
 			<form method = "" action = "">
@@ -190,7 +209,7 @@
 	function timeAngle()
 	{
 		fm = document.forms[2];
-		b = fm.beta.value
+		b = Number(fm.beta.value);
 		fm.alpha.value = 90 - b;
 
 	}

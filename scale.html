@@ -85,9 +85,9 @@
 		function maxReading()
 		{
 			fm = document.forms[0];
-			m = fm.mass.value;
-			k = fm.constant.value;
-			h = fm.height.value;
+			m = Number(fm.mass.value);
+			k = Number(fm.constant.value);
+			h = Number(fm.height.value);
 			g = 9.8;
 			fm.reading.value = m * (1 + Math.sqrt(1 + (2 * h * k) / (m * g)));
 		}

@@ -5,7 +5,7 @@
     <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
     <meta name = "Author" content = "Owen Zhang"/>
     <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: [Title]</title>
+    <title>Raskolnikov's Realm: Ropes and Pulleys</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
@@ -19,22 +19,153 @@
 		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
 		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
 		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Scale.png"/>
-		<h2>[Title]</h2></div>
+		<img class = "divider_image" src = "Pulleys.svg"/>
+		<h2>Ropes and Pulleys</h2></div>
 	<div class = "section_subpage">
-		$$\sum F = ma $$
-		$$-mg + Mg = (m + M)a$$
-		$$a = \frac{g(M - m)}{M + m}$$
+		<h4>Atwood's machine</h4>
+		<hr>
+		<p>Suppose we have an Atwood's machine: a massless pulley over which two different masses, \(m\) and \(M\), hang by way of a massless string. How might we find the accelerations of the masses?</p>
+		<p>First, let us take the meticulous path to finding the answer. (We will then learn a quicker way, but this way is useful because it can be applied to more-complicated scenarios.)</p>
+		<p>Given two masses, \(m\) and \(M\), and defining up to be positive, we can write several force equations:</p>
+		$$T - mg = ma_m$$
+		$$T - Mg = Ma_M$$
+
+		<h4>Conservation of string</h4>
+		<hr>
+		<p>We should never overlook constraints introduced to our problem by the physical setup of the scenario.</p>
+		<p>Consider, for instance, the rope on our pulley. It is of high quality and always taut, meaning it will not compress or stretch much. This in turn implies that two objects connected by the rope will accelerate at the same magnitude!</p>
+		<p>We can show this in a math-y way by picking a coordinate system and using calculus. We can divide the rope's length \(l\) into three parts: the part between \(m\) and the pulley (\(x\)), the part over the pulley (half the circumference, or \(\pi R\)), and the part between the pulley and \(M\) (\(y\)). Thus:</p>
+		\begin{align}
+		l  &= x + \pi R + y \\
+		0 &= \frac{dx}{dt} + 0 + \frac{dy}{dt} \\
+		0 &= \frac{d^2x}{dt^2} + \frac{d^2y}{dt^2} \\
+		a_m &= -a_M \\
+		\end{align}
+		<p>So we have used a physical constraint to find a relationship between the accelerations. Now the system of equations becomes easy to solve.</p>
+		\begin{align}
+		T - mg &= ma_m \\
+		T - Mg &= M(-a_m) \\
+		ma_m + mg &= -Ma_m + Mg \\
+		a_m(m + M) &= g(M - m) \\
+		\end{align}
+		<div class = "answer">$$a_m = g\frac{M - m}{M + m}$$<br>
+		$$a_M = -g\frac{M - m}{M + m}$$</div>
+		
+		<div class = "calculator">
+			<form method = "" action = "">
+				\(m\) = 
+				<input type = "text" name = "m1" value = "" size = "6" onChange = atwood()>
+				kg<br>
+				\(M\) = 
+				<input type = "text" name = "m2" value = "" size = "6" onChange = atwood()>
+				kg<br>
+				\(a_m\) =  
+				<input type = "text" name = "acc1" value = "" size = "6" onChange = atwood()>
+				m/s/s<br>
+				\(a_M\) =  
+				<input type = "text" name = "acc2" value = "" size = "6" onChange = atwood()>
+				m/s/s<br>
+			</form>
+		</div>
+		
+		<script>
+		function atwood()
+		{
+			fm = document.forms[0];
+			m = Number(fm.m1.value);
+			M = Number(fm.m2.value);
+			g = 9.8;
+			fm.acc1.value = g * (M - m) / (M + m);
+			fm.acc2.value = -g * (M - m) / (M + m);
+		}
+		</script>
+
+		<p>Now, recognizing the quicker way takes place at the conservation of string step. Since you know that the string, \(m\), and \(M\) all move at the same rate, you can treat everything as one system traveling in the clockwise direction. The total mass is \(m + M\) and \(T\) becomes an irrelevant force internal to the system. Thus, by Newton's second law after defining clockwise to be positive:</p>
+		\begin{align}
+		\sum F &= ma \\
+		Mg - mg = (M + m)a \\
+		a = g\frac{M - m}{M + m} \\
+		\end{align}
+		<p>No surprise: both masses accelerate "clockwise" around the pulley.</p>
 
 		<h4>Double Atwood's machine</h4>
-		$$T - m_1g = m_1a_1$$
-		$$T - 2T_2 = 0a = 0$$
-		$$T_2 - m_2g = m_2a_2$$
-		$$T_2 - m_3g = m_3a_3$$
-		$$a_1 = -\frac{a_2 + a_3}{2}$$
-		$$-2a_1 - a_2 = a_3$$
-		$$T_2 - m_2g = m_2a_2$$
-		$$T_2 - m_3g = m_3(-2a_1 - a_2)$$
+		<p>What if we keep a mass \(m_1\) hanging from the left side of the pulley, but replace the right mass with a whole new Atwood's machine, on which hang \(m_2\) and \(m_3\)?</p>
+		<p>We can't take the same shortcut we did in the problem of the single Atwood's machine. Here, we have several equations:</p>
+		\begin{align}
+		T - m_1g &= m_1a_1 \\
+		T - 2T_2 &= (0)a_\text{pulley} = 0 \\
+		T_2 - m_2g &= m_2a_2 \\
+		T_2 - m_3g &= m_3a_3 \\
+		\end{align}
+		<p>Notice that the second pulley must be taken into consideration, since it is accelerating too! Because it is massless, the sum of the forces on it must be zero (otherwise it would accelerate at an infinite rate).</p>
+		<p>Now for the tricky part. Like last time, we need to find a relationship between the three accelerations. Since the upper pulley is fixed thanks to the ceiling and wall, we can use conservation of string to find the relation between the \(a_1\) and \(a_\text{pulley}\):</p> 
+		$$a_1 = -a_\text{pulley}$$
+		<p>It is extremely tempting to do the same for \(m_2\) and \(m_3\) on the lower pulley and say \(a_2 = -a_3\). But this is only true in relation to the bottom pulley, which is itself accelerating because of \(m_1\). The most methodical way involves drawing a diagram and examining the relationships between distances:</p>
+		\begin{align}
+		c &= \frac{b + d + l - \pi R}{2} \\
+		\frac{d^2c}{dt^2} &= \frac{1}{2}\left(\frac{d^2b}{dt^2} + \frac{d^2d}{dt^2} + 0 - 0\right) \\
+		a_\text{pulley} &= -a_1 = \frac{a_2 + a_3}{2} \\
+		a_1 &= -\frac{a_2 + a_3}{2} \\
+		\end{align}
+		<p>Now that we have all the necessary equations, it is simply a matter of algebra before we find the final answers.</p>
+		\begin{align}
+		T &= m_1a_1 + m_1g \\
+		T_2 &= \frac{T}{2} = \frac{m_1a_1}{2} + \frac{m_1g}{2} \\
+		-2a_1 &= a_2 + a_3 \\
+		a_2 &= \frac{T_2 - m_2g}{m_2} \\
+		&= \frac{m_1a_1}{2m_2} + \frac{m_1g}{2m_2} - g \\
+		\end{align}
+		<p>In the same way,</p>
+		\begin{align}
+		a_3 &= \frac{m_1a_1}{2m_3} + \frac{m_1g}{2m_3} - g \\
+		\end{align}
+		<p>Thus:</p>
+		\begin{align}
+		-2a_1 &= \frac{m_1a_1}{2m_2} + \frac{m_1g}{2m_2} - g + \frac{m_1a_1}{2m_3} + \frac{m_1g}{2m_3} - g \\
+		-2a_1 - \frac{m_1a_1}{2m_2} - \frac{m_1a_1}{2m_3} &= \frac{m_1g}{2m_2} + \frac{m_1g}{2m_3} - 2g \\
+		a_1 \left(-2 - \frac{m_1}{2m_2} - \frac{m_1}{2m_3}\right) &= g\left(\frac{m_1}{2m_2} + \frac{m_1}{2m_3} - 2\right) \\
+		-a_1\left(\frac{m_1(m_2 + m_3) + 4m_2m_3}{2m_2m_3}\right) &= g\left(\frac{m_1(m_2 + m_3) - 4m_2m_3}{2m_2m_3}\right) \\
+		\end{align}
+		<div class = "answer">$$a_1 = g\frac{4m_2m_3 - m_1(m_2 + m_3)}{4m_2m_3 + m_1(m_2 + m_3)}$$</div>
+		<p>Phew!</p>
+
+		<div class = "calculator">
+			<form method = "" action = "">
+				\(m_1\) = 
+				<input type = "text" name = "mass1" value = "" size = "6" onChange = doubleAtwood()>
+				kg<br>
+				\(m_2\) = 
+				<input type = "text" name = "mass2" value = "" size = "6" onChange = doubleAtwood()>
+				kg<br>
+				\(m_3\) =  
+				<input type = "text" name = "mass3" value = "" size = "6" onChange = doubleAtwood()>
+				kg<br>
+				\(a_1\) =  
+				<input type = "text" name = "acc1" value = "" size = "6" onChange = doubleAtwood()>
+				m/s/s<br>
+				\(a_2\) =  
+				<input type = "text" name = "acc2" value = "" size = "6" onChange = doubleAtwood()>
+				m/s/s<br>
+				\(a_3\) =  
+				<input type = "text" name = "acc3" value = "" size = "6" onChange = doubleAtwood()>
+				m/s/s<br>
+			</form>
+		</div>
+
+		<script>
+		function doubleAtwood()
+		{
+			fm = document.forms[1];
+			m1 = Number(fm.mass1.value);
+			m2 = Number(fm.mass2.value);
+			m3 = Number(fm.mass3.value);
+			g = 9.8;
+			fm.acc1.value = g * (4 * m2 * m3 - m1 * (m2 + m3)) / (4 * m2 * m3 + m1 * (m2 + m3));
+			fm.acc2.value = -g * (4 * m2 * m3 + m1 * (m2 - 3 * m3)) / (4 * m2 * m3 + m1 * (m2 + m3));
+			fm.acc3.value = -g * (4 * m2 * m3 + m1 * (m3 - 3 * m2)) / (4 * m2 * m3 + m1 * (m2 + m3));
+		}
+		</script>
+
 	</div>
 
 	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
