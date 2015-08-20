@@ -34,6 +34,7 @@
 		<hr>
 		<p>We should never overlook constraints introduced to our problem by the physical setup of the scenario.</p>
 		<p>Consider, for instance, the rope on our pulley. It is of high quality and always taut, meaning it will not compress or stretch much. This in turn implies that two objects connected by the rope will accelerate at the same magnitude!</p>
+		<img class = "diagram" src = "Pulleys 3.svg"/>
 		<p>We can show this in a math-y way by picking a coordinate system and using calculus. We can divide the rope's length \(l\) into three parts: the part between \(m\) and the pulley (\(x\)), the part over the pulley (half the circumference, or \(\pi R\)), and the part between the pulley and \(M\) (\(y\)). Thus:</p>
 		\begin{align}
 		l  &= x + \pi R + y \\
@@ -100,9 +101,29 @@
 		<p>Notice that the second pulley must be taken into consideration, since it is accelerating too! Because it is massless, the sum of the forces on it must be zero (otherwise it would accelerate at an infinite rate).</p>
 		<p>Now for the tricky part. Like last time, we need to find a relationship between the three accelerations. Since the upper pulley is fixed thanks to the ceiling and wall, we can use conservation of string to find the relation between the \(a_1\) and \(a_\text{pulley}\):</p> 
 		$$a_1 = -a_\text{pulley}$$
-		<p>It is extremely tempting to do the same for \(m_2\) and \(m_3\) on the lower pulley and say \(a_2 = -a_3\). But this is only true in relation to the bottom pulley, which is itself accelerating because of \(m_1\). The most methodical way involves drawing a diagram and examining the relationships between distances:</p>
+		<p>It is extremely tempting to do the same for \(m_2\) and \(m_3\) on the lower pulley and say \(a_2 = -a_3\). But this is only true in relation to the bottom pulley, which is itself accelerating because of \(m_1\). One way to find the relationship between the pulleys is using intuition and adding accelerations.</p>
+		<p>Let's say the lower pulley has acceleration \(a_p = -a_1\), remembering that we <em>can</em> apply conservation of string on the top string because the top pulley is fixed to the ceiling. Let's then say that \(m_2\) and \(m_3\) have accelerations \(a_{2\text{, p}}\) and \(a_{3\text{, p}} = -a_{2\text{, p}}\) <em>relative to the pulley</em>, which has \(a_p\) itself. Thus, their accelerations relative to the Earth are:</p>
+		\begin{align}
+		a_2 &= a_{2\text{, p}} + a_p \\
+		a_3 &= -a_{2\text{, p}} + a_p \\
+		\end{align}
+		<p>Eliminating \(a_{2\text{, p}}\) and simplifying, we have:</p>
+		\begin{align}
+		a_2 - a_p &= a_p - a_3 \\
+		a_p &= \frac{a_2 + a_3}{2} \\
+		a_1 &= -\frac{a_2 + a_3}{2} \\
+		\end{align}
+
+
+
+		<p>The most methodical way, however, involves drawing a diagram and examining the relationships between distances:</p>
+		<img class = "diagram" src = "Pulleys 2.svg"/>
+		<p>From geometry, we can see that the length \(c\) can be written in terms of the others.</p>
 		\begin{align}
 		c &= \frac{b + d + l - \pi R}{2} \\
+		\end{align}
+		<p>Differentiating twice essentially returns a constraint equation comprising the accelerations we are interested in<sup>1</sup>.</p>
+		\begin{align}
 		\frac{d^2c}{dt^2} &= \frac{1}{2}\left(\frac{d^2b}{dt^2} + \frac{d^2d}{dt^2} + 0 - 0\right) \\
 		a_\text{pulley} &= -a_1 = \frac{a_2 + a_3}{2} \\
 		a_1 &= -\frac{a_2 + a_3}{2} \\
@@ -165,6 +186,11 @@
 			fm.acc3.value = -g * (4 * m2 * m3 + m1 * (m3 - 3 * m2)) / (4 * m2 * m3 + m1 * (m2 + m3));
 		}
 		</script>
+		<h4>Notes</h4>
+		<hr>
+		<div class = "footnote">
+			<p><sup>1</sup> For example, \(\frac{d^2 b}{dt^2}\) is the acceleration of the portion of the rope connected to \(m_2\). Since the rope is always rigid, \(\frac{d^2 b}{dt^2} = a_2\).</p>
+		</div>
 
 	</div>
 

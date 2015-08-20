@@ -133,6 +133,7 @@ body
 .diagram
 {
 	width: 300px;
+	max-height: 300px;
 	display: table;
 	margin: 0 auto;
 }

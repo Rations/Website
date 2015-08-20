@@ -207,8 +207,8 @@
 	<hr>
 			<p>A useful trick that can be applied in many derivations is small-angle approximation. It is easiest for sine:</p>
 			$$\sin\theta = \frac{h}{r}$$
-			<p>From geometry, we can see that the arc length swept by \(\theta\) is only slightly longer than \(h\). If \(\theta\) is very small, they will be almost exactly the same. Substituting \(s\) in place of \(h\) leads us to . . . wait! \(\frac{s}{r}\) is just the definition of an angle in radians! So:</p>
-			$$\sin\theta = \frac{h}{r} \approx \frac{s}{r} = \theta$$
+			<p>From geometry, we can see that the arc length swept by \(\theta\) is only slightly longer than \(h\) and the hypotenuse \(h\) is only slightly longer than the radius \(r\). If \(\theta\) is very small, they will be almost exactly the same. Substituting \(s\) in place of \(o\) and \(r\) in place of \(h\) leads us to . . . wait! \(\frac{s}{r}\) is just the definition of an angle in radians! So:</p>
+			$$\sin\theta = \frac{o}{h} \approx \frac{s}{r} = \theta$$
 			<div class = "answer">$$\sin\theta \approx \theta$$</div>
 			<p>We can get a better sense of how valid this approximiation is by finding the percent error.</p>
 			$$\text{% error} = \frac{\theta - \sin\theta}{\sin\theta} \times 100$$
@@ -216,12 +216,17 @@
 			<p>So we won't even be one percent off as long as our angle is less than 0.244 radians, or 14 degrees!</p>
 			<p>There are several ways to derive the corresponding approximiation for cosine (involving various expansions, Taylor series), but one method that leads to the same results involves using our result for sine. Recalling that:</p>
 			\begin{align}
-			\cos(2\theta) &= \cos^2\theta - \sin^2\theta \\
+			\cos\left(2\theta\right) &= \cos^2\theta - \sin^2\theta \\
 			\cos\theta &= \cos^2\left(\frac \theta 2\right) - \sin^2\left(\frac \theta 2\right) \\
-			&= 1 - 2\sin^2\frac \theta 2 \\
+			&= 1 - 2\sin^2\left(\frac \theta 2\right) \\
 			&\approx 1 - 2\left(\frac \theta 2\right)^2\\
 			\end{align}
 			<div class = "answer">$$\cos\theta \approx 1 - \frac{\theta^2}{2}$$</div>
+			<p>You might think that, to find the small angle approximation for tangent, you would divide our approximations for sine and cosine. Actually, we arrive much more quickly at a much neater solution by reexamining the same triangle we examined for sine:</p>
+			$$\tan\theta = \frac{o}{r}$$
+			<p>When \(\theta\) is small, we can substitute \(s\) in place of \(o\). It follows that:</p>
+			$$\tan\theta = \frac{o}{r} \approx \frac{s}{r} = \theta$$
+			<div class = "answer">$$\tan\theta \approx \theta$$</div>
 			<hr>
 </details>
 

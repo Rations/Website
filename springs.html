@@ -50,13 +50,38 @@
 		<p>Rearranging the first equation, we have \(x_1 = \frac{k_2x_2}{k_1}\). Rearranging the second equation, we have \(x_2 = \frac{mg}{k_2}\). Substituting our new expression for \(x_2\) into that for \(x_1\), we have:</p>
 		\begin{align}
 		k_\text{eff}(x_1 + x_2) &= k_\text{eff}\frac{k_2mg}{k_1k_2} + \frac{mg}{k_2} = mg \\
-		k_\text{eff} &= \frac{k_1 + k_2}{k_1k_2} \\
+		k_\text{eff} &= \frac{k_1 + k_2}{k_1k_2}\\
 		\end{align}
 
-		<div class = "answer">$$k_\text{eff} = \frac{k_1 + k_2 + \cdots + k_n}{k_1k_2 \cdots k_n}$$</div>
+		<div class = "answer">$$k_\text{eff} = \frac{k_1 + k_2 + \cdots + k_n}{k_1k_2 \cdots k_n}\equiv \frac{1}{k_\text{eff}} = \frac{1}{k_1} + \frac{1}{k_2} + \cdots + \frac{1}{k_n}$$</div>
 		<p>Now, you might have noticed that this is equivalent to cutting a spring into multiple parts. If you cut the spring, the total stretch \(x\) should not change.</p>
+
+		<h4>One spring, six scenarios</h4>
+		<hr>
+		<p>We are given a spring with spring constant \(k\) resting horizontally on a frictionless table. How much does the spring compress if:</p>
+		<ol>
+			<li>We apply a force \(F\) to only one end of the spring.</li>
+			<li>We fix one end of the spring to an unmoveable wall and apply \(F\) to the other end.</li>
+			<li>We simultaneously apply \(F\) to both ends of the spring, in opposite directions.</li>
+			<li>We simultaneously apply \(F\) to both ends of the spring, but in the same direction.</li>
+			<li>We apply unequal forces \(F\) and \(F'\), where \(F' < F\) to the spring.</li> 
+			<li>We apply unequal forces \(F\) and \(F'\) to both ends of the spring, but in the same direction.</li>
+		</ol>
+		<p>1. A normal spring only compresses or stretches when a force is applied to one of its ends if there is a force resisting its motion at the other end. Since there is no resisting force, there is no change in the spring's length in this case, and the spring accelerates like a normal block<sup>1</sup>.</p>
+		<p>2. This is the scenario we are used to. The wall provides a reactive force that scales with the \(F\) applied to the other end of the spring. When the spring has reached equilibrium, we use Hooke's law to find that the stretch is \(x = \frac{F}{k}\).
+		</p>
+		<p>3. Surprisingly, this scenario is equivalent except in the way the center of mass of the spring does not move. In the end, however, each \(F\) functions like a "wall" to the opposite \(F\). In the final configuration, the spring is still because the net force is zero, and again by Hooke's law, \(x = \frac{F}{k}\).</p>
+		<p>4. Here, 
+		<p>5. Here, the spring cannot be still because the net force on it is \(F - F' > 0\). Thus, the center of mass will accelerate at \(a = \frac{F - F'}{m}\). The amount by which the spring compresses is limited by the virtual "wall" each force can provide for the other. In this case, \(F'\) is the constraint, because it is the smaller force. If we apply a force greater than \(F'\) at the other end of the spring, there is nothing affecting the spring that can further resist its translational motion; in other words, it is easier for the spring to move instead of compress<sup>2</sup>.</p>
+		<p>5. 
 		<h4>3. Springs with mass</h4>
 		<h4>4. Spring pyramid</h4>
+		<h4>Notes</h4>
+		<hr>
+		<div class = "footnote"><p>
+		<sup>1</sup> In the real world, there might be small compressions due to the presence of friction between the bottom of the spring and the ground.</p>
+		<p><sup>2</sup> Alternatively, imagine having a wall whose maximum resisting force is \(F'\). With the spring against this wall, we slowly increase the force \(F\) we apply to the free end of the spring. The spring will compress as \(F\) is increased, but after \(F\) exceeds \(F'\), the wall will no longer be able to resist the force, and will begin moving itself. Alternatively, decompose \(F\) into two forces. </p>
+	</div>
 	</div>
 
 	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
