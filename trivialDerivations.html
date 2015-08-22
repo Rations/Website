@@ -281,6 +281,26 @@
 			$$\frac{\Delta y}{\Delta x} = \frac{y - y_1}{x - x_1} = m$$
 			<div class = "answer">$$y - y_1 = m(x - x_1)$$</div>
 	<hr>
+</details>
+
+<details>
+	<summary>\({n \choose k}p^k\left(1 - p\right)^{n - k}\): Binomial probability</summary>
+	<hr>
+			<p>We use binomial probability to find the probability that one of two events (with probabilities \(p\) and \(1 - p\), respectively) will occur exactly \(k\) times when \(n\) trials are performed. The formula seems a little arcane, but it's not too hard to understand intuitively. Note that the probability from trial to trial must remain unchanged.</p>
+			<p>The standard example is flipping a coin multiple times. Say you wanted to find the probability that, given 10 flips, exactly 5 would be heads. There are clearly many ways this could happen—you could flip five heads then five tails; five tails then five heads; two heads, five tails, then 3 heads; etc.—but the probability of each scenario happening is the same, since the trials are independent. To find the probability of any given sequence, you will be multiplying a bunch of 0.5s together.</p>
+			<p>Given \(n\) coins and \(k\) heads, there will be \(n - k\) tails. The total number of unique sequences in which you can flip five heads and five tails is thus \(n \choose k\).</p>
+			<p>Imagine ten slots in a line representing one possible outcome. From these ten, you want to choose five in which a head should appear<sup>1</sup>.</p>
+			<p>If \(p\) is the probability of flipping a head, then \(1 - p\) is the probability of flipping a tail, as we have only two events possible.</p>
+			<p>The total probability is thus the product of the number of "good" sequences and the probability of each individual sequence happening.</p>
+			<div class = "answer">$${n \choose k}p^k\left(1 - p\right)^{n - k}$$</div>
+	<hr>
+</details>
+
+<h4>Notes</h4>
+<hr>
+<div class = "footnote">
+	<p><sup>1</sup> Note that in the case of binomial probability, \(n \choose k\) is equivalent to the number of permutations with indistinguishable objects, \(\frac{n!}{k!\left(n - k\right)!}\).
+	</div>
 		</div>
 
 		<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>

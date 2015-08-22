@@ -24,33 +24,33 @@
 	<div class = "section_subpage">
 		<h4>Atwood's machine</h4>
 		<hr>
-		<p>Suppose we have an Atwood's machine: a massless pulley over which two different masses, \(m\) and \(M\), hang by way of a massless string. How might we find the accelerations of the masses?</p>
-		<p>First, let us take the meticulous path to finding the answer. (We will then learn a quicker way, but this way is useful because it can be applied to more-complicated scenarios.)</p>
-		<p>Given two masses, \(m\) and \(M\), and defining up to be positive, we can write several force equations:</p>
-		$$T - mg = ma_m$$
-		$$T - Mg = Ma_M$$
-
+		<p>Suppose we have an Atwood's machine: a massless pulley over which two different masses, \(m\) and \(M\), hang via a massless string. How might we find the accelerations of the masses?</p>
+		<p>First, let us take the meticulous path to the solution. (We will learn a quicker way, but the meticulous way is useful because it can be applied to more-complicated scenarios.)</p>
+		<p>Defining upwards to be positive, we can write force equations<sup>1</sup>:</p>
+		\begin{align}
+		T - mg &= ma_m \\
+		T - Mg &= Ma_M \\
+		\end{align}
 		<h4>Conservation of string</h4>
-		<hr>
-		<p>We should never overlook constraints introduced to our problem by the physical setup of the scenario.</p>
-		<p>Consider, for instance, the rope on our pulley. It is of high quality and always taut, meaning it will not compress or stretch much. This in turn implies that two objects connected by the rope will accelerate at the same magnitude!</p>
-		<img class = "diagram" src = "Pulleys 3.svg"/>
-		<p>We can show this in a math-y way by picking a coordinate system and using calculus. We can divide the rope's length \(l\) into three parts: the part between \(m\) and the pulley (\(x\)), the part over the pulley (half the circumference, or \(\pi R\)), and the part between the pulley and \(M\) (\(y\)). Thus:</p>
+		<p>Never overlook physical constraints introduced by the objects in our problem. Consider, for instance, our rope. It is always taut, meaning it will not compress or stretch much. This implies that two objects connected by the rope will accelerate at the same magnitude!</p>
+		<p>We can show this in a math-y way using calculus. Divide the rope's length \(l\) into three parts as shown in the diagram:</p>
+			<img class = "diagram" src = "Pulleys 3.svg"/>
+			<p>We know the length of the rope must remain constant over time. Thus, differentiating reveals</p>
 		\begin{align}
 		l  &= x + \pi R + y \\
 		0 &= \frac{dx}{dt} + 0 + \frac{dy}{dt} \\
 		0 &= \frac{d^2x}{dt^2} + \frac{d^2y}{dt^2} \\
 		a_m &= -a_M \\
 		\end{align}
-		<p>So we have used a physical constraint to find a relationship between the accelerations. Now the system of equations becomes easy to solve.</p>
+		<p>So we have used a physical constraint to find a relationship between the accelerations<sup>2</sup>. Now the system of equations becomes easy to solve.</p>
 		\begin{align}
 		T - mg &= ma_m \\
-		T - Mg &= M(-a_m) \\
+		T - Mg &= M\left(-a_m\right) \\
 		ma_m + mg &= -Ma_m + Mg \\
-		a_m(m + M) &= g(M - m) \\
+		a_m\left(m + M\right) &= g\left(M - m\right) \\
 		\end{align}
-		<div class = "answer">$$a_m = g\frac{M - m}{M + m}$$<br>
-		$$a_M = -g\frac{M - m}{M + m}$$</div>
+		<div class = "answer">$$a_m = g\left(\frac{M - m}{M + m}\right)$$<br>
+		$$a_M = -g\left(\frac{M - m}{M + m}\right)$$</div>
 		
 		<div class = "calculator">
 			<form method = "" action = "">
@@ -80,29 +80,29 @@
 			fm.acc2.value = -g * (M - m) / (M + m);
 		}
 		</script>
-
-		<p>Now, recognizing the quicker way takes place at the conservation of string step. Since you know that the string, \(m\), and \(M\) all move at the same rate, you can treat everything as one system traveling in the clockwise direction. The total mass is \(m + M\) and \(T\) becomes an irrelevant force internal to the system. Thus, by Newton's second law after defining clockwise to be positive:</p>
+		<h4>The quicker way</h4>
+		<p>Recognizing the shortcut takes place at the conservation of string step. Since we know that the string, \(m\), and \(M\) all move and accelerate at the same rates, we can group them into one system traveling in the clockwise direction. The total mass is \(m + M\), and \(T\) becomes irrelevant because we already know the relationship between the \(a_m\) and \(a_M\). Thus, by Newton's second law after defining clockwise to be positive:</p>
 		\begin{align}
-		\sum F &= ma \\
-		Mg - mg = (M + m)a \\
-		a = g\frac{M - m}{M + m} \\
+		Mg - mg &= \left(M + m\right)a \\
+		a &= g\left(\frac{M - m}{M + m}\right) \\
 		\end{align}
 		<p>No surprise: both masses accelerate "clockwise" around the pulley.</p>
 
 		<h4>Double Atwood's machine</h4>
-		<p>What if we keep a mass \(m_1\) hanging from the left side of the pulley, but replace the right mass with a whole new Atwood's machine, on which hang \(m_2\) and \(m_3\)?</p>
-		<p>We can't take the same shortcut we did in the problem of the single Atwood's machine. Here, we have several equations:</p>
+		<hr>
+		<p>What if we keep a mass \(m_1\) hanging from the left side of the pulley, but replace the right mass with a whole new Atwood's machine on which hang \(m_2\) and \(m_3\)?</p>
+		<p>We can't take the same shortcut we did in the problem of the single Atwood's machine, because different objects in the system move at different rates. Here, we have several force equations:</p>
 		\begin{align}
 		T - m_1g &= m_1a_1 \\
 		T - 2T_2 &= (0)a_\text{pulley} = 0 \\
 		T_2 - m_2g &= m_2a_2 \\
 		T_2 - m_3g &= m_3a_3 \\
 		\end{align}
-		<p>Notice that the second pulley must be taken into consideration, since it is accelerating too! Because it is massless, the sum of the forces on it must be zero (otherwise it would accelerate at an infinite rate).</p>
-		<p>Now for the tricky part. Like last time, we need to find a relationship between the three accelerations. Since the upper pulley is fixed thanks to the ceiling and wall, we can use conservation of string to find the relation between the \(a_1\) and \(a_\text{pulley}\):</p> 
+		<p>Notice that the second pulley must be taken into consideration, since it is accelerating too. Because it is massless, the sum of the forces on it must be zero (otherwise it would accelerate at an infinite rate).</p>
+		<p>Now for the tricky part. Like last time, we need to find a relationship between the accelerations, in this case \(a_1\), \(a_2\), and \(a_3\). Since the upper pulley is effectively fixed to the ceiling, we can use conservation of string to find the relation between the \(a_1\) and \(a_\text{pulley}\):</p> 
 		$$a_1 = -a_\text{pulley}$$
-		<p>It is extremely tempting to do the same for \(m_2\) and \(m_3\) on the lower pulley and say \(a_2 = -a_3\). But this is only true in relation to the bottom pulley, which is itself accelerating because of \(m_1\). One way to find the relationship between the pulleys is using intuition and adding accelerations.</p>
-		<p>Let's say the lower pulley has acceleration \(a_p = -a_1\), remembering that we <em>can</em> apply conservation of string on the top string because the top pulley is fixed to the ceiling. Let's then say that \(m_2\) and \(m_3\) have accelerations \(a_{2\text{, p}}\) and \(a_{3\text{, p}} = -a_{2\text{, p}}\) <em>relative to the pulley</em>, which has \(a_p\) itself. Thus, their accelerations relative to the Earth are:</p>
+		<p>It is extremely tempting to do the same for \(m_2\) and \(m_3\) on the lower pulley and say \(a_2 = -a_3\). But this is only true <em>in relation to the bottom pulley</em>, which is itself accelerating because of \(m_1\).</p>
+		<p>One way to find the relationship between the pulleys is using intuition and adding accelerations. Let's say the lower pulley has acceleration \(a_p = -a_1\), remembering that we <em>can</em> apply conservation of string on the top string because the top pulley is fixed to the ceiling. Let's then say that \(m_2\) and \(m_3\) have accelerations \(a_{2\text{, p}}\) and \(a_{3\text{, p}} = -a_{2\text{, p}}\) <em>relative to the pulley</em>, which has \(a_p\) itself. Thus, their accelerations relative to the Earth are:</p>
 		\begin{align}
 		a_2 &= a_{2\text{, p}} + a_p \\
 		a_3 &= -a_{2\text{, p}} + a_p \\
@@ -122,7 +122,7 @@
 		\begin{align}
 		c &= \frac{b + d + l - \pi R}{2} \\
 		\end{align}
-		<p>Differentiating twice essentially returns a constraint equation comprising the accelerations we are interested in<sup>1</sup>.</p>
+		<p>Differentiating twice essentially returns a constraint equation comprising the accelerations we are interested in.</p>
 		\begin{align}
 		\frac{d^2c}{dt^2} &= \frac{1}{2}\left(\frac{d^2b}{dt^2} + \frac{d^2d}{dt^2} + 0 - 0\right) \\
 		a_\text{pulley} &= -a_1 = \frac{a_2 + a_3}{2} \\
@@ -189,7 +189,8 @@
 		<h4>Notes</h4>
 		<hr>
 		<div class = "footnote">
-			<p><sup>1</sup> For example, \(\frac{d^2 b}{dt^2}\) is the acceleration of the portion of the rope connected to \(m_2\). Since the rope is always rigid, \(\frac{d^2 b}{dt^2} = a_2\).</p>
+			<p><sup>1</sup> The tension \(T\) must be the same at all points along the rope because the rope is massless. Given a small piece of rope, if the tensions on either side of this rope were unequal, then the piece would accelerate at an infinite rate.</p>
+			<p><sup>2</sup> For example, \(\frac{d^2 b}{dt^2}\) is the acceleration of the portion of the rope connected to \(m_2\). Since the rope is always rigid, \(\frac{d^2 b}{dt^2} = a_2\).</p>
 		</div>
 
 	</div>

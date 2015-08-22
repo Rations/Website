@@ -23,7 +23,7 @@
 		<h2>Banking Car</h2></div>
 	<div class = "section_subpage">
 		<p>While driving your Prius, you encounter a turn. A law-abiding citizen, you obey the speed limit and rest assured that you will complete the turn without issue. But what if you were an extreme driver? Would you really be risking your safety by rounding the turn at an improper speed?</p>
-		<h4>1. <em>Slow down, you move too fast!</em></h4>
+		<h4><em>Slow down, you move too fast!</em></h4>
 		<hr>
 		<p>Some background info: Many turns in roads are banked, or sloped. Jumping into the physics will help us see why.</p>
 		<p>There are three main forces acting on our car as it rounds the turn: the gravitational force \(F_g\), the normal force \(N\), and the static friction force \(f\).</p>
@@ -33,26 +33,27 @@
 			<li>You don't want to slide down or up the bank, so the net force in the vertical axis must be zero.</li>
 		</ol>
 		
-		<p>Because we are looking for the boundary ("extreme") cases, we can utilize \(f_\text{max} = \mu N\). Then, examining our free-body diagram, we can translate words into equations:</p>
+		<p>Because we are looking for the boundary ("extreme") cases, we can utilize \(f_\text{max} = \mu N\). Then, examining our FBD, we can translate words into equations:</p>
+		<img class = "diagram" src = "Car 1.svg"/>
 			\begin{align}
-			F_\text{rad} &= \frac{mv^2}{r} = N\sin\theta + \mu N\cos\theta \\
-			F_g &= mg = N\cos\theta - \mu N\sin\theta \\
+			\frac{mv^2}{r} &= N\sin\theta + \mu N\cos\theta \\
+			mg &= N\cos\theta - \mu N\sin\theta \\
 			\end{align}
-		<p>We want to eliminate \(N\), so using substitution to solve the system is in order. Starting from the second equation and then substituting into the first:</p>
+		<p>We want to eliminate \(N\), so using substitution to solve the system of equations is in order. Starting from the second equation and then substituting into the first:</p>
 		\begin{align}
 			N &= \frac{mg}{\cos\theta - \mu\sin\theta} \\
-			\frac{mv^2}{r} &= \frac{mg(\sin\theta + \mu\cos\theta)}{\cos\theta - \mu\sin\theta} \\
+			\frac{mv^2}{r} &= \frac{mg\left(\sin\theta + \mu\cos\theta\right)}{\cos\theta - \mu\sin\theta} \\
 			\end{align}
-			<div class = "answer">$$v_\text{max} = \sqrt{\frac{rg(\sin\theta + \mu\cos\theta)}{\cos\theta - \mu\sin\theta}}$$</div>
+			<div class = "answer">$$v_\text{max} = \sqrt{\frac{rg\left(\sin\theta + \mu\cos\theta\right)}{\cos\theta - \mu\sin\theta}}$$</div>
 		<div class = "calculator">
 			<form method = "" action = "">
-			\(r\) = radius =
+			\(r\) = 
 				<input type = "text" name = "radius" value = "" size = "6" onChange = vmax()>
 			m<br>
-			\(\theta\) = bank angle = 
+			\(\theta\) =  
 			<input type = "text" name = "angle" value = "" size = "6" onChange = vmax()> 
 			°<br>
-			\(\mu_\text{sf}\) = coefficient of static friction = 
+			\(\mu\) =  
 			<input type = "text" name = "musf" value = "" size = "6" onChange = vmax()>
 			<br>
 			\(v_\text{max}\) = 
@@ -60,7 +61,6 @@
 			m/s<br>
 			</form>
 		</div>
-		<p class = "QED">♛</p>
 			</li>
 		</ol>
 
@@ -75,14 +75,16 @@
 				fm.velocity.value = r * g * (Math.sin(theta) + mu * Math.cos(theta)) / (Math.cos(theta) - mu * Math.sin(theta));
 			}
 		</script>
-		<h4>2. <em>Speed up, you . . . </em>move too slow?</h4>
+		<h4><em>Speed up, you . . . </em>move too slow?</h4>
 		<hr>
-		<p>Naturally, you might wonder, <em>is there a minimum speed?</em></p>
-		<p>Probably the easiest way to justify the fact that a minimum speed limit exists is thinking about a car parked on a steep slope—the most extreme case of "slow-moving car" there is. You can easily imagine this parked car slipping. Indeed, the only thing preventing it from doing so is static friction.</p>
-		<p>Drawing a free-body diagram may help. The most important thing to notice is that, in the case of the slow-moving car, static friction helps the car "fight" gravity by acting upwards along the bank. Once this is clear, the computations should be very familiar:</p> 
+		<p>Naturally you might wonder, <em>is there a minimum speed?</em></p>
+		<p>Probably the easiest way to justify the fact that a minimum speed limit could exist is thinking about a stationary car on a steep slope—the most extreme case of "slow-moving car" there is. You could easily imagine this parked car slipping. Indeed, the only thing that can prevent it from doing so is static friction.</p>
+		<p>Again, drawing a FBD helps:</p> 
+		<img class = "diagram" src = "Car 2.svg"/>
+		<p>The most important thing to notice is that in the case of the slow-moving car, static friction now helps the car "fight" gravity by acting <em>upwards</em> along the bank. Once you understand this, the computations are familiar:</p>
 		\begin{align}
-			F_\text{rad} &= \frac{mv^2}{r} = N\sin\theta - \mu N\cos\theta \\
-			F_g &= mg = N\cos\theta + \mu N\sin\theta \\
+			\frac{mv^2}{r} &= N\sin\theta - \mu N\cos\theta \\
+			mg &= N\cos\theta + \mu N\sin\theta \\
 			N &= \frac{mg}{\cos\theta + \mu\sin\theta} \\
 			\frac{mv^2}{r} &= \frac{mg(\sin\theta - \mu\cos\theta)}{\cos\theta + \mu\sin\theta} \\
 			\end{align}
@@ -90,13 +92,13 @@
 
 		<div class = "calculator">
 			<form method = "" action = "">
-			\(r\) = radius =
+			\(r\) = 
 				<input type = "text" name = "radius" value = "" size = "6" onChange = vmin()>
 			m<br>
-			\(\theta\) = angle = 
+			\(\theta\) = 
 			<input type = "text" name = "angle" value = "" size = "6" onChange = vmin()> 
 			°<br>
-			\(\mu_\text{sf}\) = coefficient of static friction = 
+			\(\mu\) =  
 			<input type = "text" name = "musf" value = "" size = "6" onChange = vmin()>
 			<br>
 			\(v_\text{min}\) = 
@@ -104,7 +106,6 @@
 			m/s<br>
 			</form>
 		</div>
-		<p class = "QED">♛</p>
 			</li>
 		</ol>
 
@@ -126,40 +127,41 @@
 				}
 			}
 		</script>
-		<h4>3. The Invincible \(\mu\)</h4>
+		<h4>The Invincible \(\mu\)</h4>
 		<hr>
-		<p>Wait. You've seen cars parked on slopes without slipping. Clearly, it seems possible for a friction force to counteract gravity entirely. Considering a free-body diagram of a stationary car on a bank with angle \(\theta\), we can easily solve for the minimum friction force and therefore friction coefficient required.</p>
-		<p>In the plane parallel to the slope:</p>
-			$$f = \mu N = mg\sin\theta$$
-		<p>In the plane perpendicular to the slope:</p>
-			$$N = mg\cos\theta$$
-		<p>Therefore:</p>
-			$$\mu mg\cos\theta = mg\sin\theta$$
-			<div class = "answer">$$\mu = \tan\theta$$</div>
+		<p>Wait—you've seen cars parked successfully on slopes. Clearly, it seems possible for a friction force to counteract gravity entirely. Examining a FBD, we can easily solve for the smallest maximum static friction force \(f_\text{max} = \mu N\) and static friction coefficient \(\mu\) we need given a bank of angle \(\theta\).</p>
+		<img class = "diagram" src = "Car 3.svg"/>
+		<p>If the car is in equilibrium,</p>
+		\begin{align}
+		N &= mg\cos\theta \\
+		\mu N &= mg\sin\theta \\
+		\end{align}
+		<div class = "answer">$$\mu = \tan\theta$$</div>
 		<p>. . . meaning if \(\mu \geq \tan\theta\), we need not worry about a minimum speed at all!</p>
-		<p class = "QED">♛</p>
 
-		<h4>4. What about flat roads?</h4>
+		<h4>What about flat roads?</h4>
 		<hr>
-		<p>Due to costs, lagging infrastructure, practicality, etc., not all roads are banked. How do turns in flat roads compare to their banked counterparts? Again, a free-body diagram makes determining our force equations easy:</p>
+		<p>Due to costs, lagging infrastructure, practicality issues, etc., not all roads are banked. How do turns on flat roads compare to their banked counterparts? Again, a FBD makes determining our force equations easy:</p>
+		<img class = "diagram" src = "Car 4.svg"/>
+		<p>Knowing that our car is in uniform circular motion on one plane,</p>
 		\begin{align}
 			N &= mg \\
-			F_\text{rad} &= \frac{mv^2}{r} = \mu N = \mu mg \\
+			\frac{m{v_\text{max}}^2}{r} &= \mu N \\
 			\end{align}
 			<div class = "answer">$$v_\text{max} = \sqrt{\mu rg}$$</div>
 			
 		<p>Dividing the \(v_\text{max}\) expression from part 1 by this one suggests that a turn with bank \(\theta\) would permit a maximum velocity \(\sqrt{\frac{\sin\theta + \mu\cos\theta}{\mu (\cos\theta - \mu\sin\theta)}}\) times greater than a flat road would.</p>
 		<div class = "calculator">
 			<form method = "" action = "">
-			\(\mu\) = coefficient of static friction =
+			\(\mu\) = 
 				<input type = "text" name = "musf" value = "" size = "6" onChange = vdiff()>
 			<br>
-			\(\theta\) = angle = 
+			\(\theta\) =  
 			<input type = "text" name = "angle" value = "" size = "6" onChange = vdiff()> 
 			°<br>
-			The banked road will allow a maximum speed 
+			\(v_\text{max, banked}\) is 
 			<input type = "text" name = "times" value = "" size = "6" onChange = vdiff()>
-			times greater than the flat road.<br>
+			times greater than \(v_\text{max, flat}\).<br>
 			</form>
 		</div>
 			</li>
@@ -174,7 +176,6 @@
 				fm.times.value = Math.sqrt((Math.sin(theta) + mu * Math.cos(theta)) / (mu * (Math.cos(theta) - mu * Math.sin(theta))));
 			}
 		</script>
-		<p class = "QED">♛</p> 
 	</div>
 
 	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>

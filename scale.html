@@ -33,34 +33,44 @@
 		<p>We know the scale works by converting the spring force \(kx\) it feels to a reading \(R\), which implies that \(Rg = kx\). But from here, the theoretical behavior of our spring scale might not be what you're used to seeing in the real world.</p>
 		<p>Let's begin with a base case. Suppose we gently set a mass on our spring scale.</p>
 		<p>But our goal is to find the maximum reading. Intuitively, this should occur when the spring is most compressed. Once again, our friend conservation of energy makes finding the maximum compression easy. Let's say that our gently placed mass is initially at height \(x_\text{max}\) before compressing the spring to its maximum displacement \(x_\text{max}\).</p>
-		$$U_g = U_\text{spring}$$
-		$$mgx_\text{max} = \frac{1}{2}k{x_\text{max}}^2$$
-		$$x_\text{} = \frac{2mg}{k}$$
+		\begin{align}
+		U_g &= U_\text{spring} \\
+		mgx_\text{max} &= \frac{1}{2}k{x_\text{max}}^2 \\
+		x_\text{max} &= \frac{2mg}{k} \\
+		\end{align}
 		<p>Here is where things become trickier. In the real world, when we place an object on a spring scale, the spring bounces up and down for a while before stopping because of friction. If the scale is calibrated, the position at which it stops, or the equilibrium position, should correspond to the actual mass of the object.</p>
 		<p>In our perfect theoretical world, however, there is no friction to slow the bouncing motion of the scale, so our spring will continue oscillating forever. But fortunately, this doesn't change the fact that the spring's reading at the equilibrium position—where there is no acceleration for a brief moment—should correspond to the actual mass of our mass. In equation speak, this means:</p>
-		$$Rg = mg = kx_\text{eq}$$
-		$$x_\text{eq} = \frac{mg}{k}$$
+		\begin{align}
+		Rg &= mg = kx_\text{eq} \\
+		x_\text{eq} &= \frac{mg}{k} \\
+		\end{align}
 		<p>If we compare \(x_\text{max}\) to \(x_\text{eq}\) and exploit the proportion between the spring's compression and the scale's reading, we can find the relationship between the reading at the bottom of the scale and the reading in the middle:</p>
-		$$x_\text{max} = \frac{2mg}{k} = 2\left(\frac{mg}{k}\right) = 2x_\text{eq}$$
-		$$\frac{mg}{kx_\text{eq}} = \frac{Rg}{kx_\text{max}} = \frac{Rg}{2kx_\text{eq}}$$
-		$$R = 2m$$
+		\begin{align}
+		x_\text{max} &= \frac{2mg}{k} = 2\left(\frac{mg}{k}\right) = 2x_\text{eq} \\
+		\frac{mg}{kx_\text{eq}} &= \frac{Rg}{kx_\text{max}} = \frac{Rg}{2kx_\text{eq}} \\
+		R &= 2m \\
+		\end{align}
 		<p>. . . so our proportion yields that the scale's reading at the bottom should be twice as great as its reading at the equilibrium position, that is, the proper reading.</p>
 		<h4>Dropping a mass onto a scale</h4>
 		<hr>
 		<p>Now it's time for part 2. The math in this part is messier, but the general procedure is fortunately identical.</p> 
 		<p>We start again with conservation of energy. This time, however, there are two distances to consider: (1) how far the mass is above the scale before the drop and (2) how far the scale's spring compresses after the mass lands on it.</p> 
-			$$U_g = U_\text{spring}$$
-			$$mg(h + x_\text{max}) = \frac{1}{2}k{x_\text{max}}^2$$
-			$$0 = \frac{1}{2}k{x_\text{max}}^2 - mgx_\text{max} - mgh$$
+		\begin{align}
+			U_g &= U_\text{spring} \\
+			mg\left(h + x_\text{max}\right) &= \frac{1}{2}k{x_\text{max}}^2 \\
+			0 &= \frac{1}{2}k{x_\text{max}}^2 - mgx_\text{max} - mgh \\
+			\end{align}
 			<p>Unfortunately, to solve for \(x_\text{max}\) this time, we must use the quadratic formula:</p>
 			$$x_\text{max} = \frac{mg \pm \sqrt{mg\left( mg + 2hk\right)}}{k}$$
 
 		<p>Once again, since our spring is a Hooke spring, its compression is proportional to its reading. This then implies that the relationship between our base case \(x_\text{max}\) and our new \(x_\text{max}\) is equivalent to the relationship between our base case maximum reading \(R = 2m\) and our new maximum reading. If we divide our new expression for \(x_\text{max}\) by our old one, we can find exactly how many times greater our new reading is than our base case one. In equation speak:</p>
-			$$x_\text{new max} = cx_\text{base max}$$
-			$$c = \frac{mg \pm \sqrt{mg\left( mg + 2hk\right)}}{k} \times \frac{k}{2mg}$$
-			$$c = \frac{1}{2}\left(1 \pm \sqrt{1 + \frac{2hk}{mg}} \right)$$
+		\begin{align}
+			x_\text{new max} &= cx_\text{base max} \\
+			c &= \frac{mg \pm \sqrt{mg\left( mg + 2hk\right)}}{k} \left(\frac{k}{2mg}\right) \\
+			 &= \frac{1}{2}\left(1 \pm \sqrt{1 + \frac{2hk}{mg}} \right) \\
+			\end{align}
 		<p>To reiterate, our new maximum reading is \(c\) times greater than our base maximum reading, which in turn is twice as great as the actual mass. Therefore:</p>
-			<div class = "answer">$$R_\text{max} = c(2m) = m\left(1 + \sqrt{1 + \frac{2hk}{mg}}\right)$$</div>
+			<div class = "answer">$$R_\text{max} = c\left(2m\right) = m\left(1 + \sqrt{1 + \frac{2hk}{mg}}\right)$$</div>
 		<p class = "QED">♛</p>
 
 		<div class = "calculator">
