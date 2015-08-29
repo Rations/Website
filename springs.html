@@ -5,7 +5,7 @@
     <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
     <meta name = "Author" content = "Owen Zhang"/>
     <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: Springs, springs, everywhere!</title>
+    <title>Springs, springs, everywhere!</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
@@ -22,9 +22,10 @@
 		<img class = "divider_image" src = "Springs.svg"/>
 		<h2>Springs, springs, everywhere!</h2></div>
 	<div class = "section_subpage">
-		<p>Have you ever wondered what would happen if you cut a spring in half? Would it become weaker or stronger?</p>
-		<h4>Springs in parallel</h4>
+		<p>Have you ever wondered what would happen if you cut a spring in half? Would it become weaker or stronger? Let's find out!</p>
 		<hr>
+		<h3>Springs in parallel</h3>
+		
 		<p>Suppose we have two springs with spring constants \(k_1\) and \(k_2\), respectively. Remember that the force exerted by a Hooke spring can be modeled using \(F_\text{spring} = kx\), where \(x\) is the stretch or compression. We hang both from the ceiling and then use a special hook device to connect both to the same mass \(m\). In other words, the device distributes the weight of the mass in such a way that both springs will stretch the same distance.</p>
 		<p>Drawing a free-body diagram of \(m\) and defining the upwards direction to be positive, we can easily see:</p>
 		\begin{align}
@@ -35,9 +36,9 @@
 		<p>This result is very interesting. Notice that when the equation is written in this form, it resembles the generic Hooke spring equation, \(F_\text{spring} = kx\), except we have \(k_1 + k_2\) instead of \(k\). </p>
 		<p>In fact, this means that hanging a mass from two (or more) springs with different spring constants is essentially the same as hanging the mass from a single spring with an effective spring constant \(k_\text{eff}\) of \(k_1 + k_2 + \cdots \).</p>
 		<div class = "answer">$$k_\text{eff} = k_1 + k_2 + \cdots + k_n$$</div>
-
-		<h4>2. Springs in series</h4>
-		<hr>
+<hr>
+		<h3>Springs in series</h3>
+		
 		<p>What if you had a bunch of springs hanging from each other? What would \(k_\text{eff}\) be?</p>
 		<p>Let's start with two springs, again with spring constants \(k_1\) and \(k_2\), respectively. As long as we assume that our springs are massless, we can use the same free-body-diagram-driven analysis technique. Since our system is in equilibrium, we can write three force equations, though only the following two are important to us:</p>
 		\begin{align}
@@ -55,37 +56,43 @@
 
 		<div class = "answer">$$k_\text{eff} = \frac{k_1 + k_2 + \cdots + k_n}{k_1k_2 \cdots k_n}\equiv \frac{1}{k_\text{eff}} = \frac{1}{k_1} + \frac{1}{k_2} + \cdots + \frac{1}{k_n}$$</div>
 		<p>Now, you might have noticed that this is equivalent to cutting a spring into multiple parts. If you cut the spring, the total stretch \(x\) should not change.</p>
-
-		<h4>One spring, six scenarios</h4>
-		<hr>
+<hr>
+		<h3>One spring, six scenarios</h3>
+		
 		<p>We are given a spring with spring constant \(k\) resting horizontally on a frictionless table. How much does the spring compress if:</p>
 		<ol>
 			<li>We apply a force \(F\) to only one end of the spring.
-				<img class = "diagram" src = "Spring 1.svg"/></li>
+				<img class = "diagram_s" src = "Spring 1.svg"/>
+				<p>There must be an opposing force at the other end of the spring in order for the spring to compress or stretch (just like how there is no tension in a massless rope no matter how hard you pull on one end). Since there is no opposing force here, the spring will not change length, but its center of mass will accelerate according to \(F = ma\).</p>
+			</li>
 			<li>We fix one end of the spring to an unmoveable wall and apply \(F\) to the other end.
-				<img class = "diagram" src = "Spring 2.svg"/></li>
-			<li>We simultaneously apply \(F\) to both ends of the spring, in opposite directions.
-			<img class = "diagram" src = "Spring 3.svg"/></li>
-			<li>We simultaneously apply \(F\) to both ends of the spring, but in the same direction.
-			<img class = "diagram" src = "Spring 4.svg"/></li>
-			<li>We apply unequal forces \(F\) and \(F'\), where \(F' < F\) to the spring.
-			<img class = "diagram" src = "Spring 5.svg"/></li> 
-			<li>We apply unequal forces \(F\) and \(F'\) to both ends of the spring, but in the same direction.
-				<img class = "diagram" src = "Spring 6.svg"/></li>
-		</ol>
-		<p>1. A normal spring only compresses or stretches when a force is applied to one of its ends if there is a force resisting its motion at the other end. Since there is no resisting force, there is no change in the spring's length in this case, and the spring accelerates like a normal block<sup>1</sup>.</p>
-		<p>2. This is the scenario we are used to. The wall provides a reactive force that scales with the \(F\) applied to the other end of the spring. When the spring has reached equilibrium, we use Hooke's law to find that the stretch is \(x = \frac{F}{k}\).
+				<img class = "diagram_s" src = "Spring 2.svg"/>
+			<p>This is the scenario we are used to. The wall provides a reactive force that scales with the \(F\) applied to the other end of the spring. When the spring has reached equilibrium, the center of mass has shifted right, and the stretch is \(x = \frac{F}{k}\) from Hooke's law.
 		</p>
-		<p>3. Surprisingly, this scenario is equivalent except in the way the center of mass of the spring does not move. In the end, however, each \(F\) functions like a "wall" to the opposite \(F\). In the final configuration, the spring is still because the net force is zero, and again by Hooke's law, \(x = \frac{F}{k}\).</p>
+	</li>
+			<li>We simultaneously apply \(F\) to both ends of the spring, in opposite directions.
+			<img class = "diagram_s" src = "Spring 3.svg"/>
+			<p>This scenario is equivalent to (2) except for the fact that the center of mass of the spring does not shift. Each \(F\) functions like a "wall" to the opposite \(F\) (in (2), when the system was in equilibrium, the wall exerted a force of \(F\)). Therefore, again by Hooke's law, \(x = \frac{F}{k}\).</p></li>
+			<li>We simultaneously apply \(F\) to both ends of the spring, but in the same direction.
+			<img class = "diagram_s" src = "Spring 4.svg"/>
+			<p>This is equivalent to applying \(2F\) to one end of the spring. There is no opposite force, so </li>
+			<li>We apply unequal forces \(F\) and \(F'\), where \(F' < F\) to the spring.
+			<img class = "diagram_s" src = "Spring 5.svg"/>
+			<p>Here, the spring cannot be still because the net force on it is \(F - F' > 0\). Thus, the center of mass will accelerate at \(a = \frac{F - F'}{m}\). The amount by which the spring compresses is limited by the virtual "wall" each force can provide for the other. In this case, \(F'\) is the constraint, because it is the smaller force. If we apply a force greater than \(F'\) at the other end of the spring, there is nothing affecting the spring that can further resist its translational motion; in other words, it is easier for the spring to move instead of compress<sup>2</sup>.</p></li> 
+			<li>We apply unequal forces \(F\) and \(F'\) to both ends of the spring, but in the same direction.
+				<img class = "diagram_s" src = "Spring 6.svg"/></li>
+		</ol>
+		
+		
 		<p>4. Here, 
-		<p>5. Here, the spring cannot be still because the net force on it is \(F - F' > 0\). Thus, the center of mass will accelerate at \(a = \frac{F - F'}{m}\). The amount by which the spring compresses is limited by the virtual "wall" each force can provide for the other. In this case, \(F'\) is the constraint, because it is the smaller force. If we apply a force greater than \(F'\) at the other end of the spring, there is nothing affecting the spring that can further resist its translational motion; in other words, it is easier for the spring to move instead of compress<sup>2</sup>.</p>
+		
 		<p>5. 
 		<h4>3. Springs with mass</h4>
 		<h4>4. Spring pyramid</h4>
-		<h4>Notes</h4>
 		<hr>
+		<h3>Notes</h3>
+		
 		<div class = "footnote"><p>
-		<sup>1</sup> In the real world, there might be small compressions due to the presence of friction between the bottom of the spring and the ground.</p>
 		<p><sup>2</sup> Alternatively, imagine having a wall whose maximum resisting force is \(F'\). With the spring against this wall, we slowly increase the force \(F\) we apply to the free end of the spring. The spring will compress as \(F\) is increased, but after \(F\) exceeds \(F'\), the wall will no longer be able to resist the force, and will begin moving itself. Alternatively, decompose \(F\) into two forces. </p>
 	</div>
 	</div>

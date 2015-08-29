@@ -5,7 +5,7 @@
     <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
     <meta name = "Author" content = "Owen Zhang"/>
     <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: Ropes and Pulleys</title>
+    <title>Atwood's Machines</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
@@ -20,18 +20,17 @@
 		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
 		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
 		<img class = "divider_image" src = "Pulleys.svg"/>
-		<h2>Ropes and Pulleys</h2></div>
+		<h2>Atwood's Machines</h2></div>
 	<div class = "section_subpage">
-		<h4>Atwood's machine</h4>
-		<hr>
+		<h3>The Atwood's machine</h3>
 		<p>Suppose we have an Atwood's machine: a massless pulley over which two different masses, \(m\) and \(M\), hang via a massless string. How might we find the accelerations of the masses?</p>
 		<p>First, let us take the meticulous path to the solution. (We will learn a quicker way, but the meticulous way is useful because it can be applied to more-complicated scenarios.)</p>
-		<p>Defining upwards to be positive, we can write force equations<sup>1</sup>:</p>
+		<p>Defining upwards to be positive, we can write force equations<sup>[1]</sup>:</p>
 		\begin{align}
 		T - mg &= ma_m \\
 		T - Mg &= Ma_M \\
 		\end{align}
-		<h4>Conservation of string</h4>
+		<h3>Conservation of string</h3>
 		<p>Never overlook physical constraints introduced by the objects in our problem. Consider, for instance, our rope. It is always taut, meaning it will not compress or stretch much. This implies that two objects connected by the rope will accelerate at the same magnitude!</p>
 		<p>We can show this in a math-y way using calculus. Divide the rope's length \(l\) into three parts as shown in the diagram:</p>
 			<img class = "diagram" src = "Pulleys 3.svg"/>
@@ -42,17 +41,19 @@
 		0 &= \frac{d^2x}{dt^2} + \frac{d^2y}{dt^2} \\
 		a_m &= -a_M \\
 		\end{align}
-		<p>So we have used a physical constraint to find a relationship between the accelerations<sup>2</sup>. Now the system of equations becomes easy to solve.</p>
+		<p>So we have used a physical constraint to find a relationship between the accelerations<sup>[2]</sup>. Now the system of equations becomes easy to solve.</p>
 		\begin{align}
 		T - mg &= ma_m \\
 		T - Mg &= M\left(-a_m\right) \\
 		ma_m + mg &= -Ma_m + Mg \\
 		a_m\left(m + M\right) &= g\left(M - m\right) \\
 		\end{align}
-		<div class = "answer">$$a_m = g\left(\frac{M - m}{M + m}\right)$$<br>
-		$$a_M = -g\left(\frac{M - m}{M + m}\right)$$</div>
-		
-		<div class = "calculator">
+		<table>
+			<tbody>
+				<tr>
+					<td align = "right"><div class = "answer">$$a_m = g\left(\frac{M - m}{M + m}\right)$$</div></td>
+					<td align = "center"><div class = "answer">$$a_M = -g\left(\frac{M - m}{M + m}\right)$$</div></td>
+					<td align = "left"><div class = "calculator">
 			<form method = "" action = "">
 				\(m\) = 
 				<input type = "text" name = "m1" value = "" size = "6" onChange = atwood()>
@@ -67,8 +68,11 @@
 				<input type = "text" name = "acc2" value = "" size = "6" onChange = atwood()>
 				m/s/s<br>
 			</form>
-		</div>
-		
+		</div></td>
+				</tr>
+			</tbody>
+		</table>
+
 		<script>
 		function atwood()
 		{
@@ -80,16 +84,15 @@
 			fm.acc2.value = -g * (M - m) / (M + m);
 		}
 		</script>
-		<h4>The quicker way</h4>
+		<h3>A shortcut</h3>
 		<p>Recognizing the shortcut takes place at the conservation of string step. Since we know that the string, \(m\), and \(M\) all move and accelerate at the same rates, we can group them into one system traveling in the clockwise direction. The total mass is \(m + M\), and \(T\) becomes irrelevant because we already know the relationship between the \(a_m\) and \(a_M\). Thus, by Newton's second law after defining clockwise to be positive:</p>
 		\begin{align}
 		Mg - mg &= \left(M + m\right)a \\
 		a &= g\left(\frac{M - m}{M + m}\right) \\
 		\end{align}
 		<p>No surprise: both masses accelerate "clockwise" around the pulley.</p>
-
-		<h4>Double Atwood's machine</h4>
 		<hr>
+		<h3>Double Atwood's machine</h3>
 		<p>What if we keep a mass \(m_1\) hanging from the left side of the pulley, but replace the right mass with a whole new Atwood's machine on which hang \(m_2\) and \(m_3\)?</p>
 		<p>We can't take the same shortcut we did in the problem of the single Atwood's machine, because different objects in the system move at different rates. Here, we have several force equations:</p>
 		\begin{align}
@@ -186,8 +189,8 @@
 			fm.acc3.value = -g * (4 * m2 * m3 + m1 * (m3 - 3 * m2)) / (4 * m2 * m3 + m1 * (m2 + m3));
 		}
 		</script>
-		<h4>Notes</h4>
 		<hr>
+		<h3>Notes</h3>
 		<div class = "footnote">
 			<p><sup>1</sup> The tension \(T\) must be the same at all points along the rope because the rope is massless. Given a small piece of rope, if the tensions on either side of this rope were unequal, then the piece would accelerate at an infinite rate.</p>
 			<p><sup>2</sup> For example, \(\frac{d^2 b}{dt^2}\) is the acceleration of the portion of the rope connected to \(m_2\). Since the rope is always rigid, \(\frac{d^2 b}{dt^2} = a_2\).</p>

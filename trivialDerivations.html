@@ -5,7 +5,7 @@
 	<meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
 	<meta name = "Author" content = "Owen Zhang"/>
 	<link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-	<title>Raskolnikov's Realm: Trivial Derivations</title>
+	<title>Trivial Derivations</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
@@ -44,16 +44,16 @@
 	<summary>\(x = x_0 + v_0t + \frac{1}{2}at^2\) and other 1-D motion equations</summary>
 	<hr>
 		<p>Many students consider these equations for 1-D motion under <em>constant</em> acceleration to be some of the simplest in mechanics; equally many can never quite remember them. They are actually not difficult to memorize if one understands their origins in calculus, which will be our goal here.</p>
-		<p>For aesthetic purposes, when I write the function \(v\), I really mean \(v(t)\). Let's also agree that writing \(v_0\) is the same as writing \(v(0)\) and that \(t_0 = 0\).</p>
-		<p>Then, given a constant acceleration \(a\):</p>
+		
+		<p>Given a constant acceleration \(a\):</p>
 		<ol>
 			<li>$$v = \int_{0}^{t}adt = a\left(\left.t \right|_0^t\right) = at + c_1$$
 				<p>When \(t = 0\), \(v = c_1 = v_0\), so:</p>
-				<div class = "answer"><p>\(v = v_0 + at\)</p></div>
+				<div class = "answer">$$v = v_0 + at$$</div>
 			</li>
 			<li>$$x = \int_{0}^{t}vdt = \int_{0}^{t}(v_0 + at)dt = \left(\left. v_0t + \frac{1}{2}at^2 \right)\right|_0^t = v_0t + \frac{1}{2}at^2 + c_2$$
 				<p>When \(t = 0\), \(x = c_2 = x_0\), so:</p>
-				<div class = "answer"><p>\(x = x_0 + v_0t + \frac{1}{2}at^2\)
+				<div class = "answer">$$x = x_0 + v_0t + \frac{1}{2}at^2$$</div>
 				</li>
 				<li><p><strong>Eliminating \(t\) from the equations</strong></p>
 					<p>Note that our equation for \(x\) can be rewritten like:</p>
@@ -65,7 +65,7 @@
 					&= {v_0}^2 + 2a(v_0t + \frac{1}{2}at^2) \\
 					\end{align}
 					<p>Notice that the stuff in the parentheses is our rewritten equation for \(x\)! Therefore:</p>
-					<div class = "answer">\(v^2 = {v_0}^2 + 2a\Delta x\)</div>
+					<div class = "answer">$$v^2 = {v_0}^2 + 2a\Delta x$$</div>
 				</li>
 			</ol>
 			<hr>
@@ -129,7 +129,7 @@
 </details>
 
 <details>
-	<summary>\(I_{CM}\) of a uniform disk</summary>
+	<summary>\(I\) of a uniform disk</summary>
 	<hr>
 			<p>A disk is like a slice of onion—a bunch of concentric rings placed neatly together. For each of these rings, if \(r\) is the radius, then the circumference is \(2\pi r\) and the area \(dA\) is \(2\pi rdr\) (remember, we are dealing with rings, not circles).</p>
 			$$I = \int dmr^2$$
@@ -168,7 +168,7 @@
 			\begin{align}
 			I &= \int_{-R}^{R}\frac{1}{2}dmr^2 \\
 			&= \int_{-R}^{R}\frac{1}{2}\left[\left(\frac{3M}{4 R^3}\right)\left(R^2 - x^2\right)dx\right] \left(R^2 - x^2\right) \\
-			&= \frac{3M}{8R^3} \int_{-R}^{R} (R^2 - x^2)^2dx \\
+			&= \frac{3M}{8R^3} \int_{-R}^{R} \left(R^2 - x^2\right)^2dx \\
 			\end{align}
 			<p>Expanding the stuff in the integral, we have:</p>
 			\begin{align}
@@ -176,6 +176,27 @@
 			&= \frac{3M}{8R^3} \left(R^4\left(\left.x\right|_{-R}^{R}\right) - 2R^2\left(\left.\frac{x^3}{3}\right|_{-R}^{R}\right) + \left.\frac{x^5}{5}\right|_{-R}^{R}\right) \\
 			\end{align}
 			<div class = "answer">$$I = \frac{2}{5}MR^2$$</div>
+			
+<hr>
+</details>
+
+<details>
+	<summary>\(I_{CM}\) of a thin spherical shell</summary>
+	<hr>
+			<p>A very elegant way to find this moment of inertia is through using the moment of inertia of a solid sphere (see previous derivation). The basic intuition is, how much will the moment of inertia of our sphere change if we increase the radius by a very, very small amount? That change will be the moment of inertia of our thin spherical shell.</p>
+			<p>Since we're talking about microscopic amounts of change, differentiation is a good bet. But first, we need to adjust our moment of inertia expression for the solid sphere a bit.</p>
+			$$I_{CM} = \frac{2}{5}MR^2$$
+			<p>We'd like to find the change in \(I\) per change in \(R\), so we should differentiate with respect to \(R\). But things become rather nasty, because both \(M\) and \(I\) are dependent on \(R\). Our job would be alot easier if we could express the moment of inertia with a constant instead of \(M\).</p>
+			<p>We have from the previous derivation that the (constant) mass-volume density of a solid sphere is \(\rho = \frac{M}{\frac{4}{3}\pi R^3}\). Our sphere has a volume of \(\frac{4}{3}\pi R^3\). Therefore, we can rewrite \(\frac{2}{5}MR^2\) as</p>
+			\begin{align}
+			I_{CM} &= \frac{2}{5}\rho\frac{4}{3}\pi R^3R^2 \\
+			&= \frac{8}{15}\pi\rho R^5 \\
+			\end{align}
+			<p>Now we can easily differentiate with respect to \(R\).</p>
+			\begin{align}
+			dI &= \frac{8}{15}\pi\rho 5R^4dr \\
+			\end{align}
+			<div class = "answer">$$I = \frac{2}{3}MR^2$$</div>
 			
 <hr>
 </details>
@@ -284,6 +305,33 @@
 </details>
 
 <details>
+	<summary>\(\frac{dx^n}{dx} = nx^{n - 1}\): The power rule</summary>
+	<hr>
+			<p>First, let's prove the power rule for integer values of \(n\). This is a simple proof that uses the definition of the derivative.</p>
+			\begin{align}
+			\frac{dx^n}{dx} &= \lim_{h \to 0}\frac{\left(x + h\right)^n - x^n}{h} \\
+			&= \lim_{h \to 0}\frac{{n \choose 0}x^n + {n \choose 1}x^{n - 1}h + {n \choose 2}x^{n - 2}h^2 + \cdots + {n \choose n}h^n - x^n}{h} \\
+			&= \lim_{h \to 0}{n \choose 1}x^{n - 1} + \lim_{h \to 0}{n \choose 2} x^{n - 2}h + \cdots + \lim_{h \to 0}{n \choose n}h^{n - 1} \\
+			\end{align}
+			<p>Since all the terms are simple products that have an \(h\), they become zero when \(h \to 0\). Thus, we are left with the first term and the conclusion:</p>
+			<div class = "answer">$$\frac{dx^n}{dx} = nx^{n - 1}$$</div>
+			<p>We can extend the power rule to include rational exponents (e.g., fractions). To do this, we will use a creative implicit technique. Suppose we have a function whose parameter is some variable \(x\) raised to some rational power. Since the exponent is rational, we know it can be written as the quotient of two integers, \(p\) and \(q\). We want to find the derivative of \(x^{\frac{p}{q}}\) with respect to \(x\), or \(frac{df}{dx}\).</p>
+			\begin{align}
+			f &= x^{\frac{p}{q}} \\
+			f^q &= x^p \\
+			\end{align}
+			<p>We exponentiate to eliminate the fractional exponents. This allows us to use the power rule we have derived for integer exponents. Remembering the chain rule,</p>
+			\begin{align}
+			qf^{q - 1}\frac{df}{dx} &= px^{p - 1} \\
+			\frac{df}{dx} &= \frac{px^{p - 1}}{qf^{q - 1}} \\
+			&= \frac{px^{p - 1}}{q\left(x^{\frac{p}{q}}\right)^{q - 1}} = \frac{px^{p - 1}}{qx^{p - p/q}} = \frac{p}{q}x^{p - 1 - p + p / q}\\
+\end{align}
+			<div class = "answer">$$\frac{dx^\frac{p}{q}}{dx} = \frac{p}{q}x^{\frac{p}{q} - 1}$$</div>
+			\end{align}
+	<hr>
+</details>
+
+<details>
 	<summary>\({n \choose k}p^k\left(1 - p\right)^{n - k}\): Binomial probability</summary>
 	<hr>
 			<p>We use binomial probability to find the probability that one of two events (with probabilities \(p\) and \(1 - p\), respectively) will occur exactly \(k\) times when \(n\) trials are performed. The formula seems a little arcane, but it's not too hard to understand intuitively. Note that the probability from trial to trial must remain unchanged.</p>
@@ -293,13 +341,14 @@
 			<p>If \(p\) is the probability of flipping a head, then \(1 - p\) is the probability of flipping a tail, as we have only two events possible.</p>
 			<p>The total probability is thus the product of the number of "good" sequences and the probability of each individual sequence happening.</p>
 			<div class = "answer">$${n \choose k}p^k\left(1 - p\right)^{n - k}$$</div>
+
 	<hr>
 </details>
 
 <h4>Notes</h4>
 <hr>
 <div class = "footnote">
-	<p><sup>1</sup> Note that in the case of binomial probability, \(n \choose k\) is equivalent to the number of permutations with indistinguishable objects, \(\frac{n!}{k!\left(n - k\right)!}\).
+	<p><sup>1</sup> Note that in the case of binomial probability, \(n \choose k\) is equivalent to the number of permutations with indistinguishable objects, \(\frac{n!}{k_1!k_2! \cdots k_n!}\).
 	</div>
 		</div>
 

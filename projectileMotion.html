@@ -5,7 +5,7 @@
     <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
     <meta name = "Author" content = "Owen Zhang"/>
     <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: Projectile Motion Fun</title>
+    <title>Projectile Motion Fun</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
@@ -22,56 +22,56 @@
 		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Projectile%20motion.png"/>
 		<h2>Projectile Motion Fun</h2><a href = "physicsFun.html#howTo"><img class = "icon_right" src = "Calc.svg"/></a></div>
 	<div class = "section_subpage">
-		<h4>1. Throwing seashells from a cliff</h4>
-		<hr>
-		<p>You're at the White Cliffs of Dover with some friends. Naturally, a contest is in order: who can throw a seashell the farthest?</p>
-		<p>Wise Will has some advice. "Aim at 45° above the horizon," he offers somewhat condescendingly. "It maximizes range!"</p>
-		<p>Do you listen? The number 45 does seem familiar, but the stakes are too high for you to rely on memory alone. Calculus to the rescue!</p>
-		<p>Recall our general projectile motion equation:</p>
-		$$d = d_0 + v_0t + \frac{1}{2}at^2$$
-		<p>If we conveniently neglect air resistance, we can separate our seashell's motion into \(x\) and \(y\) components:</p>
+		<h3>Throwing seashells from a cliff</h3>
+		<p>You're at the <a href = "http://i.imgur.com/N1NyW.jpg">White Cliffs of Dover</a> with friends. Naturally, a contest is in order: who can throw a seashell the farthest from the base of the cliff?</p>
+		<p>"Aim at 45° above the horizon," Wise Will offers somewhat condescendingly. "Maximizes range."</p>
+		<p>Do you listen? The 45 does seem familiar, but the stakes are too high for you to rely on memory alone. Calculus to the rescue!</p>
+		<img class = "diagram" src = "Projectile motion 1.svg"/>
+		<p>If we conveniently neglect drag, we can separate our seashell's motion into \(x\)- and \(y\)-components:</p>
 		\begin{align}
-		x &= v\cos\theta t \\
-		y &= 0 = h + v\sin\theta t - \frac{1}{2}gt^2 \\
+		x &= \left(v\cos\theta\right) t \\
+		y &= h + \left(v\sin\theta\right) t - \frac{1}{2}gt^2 \\
 		\end{align}
-		<p>Since we know our seashell must land somewhere, we can set \(y\) to zero. However, there are still way too many variables. Let's try eliminating \(t\) first. Using our \(x\) equation:</p>
-		$$t = \frac{x}{v\cos\theta}$$
-		<p>We can unify our \(x\) and \(y\) equations by substitution:</p>
+		<p>We define our coordinate system such that the seashell lands at a point where \(y = 0\). Even so, we still have too many unknown variables. Rearranging our equation for \(x\) and substituting, however, we can eliminate \(t\).</p>
 		\begin{align}
+		t &= \frac{x}{v\cos\theta} \\
 		0 &= h + v\sin\theta \left(\frac{x}{v\cos\theta}\right) - \frac{1}{2}g\left(\frac{x}{v\cos\theta}\right)^2 \\
-		 &= h + x\tan\theta - \frac{g}{2v^2}\left(\frac{x^2}{\cos^2\theta}\right) \\
+		 &= h + x\tan\theta - \frac{gx^2}{2v^2\cos^2\theta} \\
 		\end{align}
-		<p>Since we're interested in the <em>maximum</em> range, differentiation is a good idea. We can safely assume that the height of our cliff and our throwing speed remain constant from throw to throw, so let's differentiate with respect to \(\theta\), remembering the chain and product/quotient rules:</p>
-		$$0 = \frac{dh}{d\theta} + \frac{dx}{d\theta}\tan\theta + (\sec^2\theta) x- \frac{g}{2v^2}\left(\frac{2x\frac{dx}{d\theta}\cos^2\theta - 2\cos\theta(-\sin\theta)x^2}{\cos^4\theta}\right)$$
-		<p>This looks exceedingly nasty, but many terms disappear once we realize that (1) the derivative of a constant is zero and (2) we can set \(\frac{dx}{d\theta}\) to zero since we are solving for a maximum:</p>
+		<p>Since we're interested in the <em>maximum</em> range, differentiation is a good idea. We are looking for the \(\theta\) that will maximize range, so let's differentiate with respect to \(\theta\)<sup>[1]</sup>.</p>
+		$$0 = \tan\theta \frac{dx}{d\theta} + x\sec^2\theta- \frac{g}{2v^2}\left(\frac{2x\cos^2\theta\frac{dx}{d\theta} + 2x^2\sin\theta\cos\theta }{\cos^4\theta}\right)$$
+		<p>This looks exceedingly nasty, but since we are searching for a maximum, we know \(\frac{dx}{d\theta} = 0\). Watch the terms disappear!</p>
 		\begin{align}
 		0 &= x\sec^2\theta - \frac{gx^2\sin\theta\sec^3\theta}{v^2} \\
-		x &= \frac{v^2\cot\theta}{g} \\
+		x &= \frac{v^2}{g\tan\theta} \\
 		\end{align}
-		<p>Now that we have an expression for the maximum range, we can back-solve to find the corresponding throwing angle:</p>
+		<p>We have stumbled upon the maximum range<sup>[2]</sup>, but not the angle that will grant us this range. We need to back-solve for \(\theta\) using the equation for \(y\) that was in terms of \(x\)<sup>[3]</sup>.</p>
 		\begin{align}
-		0 &= h + x\tan\theta - \frac{gx^2}{2v^2\cos^2\theta} \\
-		&= h + \left(\frac{v^2\cot\theta}{g}\right)\tan\theta - \frac{g\left(\frac{v^2\cot\theta}{g}\right)^2}{2v^2} \\
-		&= h + \frac{v^2}{g} - \frac{gv^4}{2v^2g^2\sin^2\theta} \\
+		0&= h + \left(\frac{v^2}{g\tan\theta}\right)\tan\theta - \frac{g\left(\frac{v^2}{g\tan\theta}\right)^2}{2v^2\cos^2\theta} \\
+		&= h + \frac{v^2}{g} - \frac{v^2}{2g\sin^2\theta} \\
 		\end{align}
-		<p>Skipping some straightforward algebra:</p>
-		<div class = "answer">$$\theta = \arcsin\left(\sqrt{\frac{v^2}{2\left(gh + v^2\right)}}\right)$$</div>
-		<div class = "calculator">
+		<table>
+			<tbody>
+				<tr>
+					<td align = "right"><div class = "answer">$$\theta = \arcsin\sqrt{\frac{v^2}{2\left(gh + v^2\right)}}$$</div></td>
+					<td align = "left"><div class = "calculator">
 			<form method = "" action = "">
-			\(v\) = throwing velocity = 
+			\(v\) = 
 				<input type = "text" name = "velocity" value = "" size = "6" onChange = cliffAngle()>
 			m/s<br>
-			\(h\) = height of cliff = 
+			\(h\) =  
 			<input type = "text" name = "height" value = "" size = "6" onChange = cliffAngle()>
 			m<br>
-			\(\theta\) = angle = 
+			\(\theta\) =  
 			<input type = "text" name = "angle" value = "" size = "6" onChange = cliffAngle()> 
 		°<br>
 			</form>
-		</div>
-			</li>
-		</ol>
-		<p class = "QED">♛</p>
+		</div></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
 
 <script>
 	function cliffAngle()
@@ -83,50 +83,53 @@
 		fm.angle.value = 180 * (Math.asin(Math.sqrt(Math.pow(v, 2) / (2 * (g * h + Math.pow(v, 2)))))) / Math.PI;
 	}
 </script>
-		<p>How does it work out for Wise Will? Play around with the calculator to find out!</p>
-
-		<h4>2. Throwing golden nuggets down a slope</h4>
-		<hr>
-		<p>You have time-traveled to ancient Egypt, and find yourself at the apex of Khufu's Great Pyramid, whose faces slope at angle \(\beta\) above the horizon. Naturally, another contest is in order: who can throw a golden nugget the farthest?</p> 
+		<p>How do things work out for Wise Will?</p>
+<hr>
+		<h3>Throwing golden nuggets down a slope</h3>
+		
+		<p>You have time-traveled to the apex of Khufu's Great Pyramid, whose faces slope at angle \(\beta\) above the horizon. Naturally, another contest is in order: who can throw a golden nugget the farthest down the pyramid?</p> 
 		<p>No listening to Will this time—straight to the math!</p>
-		<p>First, draw a picture of our scenario. Notice that there are two lines relevant to our diagram: the slope itself and the parabolic trajectory of the ball. If we start at the point \((0, h)\), our two lines are:</p>
+		<img class = "diagram" src = "Projectile motion 2.svg"/>
+		<p>Notice that there are two curves: the slope itself and the parabolic trajectory of the nugget. If we start at the point \((0, h)\), our two curves are</p>
 		\begin{align}
-			y_\text{slope} &= h - \tan\beta x \\
-			y_\text{nugget} &= h + v\sin\alpha t - \frac{1}{2}gt^2 \\
+			y_\text{slope} &= h - x\tan\beta \\
+			y_\text{nugget} &= h + \left(v\sin\alpha\right) t - \frac{1}{2}gt^2 \\
 			\end{align}
-		<p>In addition, we have the equation for the \(x\) component of the nugget's motion:</p>
-			$$x = v\cos\alpha t$$
-		<p>Immediately, we can see that we can eliminate several unknowns: our first two equations contain \(y\) and \(h\), and all three contain \(t\). Combining the first two leads to:</p>
-			$$-\tan\beta x = v\sin\alpha t - \frac{1}{2}gt^2$$
-		<p>Since we are interested in range, having an equation dependent on \(x\) is more useful than having one dependent on \(t\). Similar to our approach in part 1, we can solve for \(t\) using the third equation and then use that expression in a substitution:</p>
+		<p>In addition, we have the equation for the \(x\)-component of the nugget's motion:</p>
+			$$x = \left(v\cos\alpha\right) t$$
+		<p>We can immediately eliminate several unknowns, as our first two equations both contain \(y\) and \(h\), while all three contain \(t\). Combining the first two,</p>
+			$$-x\tan\beta = \left(v\sin\alpha\right) t - \frac{1}{2}gt^2$$
+		<p>Since we are interested in range, having an equation dependent on \(x\) is more useful than having one dependent on \(t\). Similar to our approach in part 1, we can solve for \(t\) using the third equation and then substitute.</p>
 		\begin{align}
 		t &= \frac{x}{v\cos\alpha} \\
-		-\tan\beta x &= v\sin\alpha \frac{x}{v\cos\alpha} - \frac{1}{2}g\left(\frac{x}{v\cos\alpha}\right)^2 \\
+		-x\tan\beta &= v\sin\alpha \left(\frac{x}{v\cos\alpha}\right) - \frac{1}{2}g\left(\frac{x}{v\cos\alpha}\right)^2 \\
 		-\tan\beta &= \tan\alpha - \frac{gx}{2v^2\cos^2\alpha} \\
 		\end{align}
-		<p>Now for our friend differentiation again, this time with respect to \(\alpha\), as our throw speed and the slope angle remain constant from throw to throw:</p>
-		$$0 = \sec^2\alpha - \frac{g}{2v^2}\frac{\frac{dx}{d\alpha}\cos^2\alpha - 2\cos\alpha(-\sin\alpha)x}{\cos^4\alpha}$$
-		<p>We simplify, remembering that we can cancel any terms with \(\frac{dx}{d\alpha}\).</p>
-		\begin{align}
-		\sec^2\alpha &= \frac{gx\sin\alpha\sec^3\alpha}{v^2} \\
-		x &= \frac{v^2\cot\alpha}{g} \\
+		<p>Now for differentiation again, this time with respect to \(\alpha\). Remember that we can remove any terms with \(\frac{dx}{d\alpha}\).</p>
+		
+				\begin{align}
+				0 &= \sec^2\alpha - \frac{g}{2v^2}\left(\frac{\cos^2\alpha\frac{dx}{d\alpha} + 2x\sin\alpha\cos\alpha}{\cos^4\alpha}\right) \\
+		x &= \frac{v^2}{g\tan\alpha} \\
 		\end{align}
-		<p>Looks quite familiar, right? Now let's return to the earlier equation to find the optimal \(\alpha\):</p>
+		<p>Looks familiar, eh? Let's return to the equation without<sup>[4]</sup> \(h\) and \(t\) to find the corresponding \(\alpha\).</p>
 		\begin{align}
-		-\tan\beta &= \tan\alpha - \frac{g\frac{v^2\cot\alpha}{g}}{2v^2\cos^2\alpha} \\
+		-\tan\beta &= \tan\alpha - \frac{g\left(\frac{v^2}{g\tan\alpha}\right)}{2v^2\cos^2\alpha} \\
 		&= \frac{\sin\alpha}{\cos\alpha} - \frac{1}{2\sin\alpha\cos\alpha} \\
 		&= \frac{2\sin^2\alpha - 1}{2\sin\alpha\cos\alpha} \\
 		\end{align}
 
-		<p>Now, recognizing that \(2\sin\cos\theta = \sin 2\theta\) and \(2\sin^2\theta - 1 = \cos 2\theta\):</p>
+		<p>Now, recognizing that \(2\sin\theta\cos\theta = \sin 2\theta\) and \(2\sin^2\theta - 1 = \cos 2\theta\):</p>
 		\begin{align}
 		-\tan\beta &= -\frac{\cos2\alpha}{\sin2\alpha} = -\cot2\alpha \\
-		2\alpha &= \text{arc}\cot\tan\beta \\
+		\alpha &= \frac{\text{arccot}\left(\tan\beta\right)}{2} \\
 		\end{align}
-		<p>From right triangle geometry:</p>
-		<div class = "answer">$$\alpha = \frac{\pi}{4} - \frac{\beta}{2}$$</div>
-
-<div class = "calculator">
+		<img class = "diagram" src = "Projectile motion 3.svg"/>
+		<p>From right triangle geometry, we can see that \(\text{arccot}\left(\tan\theta\right) = \text{arccot}\left(\frac{o}{a}\right) = \frac{\pi}{2} - \theta\). Therefore,</p>
+		<table>
+			<tbody>
+				<tr>
+					<td align = "right"><div class = "answer">$$\alpha = \frac{\pi}{4} - \frac{\beta}{2}$$</div></td>
+					<td align = "left"><div class = "calculator">
 			<form method = "" action = "">
 			\(\beta\) = angle of slope = 
 				<input type = "text" name = "beta" value = "" size = "6" onChange = slopeAngle()>
@@ -135,9 +138,15 @@
 			<input type = "text" name = "alpha" value = "" size = "6" onChange = slopeAngle()>
 		°<br>
 			</form>
-		</div>
-			</li>
-		</ol>
+		</div></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		
+
+
 
 <script>
 	function slopeAngle()
@@ -145,12 +154,13 @@
 		fm = document.forms[1];
 		b = Number(fm.beta.value)
 		fm.alpha.value = 45 - b / 2;
-
 	}
 </script>
-		<h4>3. Throwing seashells towards the sky</h4>
-		<hr>
-		<p>Pop quiz! You are standing on level ground in a world without air resistance. Your goal: throw a ball such that the time it spends in the air is maximized. What angle with respect to the horizon should you choose?</p>
+
+<hr>
+		<h3>Throwing seashells towards the sky</h3>
+		
+		<p>Pop quiz! You are standing on level ground in a world without air resistance. Your goal: throw a ball such that the time it spends in the air is maximized. What angle \(\theta\) with respect to the horizon should you choose?</p>
 		<ol>
 			<li>22.5°</li>
 			<li>45°</li>
@@ -158,62 +168,88 @@
 			<li>90°</li>
 			<li>Depends on the velocity, silly.</li>
 		</ol>
-		<p>Let's see what the math says. Because of gravity, we cannot simply throw a ball and expect it to travel forever. In fact, in our ideal, non-air-resistance world, gravity only affects motion in the vertical axis. Our relevant projectile motion equation is:</p>
+		<p>Let's see what the math says. Thankfully, in our ideal world, gravity only affects motion in the vertical axis. We can thus say</p>
 		$$y = \left(v\sin\theta\right)t - \frac{1}{2}gt^2$$
-		<p>Solving for \(t\):</p>
+		<p>When our seashell lands, its height will be 0. Solving for the flight time \(t\) and then differentiating with respect to \(\theta\), we find</p>
 		\begin{align}
 		t &= \frac{2v\sin\theta}{g} \\
 		\frac{dt}{d\theta} &= \frac{2v\cos\theta}{g} = 0 \\
-		\theta &= \arccos 0 = \frac{\pi}{2} \\
+		
 		\end{align}
+		<div class = "answer">$$\theta = \arccos 0 = \frac{\pi}{2}$$</div>
 		<p>Let's make things fancier. What if you are on a cliff of height \(h\)? Relevant equation:</p>
 		\begin{align}
-		y &= h + v\sin\theta t - \frac{1}{2}gt^2 \\
-		\frac{1}{2}gt^2 &= h + v\sin\theta t \\
-		gt\frac{dt}{d\theta} &= 0 + v\left(\cos\theta t + \frac{dt}{d\theta}\sin\theta\right) \\
+		y &= h + \left(v\sin\theta\right) t - \frac{1}{2}gt^2 \\
+		0 &= v\left(\left(\cos\theta\right) t + \sin\theta\frac{dt}{d\theta}\right) - gt\frac{dt}{d\theta} \\
+
 		\end{align}
-		<p>Perhaps not too surprisingly, once again, we have upon simplifying:</p>
+		<p>Perhaps not too surprisingly,</p>
 		<div class = "answer">$$\theta = \arccos 0 = \frac{\pi}{2}$$</div>
 
 		<p>What about even fancier. What if you are on a downwards-sloping hill of angle \(\beta\)? This time things are a little more involved.</p>
 		\begin{align}
-		y_\text{seashell} &= h + v\sin\alpha t - \frac{1}{2}gt^2 \\
-		y_\text{slope} &= h - \tan\beta x \\
-		x &= v\cos\alpha t \\
+		y_\text{seashell} &= h + \left(v\sin\theta\right) t - \frac{1}{2}gt^2 \\
+		y_\text{slope} &= h - x\tan\beta \\
+		x &= \left(v\cos\theta\right) t \\
 		\end{align}
-		<p>Therefore, our second equation can be rewritten as:</p>
-		$$y_\text{slope} = h - \tan\beta (v\cos\alpha t)$$
-		<p>After which we can combine it with the first:</p>
-		$$v\sin\alpha t - \frac{1}{2}gt^2 = - \tan\beta (v\cos\alpha t)$$
+		<p>Using the techniques we used previously, we can combine our two \(y\) equations and use our \(x\) equation to write any \(x\)s in terms of \(t\):</p>
+		\begin{align}
+		\left(v\sin\theta\right)t - \frac{1}{2}gt^2 &= - x\tan\beta  \\
+		&= - \left(v\cos\theta\right)\left(\tan\beta\right)t  \\
+		\end{align}
 		<p>Solving for \(t\), we conveniently receive:</p>
 		\begin{align}
-		t &= \frac{2v}{g}(\sin\alpha + \tan\beta\cos\alpha) \\
-		\frac{dt}{d\alpha} &= \frac{2v}{g}(\cos\alpha -\tan\beta\sin\alpha) = 0 \\
-		\alpha &= \text{arccot}\left(\tan\beta\right) \\
+		t &= \frac{2v}{g}(\sin\theta + \tan\beta\cos\theta) \\
+		\frac{dt}{d\theta} &= \frac{2v}{g}(\cos\theta -\tan\beta\sin\theta) = 0 \\
+		\theta &= \text{arccot}\left(\tan\beta\right) \\
 		\end{align}
-		<div class = "answer">$$\alpha = \frac{\pi}{2} - \beta$$</div>
-		<div class = "calculator">
+		<table>
+			<tbody>
+				<tr>
+					<td align = "right"><div class = "answer">$$\theta = \frac{\pi}{2} - \beta$$</div></td>
+					<td align = "left"><div class = "calculator">
 			<form method = "" action = "">
 			\(\beta\) = angle of slope = 
 				<input type = "text" name = "beta" value = "" size = "6" onChange = timeAngle()>
 		°<br>
-			\(\alpha\) = throwing angle =   
-			<input type = "text" name = "alpha" value = "" size = "6" onChange = timeAngle()>
+			\(\theta\) = throwing angle =   
+			<input type = "text" name = "theta" value = "" size = "6" onChange = timeAngle()>
 		°<br>
 			</form>
-		</div>
-			</li>
-		</ol>
+		</div></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+
 
 <script>
 	function timeAngle()
 	{
 		fm = document.forms[2];
 		b = Number(fm.beta.value);
-		fm.alpha.value = 90 - b;
+		fm.theta.value = 90 - b;
 
 	}
 </script>
+	<hr>
+	<h3>Notes</h3>
+	<div class = "footnote">
+		<p>
+			<sup>1</sup> We assume that the cliff height \(h\) and our throw speed \(v\) are constant from throw to throw, which makes differentiation with respect to \(\theta\) a lot simpler. 
+		</p>
+		<p>
+			<sup>2</sup> We know our answer must be a maximum because of the geometry of the problem (the projectile travels in a parabola, crossing the \(x\)-axis only once, and the minimum non-negative range intuitively occurs when \(\theta = -\frac{\pi}{2}\)). A more rigorous way to validate the maximum would involve signs analysis or plugging in test values.
+			</p> 
+				<p>
+			<sup>3</sup> We can't use either of the original equations for \(x\) and \(y\) because they are dependent on \(t\), which is still an unknown.
+			</p> 
+			<p>
+				<sup>4</sup> Similar to [3]. Remember, we don't actually know \(h\) when we throw the nugget; we just know there will be a time when both the nugget and slope have traveled a vertical distance \(h\) away from us.
+			</p>
+	</div>
 	</div>
 
 	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>

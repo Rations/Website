@@ -5,7 +5,7 @@
     <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
     <meta name = "Author" content = "Owen Zhang"/>
     <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: Big Ball and Small Ball</title>
+    <title>Big Ball and Small Ball</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
@@ -30,27 +30,35 @@
 			<li>The mass \(M\) of the big ball must be much, much greater than the mass \(m\) of the small ball.</li>
 			<li>There is a microscopic gap between the two balls as they fall.</li>
 		</ol>
-		<p>To start, we drop the balls from a height such that both balls fall \(h_0\) before the big ball hits the ground. We can thus find the pre-collision speed \(v_i\) of the balls using energy conservation:</p>
+		<p>To start, we drop the balls from a height such that both balls fall \(h_0\) before the big ball hits the ground. We can thus find the pre-collision speed \(v_0\) of the balls using energy conservation:</p>
 		\begin{align}
-		(m + M)gh_0 &= \frac{1}{2}(m + M){v_i}^2 \\
-		v_i &= \sqrt{2gh_0} \\
+		\left(m + M\right)gh_0 &= \frac{1}{2}\left(m + M\right){v_0}^2 \\
+		v_0 &= \sqrt{2gh_0} \\
 		\end{align}
-		<p>Note that even though the balls start at different heights, as one is stacked on the other, both will fall and thus accelerate over the same distance \(h_0\). What follows is two collisions:</p>
-		<h4>The first collision</h4>
+		<img class = "diagram_m" src = "Superball 1.svg"/>
+		<p>Note that even though the balls start at different heights, as one is stacked on the other, both will fall and thus accelerate over the same distance \(h_0\). What follows is two collisions.</p>
 		<hr>
-		<p>The big ball hits the ground. Since we have assumed that all collisions are elastic, it will rebound upwards instantaneously with the same speed relative to the Earth<sup>1</sup>, \(\sqrt{2gh_0}\). Thanks to the microscopic gap between the two balls, there is a single moment after this first collision during which the big ball is moving upwards while the small ball is still moving downwards at \(\sqrt{2gh_0}\).</p>
-		<h4>The second collision</h4>
+		<h3>The first collision</h3>
+		
+		<p>The big ball hits the ground. Since we have assumed that all collisions are elastic, it will rebound upwards instantaneously with the same speed relative to the Earth<sup>1</sup>, \(v_0\). Thanks to the microscopic gap between the two balls, there is a single moment after this first collision during which the big ball is moving upwards while the small ball is still moving downwards at \(v_0\).</p>
+		<img class = "diagram_m" src = "Superball 2.svg"/>
 		<hr>
-		<p>Imagine that you are a bacterium on the top of the big ball looking upwards. From this perspective, the small ball appears to be moving towards you at \(2\sqrt{2gh_0}\) because you are both moving towards each other at \(\sqrt{2gh_0}\).</p>
+		<h3>The second collision</h3>
+		
+		<p>Imagine that you are a bacterium on the top of the big ball looking upwards. From this perspective, the small ball appears to be moving towards you at \(2v_0\) because you are both moving towards each other at \(v_0\).</p>
+		<img class = "diagram_m" src = "Superball 3.svg"/>
 		<p>This thought occurs to you in the single moment when the balls are moving towards each other. One moment later, you have been squished by the small ball.</p>
 		<p>So what does happen when the big ball is <em>much, much, much</em> more massive than the small ball? Well, when something massive—like a truck—collides with a miniscule object—like a bug—the massive object hardly loses any momentum, while the less massive (and less fortunate) object experiences a gigantic, often fatal change in momentum.</p>
-		<p>In fact, this exact scenario happened during the first collision: when the big ball collided with the Earth, the Earth <em>technically</em> did budge, but because \(m_\text{earth} \gg M\), this budge was hardly noticeable. The same is true of the collision between the balls. Since \(m \ll M\), the small ball will bounce upwards from the big ball with the same speed <em>relative to the big ball</em><sup>1</sup>, \(2\sqrt{2gh_0}\). In essence, the big ball is like an "earth" to the small ball<sup>2</sup>.</p>
-		<p>But that is all from your perspective as a bacterium! You yourself are moving upwards relative to the Earth at \(\sqrt{2gh_0}\). If the small ball is moving away from you at \(2\sqrt{2gh_0}\), it is thus moving away from the Earth at \(3\sqrt{2gh_0}\), provided this all occurs in the vertical direction.</p>
+		<p>In fact, this exact scenario happened during the first collision: when the big ball collided with the Earth, the Earth <em>technically</em> did budge, but because \(m_\text{earth} \gg M\), this budge was hardly noticeable. The same is true of the collision between the balls. Since \(m \ll M\), the small ball will bounce upwards from the big ball with the same speed <em>relative to the big ball</em><sup>1</sup>, \(2v_0\). In essence, the big ball is like an "earth" to the small ball<sup>2</sup>.</p>
+		<img class = "diagram_m" src = "Superball 4.svg"/>
+		<p>But that is all from your perspective as a bacterium! You yourself are moving upwards relative to the Earth at \(v_0\), so the small ball is moving away <em>from the Earth</em> at \(v_0 + 2v_0 = 3v_0\).</p>
+		<img class = "diagram_m" src = "Superball 5.svg"/>
 		<p>Now we can return to energy conservation to find the final height \(h\) of the small ball.</p>
 		$$\frac{1}{2}m\left(3\sqrt{2gh_0}\right)^2 = mgh$$
 		<div class = "answer">$$h = 9h_0$$</div>
-		<h4>Notes</h4>
 		<hr>
+		<h3>Notes</h3>
+		
 		<div class = "footnote">
 			<p><sup>1</sup> For more-convincing treatment of this fact, visit <a href = "trivialDerivations.html#relativeVelocityReversal">this section</a> of the Trivial Derivations page. In short, the relative velocity of two objects reverses after they collide elastically.</p>
 			<p><sup>2</sup> And, similar to the truck in the truck-bug scenario, the momentum of the big ball will hardly be affected. The big ball will lose almost no speed and thus almost rise to \(h_0\).</p>

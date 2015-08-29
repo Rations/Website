@@ -5,7 +5,7 @@
     <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
     <meta name = "Author" content = "Owen Zhang"/>
     <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: Banking Car</title>
+    <title>Banking Car</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
@@ -23,8 +23,8 @@
 		<h2>Banking Car</h2></div>
 	<div class = "section_subpage">
 		<p>While driving your Prius, you encounter a turn. A law-abiding citizen, you obey the speed limit and rest assured that you will complete the turn without issue. But what if you were an extreme driver? Would you really be risking your safety by rounding the turn at an improper speed?</p>
-		<h4><em>Slow down, you move too fast!</em></h4>
 		<hr>
+		<h3><em>Slow down, you move too fast!</em></h3>
 		<p>Some background info: Many turns in roads are banked, or sloped. Jumping into the physics will help us see why.</p>
 		<p>There are three main forces acting on our car as it rounds the turn: the gravitational force \(F_g\), the normal force \(N\), and the static friction force \(f\).</p>
 		<p>To stay on the banked turn, this combination of forces must satisfy two conditions:</p>
@@ -44,8 +44,11 @@
 			N &= \frac{mg}{\cos\theta - \mu\sin\theta} \\
 			\frac{mv^2}{r} &= \frac{mg\left(\sin\theta + \mu\cos\theta\right)}{\cos\theta - \mu\sin\theta} \\
 			\end{align}
-			<div class = "answer">$$v_\text{max} = \sqrt{\frac{rg\left(\sin\theta + \mu\cos\theta\right)}{\cos\theta - \mu\sin\theta}}$$</div>
-		<div class = "calculator">
+			<table>
+			<tbody>
+				<tr>
+					<td align = "right"><div class = "answer">$$v_\text{max} = \sqrt{\frac{rg\left(\sin\theta + \mu\cos\theta\right)}{\cos\theta - \mu\sin\theta}}$$</div></td>
+					<td align = "left"><div class = "calculator">
 			<form method = "" action = "">
 			\(r\) = 
 				<input type = "text" name = "radius" value = "" size = "6" onChange = vmax()>
@@ -60,10 +63,11 @@
 			<input type = "text" name = "velocity" value = "" size = "6" onChange = vmax()>
 			m/s<br>
 			</form>
-		</div>
-			</li>
-		</ol>
-
+		</div></td>
+				</tr>
+			</tbody>
+		</table>
+	
 		<script>
 			function vmax()
 			{
@@ -75,8 +79,9 @@
 				fm.velocity.value = r * g * (Math.sin(theta) + mu * Math.cos(theta)) / (Math.cos(theta) - mu * Math.sin(theta));
 			}
 		</script>
-		<h4><em>Speed up, you . . . </em>move too slow?</h4>
 		<hr>
+		<h3><em>Speed up, you . . . </em>move too slow?</h3>
+		
 		<p>Naturally you might wonder, <em>is there a minimum speed?</em></p>
 		<p>Probably the easiest way to justify the fact that a minimum speed limit could exist is thinking about a stationary car on a steep slope—the most extreme case of "slow-moving car" there is. You could easily imagine this parked car slipping. Indeed, the only thing that can prevent it from doing so is static friction.</p>
 		<p>Again, drawing a FBD helps:</p> 
@@ -88,9 +93,11 @@
 			N &= \frac{mg}{\cos\theta + \mu\sin\theta} \\
 			\frac{mv^2}{r} &= \frac{mg(\sin\theta - \mu\cos\theta)}{\cos\theta + \mu\sin\theta} \\
 			\end{align}
-			<div class = "answer">$$v_\text{min} = \sqrt{\frac{rg(\sin\theta - \mu\cos\theta)}{\cos\theta + \mu\sin\theta}}$$</div>
-
-		<div class = "calculator">
+			<table>
+			<tbody>
+				<tr>
+					<td align = "right"><div class = "answer">$$v_\text{min} = \sqrt{\frac{rg(\sin\theta - \mu\cos\theta)}{\cos\theta + \mu\sin\theta}}$$</div></td>
+					<td align = "left"><div class = "calculator">
 			<form method = "" action = "">
 			\(r\) = 
 				<input type = "text" name = "radius" value = "" size = "6" onChange = vmin()>
@@ -105,9 +112,10 @@
 			<input type = "text" name = "velocity" value = "" size = "6" onChange = vmin()>
 			m/s<br>
 			</form>
-		</div>
-			</li>
-		</ol>
+		</div></td>
+				</tr>
+			</tbody>
+		</table>
 
 		<script>
 			function vmin()
@@ -127,8 +135,8 @@
 				}
 			}
 		</script>
-		<h4>The Invincible \(\mu\)</h4>
 		<hr>
+		<h3>The Invincible \(\mu\)</h3>
 		<p>Wait—you've seen cars parked successfully on slopes. Clearly, it seems possible for a friction force to counteract gravity entirely. Examining a FBD, we can easily solve for the smallest maximum static friction force \(f_\text{max} = \mu N\) and static friction coefficient \(\mu\) we need given a bank of angle \(\theta\).</p>
 		<img class = "diagram" src = "Car 3.svg"/>
 		<p>If the car is in equilibrium,</p>
@@ -138,9 +146,9 @@
 		\end{align}
 		<div class = "answer">$$\mu = \tan\theta$$</div>
 		<p>. . . meaning if \(\mu \geq \tan\theta\), we need not worry about a minimum speed at all!</p>
-
-		<h4>What about flat roads?</h4>
-		<hr>
+<hr>
+		<h3>What about flat roads?</h3>
+		
 		<p>Due to costs, lagging infrastructure, practicality issues, etc., not all roads are banked. How do turns on flat roads compare to their banked counterparts? Again, a FBD makes determining our force equations easy:</p>
 		<img class = "diagram" src = "Car 4.svg"/>
 		<p>Knowing that our car is in uniform circular motion on one plane,</p>
@@ -164,8 +172,6 @@
 			times greater than \(v_\text{max, flat}\).<br>
 			</form>
 		</div>
-			</li>
-		</ol>
 
 		<script>
 			function vdiff()

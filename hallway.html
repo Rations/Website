@@ -5,7 +5,7 @@
 	<meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
 	<meta name = "Author" content = "Owen Zhang"/>
 	<link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-	<title>Raskolnikov's Realm: The Hallway Problem</title>
+	<title>Hallway Problem</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">  
@@ -28,7 +28,7 @@
 			<blockquote>You are an architect. Your client, living in Flatland, wants a building designed with a long 3-foot-wide corridor that opens into a larger hallway. You must design the hallway with the minimum width \(w\) that will allow the inhabitants to move a 24-foot-long pole down the corridor and turn it into the hallway. The corridor is perpendicular to the hallway. Since this is Flatland, the pole cannot be tilted up. The pole is rigid. How wide must the hallway be?</blockquote>
 
 			<p>This is perhaps the simplest form of a famous open problem called the <a href = "https://en.wikipedia.org/wiki/Moving_sofa_problem">moving sofa problem</a>. Fortunately, our version can be solved using a few simple geometric observations and then elementary calculus.</p>
-			<img class = "diagram" src = "Hallway diagram.svg"/>
+			<img class = "diagram_m" src = "Hallway diagram.svg"/>
 
 			<p>Notice the two small triangles in the diagram. They are similar, so we can use some ratios to find an equation for \(h\).</p>
 			\begin{align}
@@ -51,10 +51,9 @@
 			$$h_\text{min} = 24\sin\left(\frac{\pi}{3}\right) - 3\tan\left(\frac{\pi}{3}\right)$$
 			<div class = "answer">$$h_\text{min} = 9\sqrt{3}$$</div>
 			<p>So as long as our hallway is wider than \(9\sqrt{3} \text{ m}\), we should be safe.</p>
-			<p class = "QED">♛</p>
-
-			<h4>The General Case</h4>
-			<hr>
+<hr>
+			<h3>The General Case</h3>
+		
 			<p>I thought about whether showing you the derivation of the general case would be worthwhile. Ultimately, I decided yes—though the math is the same, the final solution takes on a form quite different from our nice answer in part 1. This time we shall skip some steps:</p>
 			\begin{align}
 			h &= \frac{a(l - x)}{x} = l\sin\theta - w\tan\theta \\
@@ -77,7 +76,6 @@
 						m<br>
 					</form>
 				</div>
-				<p class = "QED">♛</p>
 			</li>
 		</ol>
 

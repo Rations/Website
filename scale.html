@@ -5,7 +5,7 @@
     <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
     <meta name = "Author" content = "Owen Zhang"/>
     <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: Jumping on a Scale</title>
+    <title>Jumping on a Scale</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
@@ -70,10 +70,11 @@
 			 &= \frac{1}{2}\left(1 \pm \sqrt{1 + \frac{2hk}{mg}} \right) \\
 			\end{align}
 		<p>To reiterate, our new maximum reading is \(c\) times greater than our base maximum reading, which in turn is twice as great as the actual mass. Therefore:</p>
-			<div class = "answer">$$R_\text{max} = c\left(2m\right) = m\left(1 + \sqrt{1 + \frac{2hk}{mg}}\right)$$</div>
-		<p class = "QED">♛</p>
-
-		<div class = "calculator">
+		<table>
+			<tbody>
+				<tr>
+					<td align = "right"><div class = "answer">$$R_\text{max} = c\left(2m\right) = m\left(1 + \sqrt{1 + \frac{2hk}{mg}}\right)$$</div></td>
+					<td align = "left"><div class = "calculator">
 			<form method = "" action = "">
 				\(m\) = mass = 
 				<input type = "text" name = "mass" value = "" size = "6" onChange = maxReading()>
@@ -88,8 +89,11 @@
 				<input type = "text" name = "reading" value = "" size = "6" onChange = maxReading()>
 				kg<br>
 			</form>
-		</div></li>
-		</ol>
+		</div></td>
+				</tr>
+			</tbody>
+		</table>
+		
 
 		<script>
 		function maxReading()

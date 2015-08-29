@@ -5,7 +5,7 @@
     <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
     <meta name = "Author" content = "Owen Zhang"/>
     <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: Rolling and Slipping</title>
+    <title>Rolling and Slipping</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
@@ -22,14 +22,15 @@
 		<img class = "divider_image" src = "Rolling and slipping.svg"/>
 		<h2>Rolling and Slipping</h2></div>
 	<div class = "section_subpage">
-		<h4>The bowling ball</h4>
-		<hr>
+		<h3>The bowling ball</h3>
+		
 		<p>You're bowling when physics strikes again! This time, the challenge is to analyze the motion of a bowling ball as it travels down the alley.</p>
 		<p>This is a nice little scenario because it really shows some of the parallels between linear and rotational motion—and how you can analyze them separately. If you think you understand the basic differences between linear and rotational motion well enough, feel free to skip this section.</p>
-
-		<h4>Linear vs. rotational</h4>
-			<hr>
+<hr>
+		<h3>Linear vs. rotational</h3>
 		<p>If you haven't ever done so, it's worth your time to consider the basic parallels between linear and rotational motion. This chart might help!</p>
+	<details>
+		<summary>Expand/collapse</summary>
 		<table border = "1px" style = "border-style: solid; border: 2px; border-color: black; margin: 0px auto">
 			<thead>
 				<title>Test</title>
@@ -78,33 +79,34 @@
 			</tr>
 		</tbody>
 		</table>
+	</details>
+		<hr>
+		<h3>Rolling without slipping</h3>
 		
-		<h4>Rolling without slipping</h4>
-		<hr>
-		<p>We can proceed to analyze the linear and rotational motion of the ball separately. First, we must make sure that we understand the conditions behind rolling without slipping.</p>
-		<img class = "diagram" src = "Rolling and slipping 2.svg"/>
+		<p>What are the characteristics of a disk that's rolling without slipping?</p>
 		<ol>
-			<li>When an object rolls without slipping, it is moving as a whole, so its center of mass has a velocity \(v_\text{CM}\).</li>
-			<li>If a rigid object, like a thin disk, is rotating, every point along its edge is moving at the same velocity \(v_\text{tan}\) <em>with respect to the center of mass</em>.</li>
-			<li>If the object is not slipping, there must be no movement between its bottommost point and the ground. Thus, its bottommost point has \(v = 0\) <em>relative to the ground</em> even though it has a velocity \(v_\text{tan}\) <em>relative to the center of mass</em>. It follows that, in order for the object to be rolling without slipping, \(v_\text{CM} = v_\text{tan}\).</li>
+			<li>It is moving translationally as a whole, so its CM has a velocity \(v\).</li>
+			<li>Every point along its edge moves at the same velocity \(v_\text{tan}\) <em>with respect to the CM</em><sup>1</sup>.</li>
+			<li>There is no slipping, or relative motion, between the bottom point and the ground. Thus, the bottom point has \(v = 0\) relative to the ground, but \(v_\text{tan}\) relative to the CM. To satisfy these conditions, \(v_\text{CM} = v_\text{tan}\) relative to the ground<sup>2</sup>.</li>
 		</ol>
-		<p><sup>1</sup> If we want to find the velocity \(v\) of any point <em>relative to the Earth</em>, we can treat the contact point between the object and the ground as our center of rotation. Because it is stationary with respect to the Earth, the velocity \(v_\text{tan}\) of any point relative to it will be the same as the velocity \(v\) of that point relative to the Earth.</p>
-		<p>Since our object is rigid, points far away from the center of rotation (i.e., at the top of the object) will have a higher \(v_\text{tan}\) than those closer to the ground. In a small moment of time, the top of the ball moves twice as far as the center of mass; hence, \(v_\text{top} = 2v_\text{CM}\).</p>
-
-		<h4>Bowling ball motion</h4>
-		<hr>
-		<p>We can analyze rotational motion separately from linear motion. When the bowling ball first contacts the alley, it is sort of sliding and spinning simultaneously, but in a way such that it is not exactly <em>rolling</em> per se.</p>
-		<p>At this point, if you examine high-speed camera footage of the bowling ball, you will notice that the ball and floor are moving relative to each other (i.e., the ball is sliding). There is also a normal force \(N\) balancing the weight \(Mg\) of the ball.</p>
-		<p>Therefore, there will be kinetic friction between the two. But since friction is applied at the edge of the ball, a distance \(R\) from the center of mass, it also functions as a torque:</p>
+		<img class = "diagram_m" src = "Rolling and slipping 2.svg"/>
+		
+		<p>Relative to the ground, the bottom point looks naturally looks like the instantaneous pivot point of the disk, as it is stationary. Because the disk is rigid, points far away from the pivot (i.e., points at the top of the disk) will have a higher \(v\) relative to the ground than points closer to the ground. Specifically, in a small moment of time, the top of the disk, which is twice as far from the pivot, moves twice as far as the center of mass does; hence, \(v_\text{top} = 2v_\text{CM}\).</p>
+<hr>
+		<h3>Bowling ball motion</h3>
+		
+		<p>We can analyze rotational motion separately from linear motion. When the bowling ball first contacts the alley, it is sliding, but quickly begins spinning as well. All this time, there is also a normal force \(N\) balancing the weight \(Mg\) of the ball.</p>
+		<p>Thus, the conditions for kinetic friction are satisfied. Thus, there will be a friction force / torque applied at the edge of the disk, a distance \(R\) from the CM.</p>
 		\begin{align}
 		F &= \mu Mg \\
 		\tau &= \mu MgR \\
 		\end{align}
 		
-		<p>We know the ball will be rolling nicely—without slippage—when the velocity \(v_{\text{CM}}\) of its center of mass is the same as the tangential velocity \(v_\text{tan}\) of a point on its edge. Remember, if we know the angular velocity \(\omega\) of the ball, we can find \(v_\text{tan}\) thanks to the radian relationship \(\theta = \frac{s}{r}\), which implies \(\omega = \frac{v_\text{tan}}{r}\):</p>
+		<p>The ball will be rolling without slipping when \(v_{\text{CM}} = v_\text{tan}\), both relative to the ground. Remember, if we know the angular velocity \(\omega\) of the ball, we can find \(v_\text{tan}\) thanks to the radian relationship \(\theta = \frac{s}{r}\), which implies \(\omega = \frac{v_\text{tan}}{r}\):</p>
+		<img class = "diagram" src = "Rolling and slipping 1.svg"/>
 		<p>We can easily find the linear and angular accelerations. If the direction the ball is moving in is positive and the clockwise direction is positive:</p>
-		$$a_{\text{CM}} = -\mu Mg$$
 		\begin{align}
+		a_{\text{CM}} &= -\mu g \\
 		\sum \tau &= I\alpha \\
 		\mu Mgr &= \left(\frac{2}{5}MR^2\right)\alpha \\
 		\alpha &= \frac{5\mu g}{R} \\
@@ -128,23 +130,32 @@
 		<p>We can use basic kinematics again to find the displacement at that time:</p>
 		$$x = x_0 + v_0t + \frac{1}{2}at^2$$
 		$$x = v_0\left(\frac{2v_0}{7\mu g}\right) -\frac{1}{2}\mu g \left(\frac{2v_0}{7\mu g}\right)^2$$
-		<div class = "answer">$$x = \frac{12{v_0}^2}{49\mu g}$$</div>
-<div class = "calculator">
+		<table>
+			<tbody>
+				<tr>
+					<td align = "right"><div class = "answer">$$x = \frac{12{v_0}^2}{49\mu g}$$</div></td>
+					<td align = "left"><div class = "calculator">
 			<form method = "" action = "">
-			\(v_0\) = initial velocity =
+			\(v_0\) = 
 				<input type = "text" name = "v_i" value = "" size = "6" onChange = rollingSlipping()>
 			m/s <br>
-			\(\mu\) = coefficient of kinetic friction = 
+			\(\mu\) =  
 			<input type = "text" name = "mukf" value = "" size = "6" onChange = rollingSlipping()> 
 			<br>
 			\(x\) = 
 			<input type = "text" name = "distance" value = "" size = "6" onChange = rollingSlipping()>
 			m <br>
-			\(v\) = final velocity = 
+			\(v\) =  
 			<input type = "text" name = "v_f" value = "" size = "6" onChange = rollingSlipping()>
 			m/s<br>
 			</form>
-		</div>
+		</div></td>
+				</tr>
+			</tbody>
+		</table>
+
+		
+
 		<script>
 			function rollingSlipping()
 			{
@@ -156,6 +167,13 @@
 				fm.v_f.value = (5 * v_0) / 7;
 			}
 		</script>
+		<hr>
+		<h3>Notes</h3>
+		<div class = "footnote">
+<p><sup>1</sup> Because our disk is symmetric about the origin and rigid. 
+</p>
+<p><sup>2</sup> If we want to find the velocity \(v\) of any point <em>relative to the Earth</em>, we can treat the contact point between the object and the ground as our center of rotation. Because it is stationary with respect to the Earth, the velocity \(v_\text{tan}\) of any point relative to it will be the same as the velocity \(v\) of that point relative to the Earth.</p>
+		</div>
 	</div>
 	
 	

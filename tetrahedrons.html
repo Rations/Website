@@ -5,7 +5,7 @@
     <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
     <meta name = "Author" content = "Owen Zhang"/>
     <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: Tetrahedron Angles</title>
+    <title>Tetrahedron Angles</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
@@ -23,23 +23,26 @@
 		<h2>Tetrahedron Angles</h2></div>
 	<div class = "section_subpage">
 	<p>A pyramid with all equilateral-triangle faces, the regular tetrahedron is, in my opinion, one of the most aesthetically appealing solids. In fact, it appears quite frequently in nature.</p>
-	<h4>The face-vertex-edge angle</h4>
 	<hr>
+	<h3>The face-vertex-edge angle</h3>
+	
 	<p>Divide the base triangle into three smaller triangles formed by intersecting the three angle bisectors at the center. By 30-60-90-triangle properties, we have:</p>
 	\begin{align}
 	b &= 2 \left(\frac{0.5a}{\sqrt{3}}\right) = \frac{a\sqrt{3}}{3} \\
 	\alpha &= \arccos\left(\frac{b}{a}\right) = \arccos \left(\frac{\sqrt{3}}{3}\right) \\
 	\end{align}
 	<div class = "answer">$$\alpha \approx 54.7°$$</div>
-	<h4>The face-edge-face angle</h4>
 	<hr>
+	<h3>The face-edge-face angle</h3>
+	
 	<p>Draw a plane through one of the vertices. From 30-60-90-triangle properties again, we have:</p>
 	$$h = \frac{a\sqrt{3}}{2}$$
 	<p>Now we have formed a triangle with side lengths \(a\), \(h\), and \(h\). Using geometry to find the angle in question is then easy. Here is one way: consider the sub-triangle with base \(0.5a\) and hypotenuse \(h\).</p>
 	$$\beta = \arcsin \left(\frac{0.5a}{h}\right) = \arcsin \left(\frac{1}{\sqrt{3}}\right)$$
 	<div class = "answer">$$\theta \approx 70.5°$$</div>
-	<h4>The tetrahedral angle</h4>
 	<hr>
+	<h3>The tetrahedral angle</h3>
+	
 	<p>Credit for this extremely elegant approach goes to W. E. Brittin of the University of Colorado, Boulder.</p>
 	<p>Connect the tetrahedron's centroid to its vertices using four vectors with length \(v\): \(\mathbf{v}_1\), \(\mathbf{v}_2\), \(\mathbf{v}_3\), \(\mathbf{v}_4\). (Alternatively, imagine grabbing four identical angry arrows by the tail and having them repel from each other as far as they can.) Thus:</p>
 	<ul>

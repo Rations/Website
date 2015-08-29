@@ -5,7 +5,7 @@
     <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
     <meta name = "Author" content = "Owen Zhang"/>
     <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm: Escape Velocity</title>
+    <title>Escape Velocity</title>
 	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
 	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type = "text/JavaScript">    
@@ -23,28 +23,34 @@
 		<img class = "divider_image" src = "Escape Velocity.svg"/>
 		<h2>Escape Velocity</h2><a href = "physicsFun.html#howTo"><img class = "icon_right" src = "Calc.svg"/></a></div>
 	<div class = "section_subpage">
-		<p>Even if you jump as hard as you can, you immediately fall back to the Earth thanks to gravity. But given enough speed, it is clearly possible for a spaceship, missile, or <a href = "https://en.wikipedia.org/wiki/Operation_Plumbbob#Propulsion_of_steel_plate_cap">perhaps manhole cover</a> to escape the gravitational field of the Earth. How can we find this speed?</p>
-		<p>The simplest way is using energy conservation. Suppose we have a particle of mass \(m\) sitting on a planet of mass \(M\). We would like to find the gravitational potential energy of \(m\).</p>
-		<p>Potential energy calculations are flexible: you are free to set \(PE = 0\) at any arbitrary point \(O\) that's most useful to you. Then, if you have an object at another point \(P\), the object's \(PE\) at \(P\) is equal to the work you would have to do on the object to move it from the first point (\(O\)) to the second point (\(P\)).</p>
-		<p>When we are working with objects that are very small in relation to the Earth in the reference frame of the Earth, we often set \(PE = 0\) at the Earth's surface.</p>
-		$$F_g = G\frac{m_1m_2}{r^2}$$
-		<p>Recall Newton's law of universal gravitation. When dealing with things of astronomical proportions, it is often convenient to set \(PE = 0\) at a distance \(\infty\) away from the object. This makes sense: when two objects are infinitely apart, there is essentially no gravitational force between them (as \(r \to \infty\), \(F_g \to 0\)), so the object does not feel the urge to "fall back" to anywhere.</p>
+		<p>Even if you jump as hard as you can, you immediately land back on Earth thanks to gravity. But given enough speed, it is clearly possible for a spaceship, missile, or <a href = "https://en.wikipedia.org/wiki/Operation_Plumbbob#Propulsion_of_steel_plate_cap">quasi–manhole cover</a> to escape the gravitational pull of the Earth. How can we find this speed?</p>
+		<hr>
+		<h3>Gravitational potential energy</h3>
+		<p>The simplest way is to use energy conservation. To do this, we need a general expression for gravitational potential energy.</p> 
+		<p>Remember that potential energy is a relative measurement: you can set \(PE = 0\) at any origin \(O\) that's useful to you—as long as you calculate your other potential energy measurements with respect to \(O\). When we are working with small objects in the reference frame of the Earth, it is useful to set \(PE = 0\) at the Earth's surface. But when dealing with things of astronomical proportions, it is often convenient to set \(PE = 0\) at a distance \(\infty\) away from the source of gravity (e.g., a planet).</p>
+		<img class = "diagram" src = "Escape velocity 1.svg"/>
+		<p>This makes sense: when two objects are infinitely apart, there is no attraction between them (as \(r \to \infty\), \(F_g \to 0\)).</p>
+		<p>Suppose we have a particle of mass \(m\) sitting on a planet of mass \(M\). We know that if a mass is at some point \(R\), its gravitational potential energy \(U_g\) is equal to the work you would have to do to move it from \(O\) (i.e., \(\infty\)) to \(R\). Using Newton's law of universal gravitation, we can find the force between \(m\) and \(M\), and thus \(U_g\).</p>
 		\begin{align}
 			U_g &= \int_{r_0}^{r} F_gdr \\
 				&= \int_{\infty}^{R} G\frac{Mm}{r^2}dr \\
 				&= GMm \left.\left(-\frac{1}{r}\right|_{\infty}^{R}\right) \\
-				&= GMm \left(-\frac{1}{R} - 0\right) \\
 				&= -\frac{GMm}{R} \\ 
 		\end{align}
-		<p>Now, at launch, the particle must possess at least as much kinetic energy as potential energy; otherwise, sooner or later, it would "fall back" to the planet. Somehow, it must make its way to a point where its potential energy is zero:</p>
+		<hr>
+		<h3>Escape velocity</h3>
+		<p>We assume energy is conserved throughout the object's flight. At launch, the object has both kinetic and potential energy. It needs to have enough total energy to reach a point where its potential energy is zero in order not to "fall back" towards the planet:</p>
 		$$KE_0 + PE_0 = KE$$
-		<p>It doesn't matter what velocity we have at the end. We should be alright as long as there is no potential energy. We are trying to find the cutoff, the velocity that will just allow us to escape the gravitational field of the planet, so we can set the final velocity \(v\), and thus \(KE\), to zero.</p>
+		<p>It doesn't matter what velocity we have at the end. We should be alright as long as there is no potential energy. We are trying to find the cutoff, the minimum velocity that will allow the object to escape, so we can set \(v\) and thus \(KE\) to zero.</p>
 		\begin{align}
 			KE_0 + PE_0 &= 0 \\
 			\frac{1}{2}m{v_e}^2 - \frac{GMm}{R} &=  \\
 		\end{align}
-		<div class = "answer">$$v_e = \sqrt{\frac{2GM}{R}}$$</div>
-		<div class = "calculator">
+		<table>
+			<tbody>
+				<tr>
+					<td align = "right"><div class = "answer">$$v_e = \sqrt{\frac{2GM}{R}}$$</div></td>
+					<td align = "left"><div class = "calculator">
 			<form method = "" action = "">
 			\(M\) = planet mass =
 				<input type = "text" name = "Mass" value = "" size = "6" onChange = escapeVelocity()>
@@ -56,7 +62,13 @@
 			<input type = "text" name = "v_f" value = "" size = "6" onChange = escapeVelocity()>
 			m/s<br>
 			</form>
-		</div>
+		</div></td>
+				</tr>
+			</tbody>
+		</table>
+
+		
+		
 		<script>
 			function escapeVelocity()
 			{
@@ -68,21 +80,26 @@
 			}
 		</script>
 		<p>Note that \(v_e\) is independent of the direction of launch or the mass of the object.</p>
-		<h4>The case of two planets</h4>
 		<hr>
-		<p>What if we are transported to a binary star system, where two stars orbit about each other? Would the escape velocity of a mass on the surface of one of the stars be different?</p>
-		<p>Fortunately, the problem is not too difficult to tackle. It turns out that we can analyze the gravitational potential energy the mass in relation to each of the stars separately. If star 1 is the one on which whose surface the mass rests:</p>
+		<h3>The case of two planets</h3>
+		
+		<p>What if we are transported to a binary planet system, where two planets orbit about each other? Would the escape velocity of a mass on the surface of one of the planets be different?</p>
+		<img class = "diagram" src = "Escape velocity 2.svg"/>
+		<p>Fortunately, the problem is not too difficult to tackle. It turns out that we can analyze the gravitational potential energy the mass in relation to each of the planets separately. If the object rests on planet 1,</p>
 		$$U_{1} = -\frac{GM_1m}{R}$$
-		<p>In other words, it is identical to the expression in the previous problem.</p>
-		<p>Now we can find the potential energy of the mass in relation to the second star. All we need to know is the distance \(d\) between the mass and the center of star 2:</p>
+		<p>. . . just like in the previous problem.</p>
+		<p>Now we must find \(U_2\). All we need to know is the distance \(D\) between the mass and the center of planet 2:</p>
 		$$U_{2} = -\frac{GM_2m}{D}$$
-		<p>Now, to find the total potential energy:<p>
+		<p>Now, setting total energy to be zero again,<p>
 			\begin{align}
 			KE_0 + U_1 + U_2 &= 0 \\
 			\frac{1}{2}m{v_e}^2 - \frac{GM_1m}{R} -\frac{GM_2m}{D} &= \\
 			\end{align}
-			<div class = "answer">$$v_e = \sqrt{2G\left(\frac{M_1}{R} + \frac{M_2}{D}\right)}$$</div>
-			<div class = "calculator">
+			<table>
+			<tbody>
+				<tr>
+					<td align = "right"><div class = "answer">$$v_e = \sqrt{2G\left(\frac{M_1}{R} + \frac{M_2}{D}\right)}$$</div></td>
+					<td align = "left"><div class = "calculator">
 			<form method = "" action = "">
 			\(M_1\) = planet 1 mass =
 				<input type = "text" name = "Mass" value = "" size = "6" onChange = escapeVelocity2()>
@@ -90,17 +107,23 @@
 			\(M_2\) = planet 2 mass =
 				<input type = "text" name = "Mass2" value = "" size = "6" onChange = escapeVelocity2()>
 			kg<br> 
-			\(R\) = planet radius = 
+			\(R\) = planet 1 radius = 
 			<input type = "text" name = "radius" value = "" size = "6" onChange = escapeVelocity2()> 
 			m<br>
-			\(D\) = dist. between mass and planet 2 = 
+			\(D\) = dist. between object and planet 2 = 
 			<input type = "text" name = "distance" value = "" size = "6" onChange = escapeVelocity2()> 
 			m<br>
 			\(v_e\) =
 			<input type = "text" name = "v_f" value = "" size = "6" onChange = escapeVelocity2()>
 			m/s<br>
 			</form>
-		</div>
+		</div></td>
+				</tr>
+			</tbody>
+		</table>
+		
+			
+			
 		<script>
 			function escapeVelocity2()
 			{
