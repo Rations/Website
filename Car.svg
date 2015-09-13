@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="350"
-   height="200"
-   viewBox="0 0 350 200"
+   width="300"
+   height="173.20508"
+   viewBox="0 0 300 173.20508"
    id="svg4333"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -29,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="70.646237"
-     inkscape:cy="61.832473"
+     inkscape:cx="95.02267"
+     inkscape:cy="48.435015"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -53,7 +53,11 @@
      inkscape:window-x="-4"
      inkscape:window-y="-4"
      inkscape:window-maximized="1"
-     inkscape:snap-global="true" />
+     inkscape:snap-global="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata4338">
     <rdf:RDF>
@@ -70,7 +74,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-852.36216)">
+     transform="translate(-25.000005,-865.75962)">
     <g
        id="g5652"
        transform="translate(20.955971,-11.377164)">
@@ -86,7 +90,8 @@
              width="18"
              id="rect5550"
              style="fill:#323232;fill-opacity:1;stroke:none"
-             ry="5" />
+             ry="5"
+             rx="5" />
           <rect
              style="fill:#323232;fill-opacity:1;stroke:none"
              id="rect5573"
@@ -94,7 +99,8 @@
              height="18"
              x="176"
              y="977.36218"
-             ry="5" />
+             ry="5"
+             rx="5" />
         </g>
         <g
            id="g5585"
@@ -118,7 +124,8 @@
              height="35"
              width="100"
              id="rect5548"
-             style="fill:#ffc864;fill-opacity:1;stroke:none" />
+             style="fill:#ffc864;fill-opacity:1;stroke:none"
+             rx="10.208334" />
           <path
              sodipodi:nodetypes="ccccc"
              inkscape:connector-curvature="0"
@@ -139,7 +146,8 @@
            height="10"
            x="97.5"
            y="967.36218"
-           ry="2.5" />
+           ry="2.5"
+           rx="2.5" />
         <rect
            style="fill:#483a21;fill-opacity:1;stroke:none"
            id="rect5566"
@@ -214,7 +222,8 @@
          height="5"
          width="175"
          id="rect5650"
-         style="fill:#323232;fill-opacity:1;stroke:none" />
+         style="fill:#323232;fill-opacity:1;stroke:none"
+         rx="2.5" />
     </g>
   </g>
 </svg>

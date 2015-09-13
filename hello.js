@@ -7,7 +7,7 @@ function hello()
 	var end = " today!";
 	if (nL == "")
 	{
-		fm.greeting.value = "Hello . . . ?"
+		fm.greeting.value = "Hello . . . ?";
 	}
 	else if (nL.substring(0, 4) == "i am")
 	{
@@ -17,13 +17,13 @@ function hello()
 	{
 		fm.greeting.value = "Hello. " + "You're" + n.substring(3) + "!";
 	}
-	else if (nL == "owen zhang" || nL == "rodion" || nL == "raskolnikov" || nL == "rodia" || nL == "rations" || nL == "rodion raskolnikov" || nL == "rodia raskolnikov")
+	else if (nL == "rodion" || nL == "raskolnikov" || nL == "rodia" || nL == "rations" || nL == "rodion raskolnikov" || nL == "rodia raskolnikov")
 	{
 		fm.greeting.value = "WELCOME, MASTER. SITE STATUS: OPERATIONAL.";
 	}
 	else if (nL == "master" || nL == "sir" || nL == "god" || nL == "lord" || nL == "boss" || nL == "savior" || nL == "saviour")
 	{
-		fm.greeting.value = "FATAL ERROR: YOU ARE NOT MY MASTER."
+		fm.greeting.value = "FATAL ERROR: YOU ARE NOT MY MASTER.";
 	}
 	else
 	{

@@ -2,31 +2,85 @@
 <html lang = "en">
 
 <head>
-    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
-    <meta name = "Author" content = "Owen Zhang"/>
-    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Water Rocket</title>
-    <link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
-    <script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type = "text/JavaScript">    
-        MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
-    </script>
-    <script type = "text/javascript" src = "http://mbostock.github.com/d3/d3.js"></script>
+    <!--//JQuery, JQuery UI, D3, MathJax-->     
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src = "http://mbostock.github.com/d3/d3.js"></script>
+    <script src = "jQuery.js"></script>
+    <script src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>MathJax.Hub.Config({"HTML-CSS": {scale: 80}});</script>
+
+    <meta charset = "utf-8"/> 
+    <meta name = "description" content = "Physics fun, musical musings, and other drifting thoughts brought to you by a humble undergrad."/>
+
+    <link rel = "shortcut icon" href = "White queen.ico"/>
+    <link rel = "stylesheet" href = "stylesheet.css"/>
+    
+    <title>Rockets</title>
 </head>
 
 <body>
     <div class = "divider_subpage">
-        <a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
-        <img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-        <a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
-        <img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+        <a href = "index.html"><img class = "divider_image" src = "Black queen.svg"/></a>
+        <img class = "divider_image" src = "Arrow.svg"/>
+        <a href = "physicsFun.html"><img class = "divider_image" src = "Rocket.svg"/></a>
+        <img class = "divider_image" src = "Arrow.svg"/>
         <img class = "divider_image" src = "Water rocket.svg"/>
-        <h2>Water Rocket</h2><a href = "physicsFun.html#howTo"><img class = "icon_right" src = "Calc.svg"/></a></div>
+        <h2>Rockets</h2><a href = "physicsFun.html#PFtab3"><img class = "icon_right" src = "Calc.svg"/></a>
+    </div>
     <div class = "section_subpage">
-<p>A rocket is a prime example of a device that exploits Newton's third law (for every action, there exists an equal and opposite reaction): propellant ejected downwards from the fuel tank exerts an upwards force on the rocket. If said force exceeds the downwards gravitational force, the rocket accelerates upwards.</p>
+    <p>A rocket is a prime example of a device that exploits Newton's third law: propellant ejected downwards from the fuel tank exerts an upwards force on the rocket. If said force exceeds the downwards gravitational force, the rocket accelerates upwards.</p>
+    <p>Finding the velocity of firing rocket can be difficult. Newton's second law alone does not satisfy, for the mass of the rocket changes over time as propellant is ejected.</p>
+    <p>Fortunately, we still have the impulse-momentum theorem:</p>
+    $$F_\text{net}\Delta t = \Delta p = mv - m_0v_0$$
+        <img class = "diagram" src = "Rocket 1.svg"/>
+    <p>We will take a very methodical approach in our analysis. First, we must determine what given information we need. We need</p>
+    <ul>
+        <li>The mass \(M\) of the empty rocket</li>
+        <li>The rate \(b\) at which the rocket loses mass (i.e., mass of fuel ejected per second)</li>
+        <li>The exhaust velocity \(v_e\) at which the fuel is ejected <em>relative to the rocket</em></li> 
+    </ul>
+    <p>Let's "zoom in" on a moment in time when the rocket is firing and at some velocity \(v\). We will be focusing on a very small quantity of fuel with mass \(\Delta m\) that is about to be ejected. Everything in the rocket, including \(\Delta m\), is traveling at \(v\). Here, momentum in the vertical direction is</p>
+    $$p\left(t\right) = \left(m + \Delta m\right)v$$
+    <p>The next few moments are critical. As the mass is expelled downwards from the nozzle over a time \(\Delta t\), it exerts an upwards reactive force on the rocket, thus accelerating the rocket upwards. This process continues all the way until \(\Delta m\) loses contact with the rocket.</p>
+    <img class = "diagram" src = "Rocket 2.svg"/>
+    <p>At the point at which contact is lost, the rocket is at its new speed, \(v + \Delta v\), and \(\Delta m\) is moving away from the rocket at a speed \(v_e\) <em>relative to the new speed of the rocket</em>. The new momentum and change in momentum are thus</p>
+    \begin{align}
+    p\left(t + \Delta t\right) &= m\left(v + \Delta v\right) + \Delta m \left(v + \Delta v - v_e\right) \\
+    \Delta p &= m\Delta v + \Delta m \Delta v - \Delta m v_e \\
+    \end{align}
+    <p>To make use of the impulse-momentum theorem, we need to choose our system carefully. We are keeping track of both the rocket and the quantity of fuel throughout \(\Delta t\). This allows us to treat the force exerted by the fuel on the rocket as a irrelevant internal force. We must, however, take into account gravity. If upwards is positive,</p>
+    \begin{align}
+F_g\Delta t &= m\Delta v + \Delta m \Delta v - \Delta m v_e \\
+-\left(m + \Delta m\right)g &= \lim_{\Delta t \to 0}m\frac{\Delta v}{\Delta t} + \frac{\Delta m \Delta v}{\Delta t} - \frac{\Delta m}{\Delta t} v_e \\
+&= m\frac{dv}{dt} - bv_e \\
+\frac{bv_e}{m + M} - g &= \frac{dv}{dt}\\
+\int_{0}^{t}\frac{bv_edt}{m + M} - \int_{0}^{t}gdt &= \int_{0}^{v}dv\\
+m_0 - bt &= m \\
+\int_{0}^{t}\frac{bv_edt}{m_0 - bt + M} - \int_{0}^{t}gdt &= \int_{0}^{v}dv\\
+u &= m_0 + M - bt \\
+dt &= -\frac{dt}{b}\\
+-v_e\int_{u_0}^{u}\frac{du}{u} - \int_{0}^{t}gdt &= \int_{0}^{v}dv\\
+-v_e\ln\left|\frac{u}{u_0}\right| - gt &= v\\
+
+\end{align}
+<div class = "answer">$$v = -v_e\ln\left(\frac{M + m_0 - bt}{M + m_0}\right) - gt$$</div>
+
+Note: The first stage of the Saturn V, the largest rocket ever built, had a mass of approximately 2,250,000 kg when fueled and detached at 65,000 m above the ground. The difference in gravitational force:</a>
+G = 6.67 x 10−11
+r_e = 6.38 x 10^6 m
+m_e = 5.97 × 10^24 kg
+m 2.95 x 10^6 kg
+F-0 = 2.89 x 10^7
+F = 
+\begin{align}
+F_0 = G\frac{m_em}
+\end{align} 
+
+
 
 <p>In the case of the water rocket, air in the bottle is pressurized using an external pump. During launch, the pressurized air expands, ejecting the water from the bottle.</p>
-
+ 
 <p>An important design factor is the composition of the propellant. A mixture primarily composed of air is easily pressurized but lacks mass, meaning it is less capable of exerting a large force on the rocket; even if a large volume of air rapidly exits the nozzle, its effect on the acceleration of the rocket will be minimal. Conversely, water is difficult to compress and expand but possesses fluidity and mass. A finely tuned combination of air and water is thus the most effective propellant.</p>
 
 <h4>Predicting the altitude of the rocket</h4>

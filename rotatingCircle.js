@@ -55,9 +55,9 @@ function execute(t)
 		var dt = t / period;
 
 		//Calculate new x and y
-		var θ = 2 * Math.PI * dt;
-		var x = R * Math.cos(θ);
-		var y = R * Math.sin(θ);
+		var theta = 2 * Math.PI * dt;
+		var x = R * Math.cos(theta);
+		var y = R * Math.sin(theta);
 
 		circleDatum.set("x", (width / 2) + x);
 		circleDatum.set("y", (height / 2) + y);

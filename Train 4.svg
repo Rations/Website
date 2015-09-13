@@ -58,7 +58,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.5"
-     inkscape:cx="263.50178"
+     inkscape:cx="151.16845"
      inkscape:cy="21.948943"
      inkscape:document-units="px"
      inkscape:current-layer="g16290"
@@ -91,7 +91,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -598,10 +598,46 @@
                      y="1043.028"
                      x="72.940804"
                      id="tspan16625"
-                     sodipodi:role="line"></tspan></text>
+                     sodipodi:role="line" /></text>
               </g>
             </g>
           </g>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             x="369.5065"
+             y="1015.1283"
+             id="text4234"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan4236"
+               x="369.5065"
+               y="1015.1283"
+               style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">m</tspan></text>
+          <text
+             sodipodi:linespacing="125%"
+             id="text4238"
+             y="1015.1283"
+             x="457.00647"
+             style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             xml:space="preserve"><tspan
+               style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '"
+               y="1015.1283"
+               x="457.00647"
+               id="tspan4240"
+               sodipodi:role="line">m</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             x="544.4895"
+             y="1015.1287"
+             id="text4242"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               id="tspan4244"
+               x="544.4895"
+               y="1015.1287"
+               style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, '">m</tspan></text>
         </g>
       </g>
     </g>

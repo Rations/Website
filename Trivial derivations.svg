@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="300"
-   height="125"
-   viewBox="0 0 300 125"
+   width="258.00046"
+   height="96.784225"
+   viewBox="0 0 258.00046 96.784225"
    id="svg4333"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="trivialDerivations.svg">
+   sodipodi:docname="Trivial derivations.svg">
   <defs
      id="defs4335" />
   <sodipodi:namedview
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="87.587639"
-     inkscape:cy="136.0548"
+     inkscape:cx="-64.12642"
+     inkscape:cy="121.94691"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -49,7 +49,11 @@
      inkscape:window-height="1061"
      inkscape:window-x="-4"
      inkscape:window-y="-4"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata4338">
     <rdf:RDF>
@@ -66,7 +70,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-927.36216)">
+     transform="translate(-20.999773,-941.47005)">
     <g
        id="g4794"
        transform="translate(20.999776,89.107866)">

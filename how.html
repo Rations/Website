@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <!--//JQuery, JQuery UI, D3, MathJax-->		
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src = "http://mbostock.github.com/d3/d3.js"></script>
+    <script src = "jQuery.js"></script>
+    <script src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script>MathJax.Hub.Config({"HTML-CSS": {scale: 80}});</script>
+
+    <meta charset = "utf-8"/> 
+    <meta name = "description" content = "Physics fun, musical musings, and other drifting thoughts brought to you by a humble undergrad."/>
+
+    <link rel = "shortcut icon" href = "White queen.ico"/>
+    <link rel = "stylesheet" href = "stylesheet.css"/>
+	
+	<title>How It's Made: This Website</title>
+</head>
+
+<body>
+	<div class = "divider_subpage">
+		<a href = "index.html"><img class = "divider_image" src = "Black queen.svg"/></a>
+		<img class = "divider_image" src = "Arrow.svg"/>
+		<h2>How It's Made: This Website</h2>
+	</div>
+	<div class = "section_subpage">
+		<p>I had no experience with coding-based web design before I began building this website. I had taken one year of AP Computer Science, but that was the extent of my coding training.</p>
+		<p>I learned the basics of HTML, CSS, and JavaScript from Codecademy, though knowing some Java from AP CS helped with the lattermost. Codecademy's lessons often feel too training-wheels-y, but its interactive user interface is very helpful for learning . . . and pretty, too! I have mixed feelings about the repetitiveness of the lesson exercises: practice <em>is</em> crucial, but I feel like learners' time would be better spent on coding independent projects and figuring things out along the way.</p>
+		<p>In fact, it's remarkable how much you can accomplish with only a bit of coding knowledge. Once you understand the basic syntax, you can experiment with website building, troubleshooting problems using online resources; chances are that someone else has run into your problems before. Stack Exchange is a great place to start.</p>
+		<h3>Text</h3>
+		<p>The pages on this site were all coded from the ground up using HTML. I started with Notepad++, but quickly learned of Sublime Text from my adviser, Matthew Kelly. The developers of the latter have truly found an aesthetically appealing color scheme!</p>
+		<img class = "diagram" src = "Sublime Text.svg"/>
+		<p>Math expressions are possible thanks to MathJax, a free JavaScript engine that renders LaTeX-like text for web pages. While it can't do everything LaTeX can (especially when it comes to packages), it requires no installation, uses syntax almost identical to that of LaTeX, and can be edited directly in an HTML document).</p> 
+
+
+		<h3>Images</h3>
+		<p>Almost all the images on this website were created by me in InkScape, a free SVG graphics application.</p>
+		<img class = "diagram" src = "InkScape.svg"/>
+		<p>The user interface appears a bit daunting, and I won't pretend the know how to navigate around the nauances the developers have included, but once you invest a modest amount of time in reading the tutorials, experimenting with the tools, and troubleshooting problems online, I think you'll find InkScape very rewarding and gratifying (especially the snap handles—ooh!).</p>
+
+		<h3>Fancier things</h3>
+		<p>At the time of writing, Wondergrad has relatively few "fancy" things. The input-output calculators are lightweight JavaScript scripts artistically styled using basic CSS. Lately, I have been streamlining the user interface by adding jQuery code.</p>
+		<p>Much of such code is simple enough that it is more convenient for me to write it directly in Sublime Text. For more complicated scripts, however, I prefer using Eclipse, which has more error-recognition and development tools than most humble undergrads can hope to become fluent in.</p>
+		<img class = "diagram" src = "Eclipse.svg"/>
+		<p>In the works are D3 animations, among other more interesting things.</p>
+	</div>
+
+	<div ID = "footer"><img class = "divider_image" src = "Chrome.png"/>
+		<div class = "v_center_inner">
+		<em>
+			<script src = "lastModified.js"></script>
+		</em>
+		</div>
+	</div>
+</body>
+</html>

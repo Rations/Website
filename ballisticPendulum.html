@@ -2,26 +2,32 @@
 <html lang = "en">
 
 <head>
-	<meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
-	<meta name = "Author" content = "Owen Zhang"/>
-	<link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
+    <!--//JQuery, JQuery UI, D3, MathJax-->		
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src = "http://mbostock.github.com/d3/d3.js"></script>
+    <script src = "jQuery.js"></script>
+    <script src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script>MathJax.Hub.Config({"HTML-CSS": {scale: 80}});</script>
+
+    <meta charset = "utf-8"/> 
+    <meta name = "description" content = "Physics fun, musical musings, and other drifting thoughts brought to you by a humble undergrad."/>
+
+    <link rel = "shortcut icon" href = "White queen.ico"/>
+    <link rel = "stylesheet" href = "stylesheet.css"/>
+	
 	<title>Ballistic Pendulum</title>
-	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
-	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-	<script type = "text/JavaScript">    
-		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
-	</script>
-	<script type = "text/javascript" src = "http://mbostock.github.com/d3/d3.js"></script>
 </head>
 
 <body>
 	<div class = "divider_subpage">
-		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Ballistic%20pendulum.png"/>
-		<h2>Ballistic Pendulum</h2></div>
+		<a href = "index.html"><img class = "divider_image" src = "Black queen.svg"/></a>
+		<img class = "divider_image" src = "Arrow.svg"/>
+		<a href = "physicsFun.html"><img class = "divider_image" src = "Rocket.svg"/></a>
+		<img class = "divider_image" src = "Arrow.svg"/>
+		<img class = "divider_image" src = "Ballistic pendulum.svg"/>
+		<h2>Ballistic Pendulum</h2>
+	</div>
 	<div class = "section_subpage">
 		<p>You're having a Nerf gun war in physics class. Suddenly, Bobby interrupts with an intriguing inquiry: <em>How fast does a Nerf bullet travel?</em></p>
 		<p>Unfortunately, since we're in high-school physics, we don't have any fancy radar guns or echolocation gizmos. Fortunately, we do have basic lab items. But how exactly can we determine the speed of something as fast as a Nerf bullet?</p>
@@ -29,6 +35,7 @@
 		<p><em>A ballistic pendulum!</em></p>
 		
 		<h3><em>How</em> it works:</h3>
+		<img class = "diagram_m" src = "Ballistic pendulum 4.svg"/>
 		<ol>
 			<li>Measure the mass \(m\) of your bullet, the mass \(M\) of the pendulum bob (whatever block or cannister hangs from it), and the length \(L\) of your pendulum.</li>
 			<li>Fire your bullet at the bob (and hope it sticks<sup>[1]</sup>)!</li>
@@ -94,7 +101,7 @@
 		v_b &= \sqrt{2gh} \\
 		\end{align}
 		<p>Here is where \(\theta\) comes in, as we don't actually know \(h\) directly. A diagram helps:</p>
-		<img class = "diagram" src = "Ballistic pendulum 2.svg"/>
+		<img class = "diagram_m" src = "Ballistic pendulum 2.svg"/>
 		\begin{align}
 		\cos\theta &= \frac{L - h}{L}\\
 		h &= L\left(1 - \cos\theta\right) \\
@@ -107,7 +114,7 @@
 			<p>The critical moment is when our blob is at the apex of its circular path. If its initial velocity \(v_b\) is too slow, it will never make it; it could also fly past the apex safely but do so with excess speed.</p>
 
 			<p>The sweet spot turns out to be when the blob is in free fall for <em>one instant</em> at the apex. This makes sense: if the blob is in free fall before the apex, it will arc downwards and fail to reach the apex entirely. If it is moving too fast, gravity alone will not be able to force it into a circular path, and the arm of the pendulum will have to contribute a radial tension-like force.</p>
-
+			<img class = "diagram" src = "Ballistic pendulum 3.svg"/>
 			<p>First, we can use \(F_\text{rad} = m\frac{v^2}{R}\) to find the speed \(v_a\) of the blob at the apex if gravity is to provide all the centripetal force needed there<sup>[3]</sup>.</p>
 			\begin{align}
 			F_\text{rad} &= F_g \\

@@ -2,90 +2,93 @@
 <html lang = "en">
 
 <head>
-    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
-    <meta name = "Author" content = "Owen Zhang"/>
-    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Jumping on a Scale</title>
-	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
-	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-	<script type = "text/JavaScript">    
-  		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
-	</script>
+    <!--//JQuery, JQuery UI, D3, MathJax-->		
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src = "http://mbostock.github.com/d3/d3.js"></script>
+    <script src = "jQuery.js"></script>
+    <script src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script>MathJax.Hub.Config({"HTML-CSS": {scale: 80}});</script>
+
+    <meta charset = "utf-8"/> 
+    <meta name = "description" content = "Physics fun, musical musings, and other drifting thoughts brought to you by a humble undergrad."/>
+
+    <link rel = "shortcut icon" href = "White queen.ico"/>
+    <link rel = "stylesheet" href = "stylesheet.css"/>
+	
+	<title>Dropping on a Scale</title>
 </head>
 
 <body>
 	<div class = "divider_subpage">
-		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Scale.png"/>
-		<h2>Jumping on a Scale</h2></div>
+		<a href = "index.html"><img class = "divider_image" src = "Black queen.svg"/></a>
+		<img class = "divider_image" src = "Arrow.svg"/>
+		<a href = "physicsFun.html"><img class = "divider_image" src = "Rocket.svg"/></a>
+		<img class = "divider_image" src = "Arrow.svg"/>
+		<img class = "divider_image" src = "Scale.svg"/>
+		<h2>Dropping on a Scale</h2>
+	</div>
 	<div class = "section_subpage">
-		<p>Surely you've jumped onto a scale and seen the poor needle spike to a high reading. But have you ever wondered how you might approximate that reading using physics?</p>
+		<p>Surely you've jumped onto a scale and seen the poor needle spike to a high reading. And naturally, you've wondered how you might approximate that reading using physics?</p>
 
-		<p>Yes? Well, you've come to the right place!</p>
-		<p>Before we begin our journey, we have several physics-equation-friends at our disposal:</p>
-		<ul>
-			<li>Hooke's law says that a spring exerts a force directly proportional to its compression/stretch: \(F = kx\)</li>
-			<li>Integrating Hooke's law gives us the equation for spring potential energy: \(U = \frac{1}{2}kx^2\)</li>
-		</ul>
-		<p>We know the scale works by converting the spring force \(kx\) it feels to a reading \(R\), which implies that \(Rg = kx\). But from here, the theoretical behavior of our spring scale might not be what you're used to seeing in the real world.</p>
-		<p>Let's begin with a base case. Suppose we gently set a mass on our spring scale.</p>
-		<p>But our goal is to find the maximum reading. Intuitively, this should occur when the spring is most compressed. Once again, our friend conservation of energy makes finding the maximum compression easy. Let's say that our gently placed mass is initially at height \(x_\text{max}\) before compressing the spring to its maximum displacement \(x_\text{max}\).</p>
+		<p>Well, you've certainly come to the right place!</p>
+
+		<p>The scale works by converting the spring force \(kx\) it feels to a reading \(R\), which implies that \(Rg = kx\).</p>
+		<p>Let's begin with a base case. Suppose we gently set a mass \(m\) on the scale.</p>
+		<img class = "diagram_m" src = "Scale 1.svg"/>
+		<p>Our goal is to find the maximum reading \(R_1\). Intuitively, this should occur when the spring is most compressed. Once again, energy conservation makes finding the maximum compression \(x_1\) easy. Given the diagram,</p>
 		\begin{align}
-		U_g &= U_\text{spring} \\
-		mgx_\text{max} &= \frac{1}{2}k{x_\text{max}}^2 \\
-		x_\text{max} &= \frac{2mg}{k} \\
+		mgx_1 &= \frac{1}{2}k{x_1}^2 \\
+		x_1 &= \frac{2mg}{k} \\
 		\end{align}
-		<p>Here is where things become trickier. In the real world, when we place an object on a spring scale, the spring bounces up and down for a while before stopping because of friction. If the scale is calibrated, the position at which it stops, or the equilibrium position, should correspond to the actual mass of the object.</p>
-		<p>In our perfect theoretical world, however, there is no friction to slow the bouncing motion of the scale, so our spring will continue oscillating forever. But fortunately, this doesn't change the fact that the spring's reading at the equilibrium position—where there is no acceleration for a brief moment—should correspond to the actual mass of our mass. In equation speak, this means:</p>
+		<p>Here is where things become trickier. In the real world, \(m\) would bounce up and down for a short while before stopping because of friction at the (new) equilibrium position of the spring<sup>[1]</sup>. Assuming the scale is properly calibrated, the reading at equilibrium \(R_0\) should reflect the actual mass of the object, that is \(R_0 = m\).</p>
+		<p>The equilibrium point is where the forces on the mass are balanced. Thus,</p>
 		\begin{align}
-		Rg &= mg = kx_\text{eq} \\
-		x_\text{eq} &= \frac{mg}{k} \\
+		mg &= kx_0 \\
+		x_0 &= \frac{mg}{k} \\
 		\end{align}
-		<p>If we compare \(x_\text{max}\) to \(x_\text{eq}\) and exploit the proportion between the spring's compression and the scale's reading, we can find the relationship between the reading at the bottom of the scale and the reading in the middle:</p>
+		<p>If we examine the relationship between \(x_0\) and \(x_1\), we can make inferences about the relationship between \(R_0\) and \(R_1\), thanks to the fact that the compression/stretch of the spring is directly proportional to the spring force, and thus scale reading.</p>
 		\begin{align}
-		x_\text{max} &= \frac{2mg}{k} = 2\left(\frac{mg}{k}\right) = 2x_\text{eq} \\
-		\frac{mg}{kx_\text{eq}} &= \frac{Rg}{kx_\text{max}} = \frac{Rg}{2kx_\text{eq}} \\
-		R &= 2m \\
+		x_1 &= 2\left(\frac{mg}{k}\right) = 2x_0 \\
+		R_1 &= 2R_0 \\
+		 &= 2m \\
 		\end{align}
-		<p>. . . so our proportion yields that the scale's reading at the bottom should be twice as great as its reading at the equilibrium position, that is, the proper reading.</p>
-		<h4>Dropping a mass onto a scale</h4>
+		<p>Indeed, the maximum stretch is twice the equilibrium stretch; the maximum reading is twice the equilibrium (i.e., "correct") reading.</p>
 		<hr>
-		<p>Now it's time for part 2. The math in this part is messier, but the general procedure is fortunately identical.</p> 
-		<p>We start again with conservation of energy. This time, however, there are two distances to consider: (1) how far the mass is above the scale before the drop and (2) how far the scale's spring compresses after the mass lands on it.</p> 
+		<h3>Dropping a mass onto a scale</h3>
+		<p>You've made it to part 2. The math is messier, but the procedure is the same.</p> 
+		<p>We start again with energy conservation. This time, however, there are two heights to consider: (1) how far the mass is above the scale before the drop and (2) how far the spring compresses after the mass lands on it.</p> 
+		<img class = "diagram_m" src = "Scale 2.svg"/>
 		\begin{align}
-			U_g &= U_\text{spring} \\
-			mg\left(h + x_\text{max}\right) &= \frac{1}{2}k{x_\text{max}}^2 \\
-			0 &= \frac{1}{2}k{x_\text{max}}^2 - mgx_\text{max} - mgh \\
+			mg\left(h + x_2\right) &= \frac{1}{2}k{x_2}^2 \\
+			0 &= \frac{1}{2}k{x_2}^2 - mgx_2 - mgh \\
+			x_2 &= \frac{mg \pm \sqrt{mg\left( mg + 2hk\right)}}{k} \\
 			\end{align}
-			<p>Unfortunately, to solve for \(x_\text{max}\) this time, we must use the quadratic formula:</p>
-			$$x_\text{max} = \frac{mg \pm \sqrt{mg\left( mg + 2hk\right)}}{k}$$
+			
 
-		<p>Once again, since our spring is a Hooke spring, its compression is proportional to its reading. This then implies that the relationship between our base case \(x_\text{max}\) and our new \(x_\text{max}\) is equivalent to the relationship between our base case maximum reading \(R = 2m\) and our new maximum reading. If we divide our new expression for \(x_\text{max}\) by our old one, we can find exactly how many times greater our new reading is than our base case one. In equation speak:</p>
+		<p>The fact that the spring's compression is directly proportional to its reading implies that the relationship between \(x_1\) and \(x_2\) is equivalent to the relationship between \(R_1\) and \(R_2\). In equation speak,</p>
 		\begin{align}
-			x_\text{new max} &= cx_\text{base max} \\
-			c &= \frac{mg \pm \sqrt{mg\left( mg + 2hk\right)}}{k} \left(\frac{k}{2mg}\right) \\
-			 &= \frac{1}{2}\left(1 \pm \sqrt{1 + \frac{2hk}{mg}} \right) \\
+			\frac{x_2}{x_1} &= \frac{R_2}{R_1} \\
+			R_2 &= \frac{R_1x_2}{x_1} \\
+			&= 2m\left(\frac{mg \pm \sqrt{mg\left( mg + 2hk\right)}}{k} \times \frac{k}{2mg}\right) \\
 			\end{align}
-		<p>To reiterate, our new maximum reading is \(c\) times greater than our base maximum reading, which in turn is twice as great as the actual mass. Therefore:</p>
 		<table>
 			<tbody>
 				<tr>
-					<td align = "right"><div class = "answer">$$R_\text{max} = c\left(2m\right) = m\left(1 + \sqrt{1 + \frac{2hk}{mg}}\right)$$</div></td>
+					<td align = "right"><div class = "answer">$$R_2 = m\left(1 + \sqrt{1 + \frac{2hk}{mg}}\right)$$</div></td>
 					<td align = "left"><div class = "calculator">
 			<form method = "" action = "">
-				\(m\) = mass = 
+				\(m\) =  
 				<input type = "text" name = "mass" value = "" size = "6" onChange = maxReading()>
 				kg<br>
-				\(k\) = spring constant = 
+				\(k\) =  
 				<input type = "text" name = "constant" value = "" size = "6" onChange = maxReading()>
+				N/m
 				<br>
-				\(h\) = height of drop = 
+				\(h\) =  
 				<input type = "text" name = "height" value = "" size = "6" onChange = maxReading()>
 				m<br>
-				\(R_\text{max}\) =   
+				\(R_2\) =   
 				<input type = "text" name = "reading" value = "" size = "6" onChange = maxReading()>
 				kg<br>
 			</form>
@@ -120,6 +123,10 @@
 			Indeed, this activity involved a lot of big assumptions. 
 		</ol>
 		<hr>
+		<h3>Notes</h3>
+		<div class = "footnote">
+			<p><sup>1</sup> In our perfect world, however, there is no friction to slow the bouncing, so our mass will continue oscillating forever. Note that on each pass through \(x_0\), the mass has velocity, meaning it will overshoot the point until the spring force pulls it back. (Fortunately, this doesn't change the fact that the scale should read \(R_0 = m\) when the mass is at \(x_0\).)</p>
+		</div>
 	</div>
 
 	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>

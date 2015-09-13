@@ -2,50 +2,67 @@
 <html lang = "en">
 
 <head>
-    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
-    <meta name = "Author" content = "Owen Zhang"/>
-    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Atwood's Machines</title>
-	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
-	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-	<script type = "text/JavaScript">    
-  		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
-	</script>
+    <!--//JQuery, JQuery UI, D3, MathJax-->		
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src = "http://mbostock.github.com/d3/d3.js"></script>
+    <script src = "jQuery.js"></script>
+    <script src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script>MathJax.Hub.Config({"HTML-CSS": {scale: 80}});</script>
+
+    <meta charset = "utf-8"/> 
+    <meta name = "description" content = "Physics fun, musical musings, and other drifting thoughts brought to you by a humble undergrad."/>
+
+    <link rel = "shortcut icon" href = "White queen.ico"/>
+    <link rel = "stylesheet" href = "stylesheet.css"/>
+	
+	<title>Atwood's Machines</title>
 </head>
 
 <body>
 	<div class = "divider_subpage">
-		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<a href = "index.html"><img class = "divider_image" src = "Black queen.svg"/></a>
+		<img class = "divider_image" src = "Arrow.svg"/>
+		<a href = "physicsFun.html"><img class = "divider_image" src = "Rocket.svg"/></a>
+		<img class = "divider_image" src = "Arrow.svg"/>
 		<img class = "divider_image" src = "Pulleys.svg"/>
-		<h2>Atwood's Machines</h2></div>
+		<h2>Atwood's Machines</h2>
+	</div>
 	<div class = "section_subpage">
 		<h3>The Atwood's machine</h3>
+
 		<p>Suppose we have an Atwood's machine: a massless pulley over which two different masses, \(m\) and \(M\), hang via a massless string. How might we find the accelerations of the masses?</p>
-		<p>First, let us take the meticulous path to the solution. (We will learn a quicker way, but the meticulous way is useful because it can be applied to more-complicated scenarios.)</p>
-		<p>Defining upwards to be positive, we can write force equations<sup>[1]</sup>:</p>
+		<img class = "diagram_m" src = "Pulleys 4.svg"/>
+		<p>First, we will take the meticulous path to the solution. (We will see a quicker way, but the meticulous way is useful because it can be applied to more elaborate problems.)</p>
+		<p>Defining upwards to be positive, we can write force equations and eliminate \(T\)<sup>[1]</sup>:</p>
 		\begin{align}
 		T - mg &= ma_m \\
 		T - Mg &= Ma_M \\
+		\implies ma_m + mg &= Ma_M + Mg\\
 		\end{align}
 		<h3>Conservation of string</h3>
-		<p>Never overlook physical constraints introduced by the objects in our problem. Consider, for instance, our rope. It is always taut, meaning it will not compress or stretch much. This implies that two objects connected by the rope will accelerate at the same magnitude!</p>
-		<p>We can show this in a math-y way using calculus. Divide the rope's length \(l\) into three parts as shown in the diagram:</p>
-			<img class = "diagram" src = "Pulleys 3.svg"/>
-			<p>We know the length of the rope must remain constant over time. Thus, differentiating reveals</p>
+		<p>Never overlook constraints introduced by the physical setup of the problem. In this case, the rope is always taut, meaning it does not compress or stretch. This implies that two objects connected by the rope will experience the same magnitude of acceleration relative to the pulley.</p>
+		<div id = "menu">
+			<h3>We can show this more rigorously using calculus.</h3>
+			<div>
+				Divide the rope's length \(l\) into three parts as shown in the diagram:</p>
+			<img class = "diagram_m" src = "Pulleys 3.svg"/>
+			<p>We know the length of the rope must remain constant over time (\(\frac{dl}{dt} = 0\)). Therefore, after differentiating twice,</p>
 		\begin{align}
 		l  &= x + \pi R + y \\
 		0 &= \frac{dx}{dt} + 0 + \frac{dy}{dt} \\
 		0 &= \frac{d^2x}{dt^2} + \frac{d^2y}{dt^2} \\
-		a_m &= -a_M \\
+		
 		\end{align}
-		<p>So we have used a physical constraint to find a relationship between the accelerations<sup>[2]</sup>. Now the system of equations becomes easy to solve.</p>
+		<p>Again, because the rope is taut, any changes to \(x\) and \(y\) will correspond to changes in the position/velocity of \(m\) and \(M\), respectively. In other words,</p>
+		$$a_m = -a_M$$ 
+			</div>
+		</div>
+
+		<p>So we have used a physical constraint to find a relationship between the accelerations. Now we can solve for \(a_m\) easily.</p>
 		\begin{align}
-		T - mg &= ma_m \\
-		T - Mg &= M\left(-a_m\right) \\
-		ma_m + mg &= -Ma_m + Mg \\
+		ma_m + mg &= Ma_M + Mg \\
+		&= -Ma_m + Mg \\
 		a_m\left(m + M\right) &= g\left(M - m\right) \\
 		\end{align}
 		<table>
@@ -84,43 +101,45 @@
 			fm.acc2.value = -g * (M - m) / (M + m);
 		}
 		</script>
-		<h3>A shortcut</h3>
-		<p>Recognizing the shortcut takes place at the conservation of string step. Since we know that the string, \(m\), and \(M\) all move and accelerate at the same rates, we can group them into one system traveling in the clockwise direction. The total mass is \(m + M\), and \(T\) becomes irrelevant because we already know the relationship between the \(a_m\) and \(a_M\). Thus, by Newton's second law after defining clockwise to be positive:</p>
+		<h3>The shortcut</h3>
+		<p>Recognizing the shortcut takes place at the conservation of string step. Since we know that the string and masses all move and accelerate at the same rate, we can group them into one system. The mass of the system is \(m + M\), and \(T\) becomes an irrelevant internal force of the system. After defining clockwise about the pulley to be positive, Newton's second law yields</p>
 		\begin{align}
 		Mg - mg &= \left(M + m\right)a \\
 		a &= g\left(\frac{M - m}{M + m}\right) \\
 		\end{align}
-		<p>No surprise: both masses accelerate "clockwise" around the pulley.</p>
+		<p>No surprise—everything accelerates at the same rate about the pulley.</p>
 		<hr>
 		<h3>Double Atwood's machine</h3>
 		<p>What if we keep a mass \(m_1\) hanging from the left side of the pulley, but replace the right mass with a whole new Atwood's machine on which hang \(m_2\) and \(m_3\)?</p>
-		<p>We can't take the same shortcut we did in the problem of the single Atwood's machine, because different objects in the system move at different rates. Here, we have several force equations:</p>
+		<img class = "diagram" src = "Pulleys 5.svg"/>
+		<p>We can't take the shortcut we did in the previous problem because different parts of our double Atwood's machine move at different rates. First, after defining upwards to be positive, we can write several force equations:</p>
 		\begin{align}
 		T - m_1g &= m_1a_1 \\
-		T - 2T_2 &= (0)a_\text{pulley} = 0 \\
 		T_2 - m_2g &= m_2a_2 \\
 		T_2 - m_3g &= m_3a_3 \\
+		T - 2T_2 &= 0\left(a_p\right) = 0 \\
 		\end{align}
-		<p>Notice that the second pulley must be taken into consideration, since it is accelerating too. Because it is massless, the sum of the forces on it must be zero (otherwise it would accelerate at an infinite rate).</p>
-		<p>Now for the tricky part. Like last time, we need to find a relationship between the accelerations, in this case \(a_1\), \(a_2\), and \(a_3\). Since the upper pulley is effectively fixed to the ceiling, we can use conservation of string to find the relation between the \(a_1\) and \(a_\text{pulley}\):</p> 
-		$$a_1 = -a_\text{pulley}$$
-		<p>It is extremely tempting to do the same for \(m_2\) and \(m_3\) on the lower pulley and say \(a_2 = -a_3\). But this is only true <em>in relation to the bottom pulley</em>, which is itself accelerating because of \(m_1\).</p>
-		<p>One way to find the relationship between the pulleys is using intuition and adding accelerations. Let's say the lower pulley has acceleration \(a_p = -a_1\), remembering that we <em>can</em> apply conservation of string on the top string because the top pulley is fixed to the ceiling. Let's then say that \(m_2\) and \(m_3\) have accelerations \(a_{2\text{, p}}\) and \(a_{3\text{, p}} = -a_{2\text{, p}}\) <em>relative to the pulley</em>, which has \(a_p\) itself. Thus, their accelerations relative to the Earth are:</p>
+		<p>Notice that the lower pulley must be taken into consideration, since it is accelerating translationally at some \(a_p\). Because it is massless, the sum of the forces on it must be zero (otherwise it would accelerate at an infinite rate).</p>
+		<p>Now for the tricky part. Like last time, we need to find a relationship between the accelerations, in this case \(a_1\), \(a_2\), and \(a_3\). The upper pulley is effectively fixed, so conservation of string dictates that relative to the Earth,</p> 
+		$$a_1 = -a_p$$
+		<p>It is extremely tempting to do the same for \(m_2\) and \(m_3\) on the lower pulley and say \(a_2 = -a_3\). But this relationship is only true <em>relative to the lower pulley</em>, which is itself accelerating at \(a_p\) because of \(m_1\). Don't worry—we can still make use of this relationship using some intuition and acceleration adding.</p>
+		<img class = "diagram_m" src = "Pulleys 1.svg"/>
+		<p>We have established that the lower pulley is accelerating at \(a_p = -a_1\). Let's say that, relative to the lower pulley, \(m_2\) and \(m_3\) have accelerations \(a_{2\text{, }p}\) and \(a_{3\text{, }p}\), respectively. Thus, their accelerations relative to the Earth are</p>
 		\begin{align}
-		a_2 &= a_{2\text{, p}} + a_p \\
-		a_3 &= -a_{2\text{, p}} + a_p \\
+		a_2 &= a_{2\text{, }p} + a_p \\
+		a_3 &= -a_{2\text{, }p} + a_p \\
 		\end{align}
-		<p>Eliminating \(a_{2\text{, p}}\) and simplifying, we have:</p>
+		<p>Eliminating \(a_{2\text{, }p}\), we have:</p>
 		\begin{align}
 		a_2 - a_p &= a_p - a_3 \\
 		a_p &= \frac{a_2 + a_3}{2} \\
 		a_1 &= -\frac{a_2 + a_3}{2} \\
 		\end{align}
 
-
-
-		<p>The most methodical way, however, involves drawing a diagram and examining the relationships between distances:</p>
-		<img class = "diagram" src = "Pulleys 2.svg"/>
+		<div id = "menu2">
+			<h3>For math-y people, there is a calculus-based approach as well.</h3>
+			<div>
+				<img class = "diagram" src = "Pulleys 2.svg"/>
 		<p>From geometry, we can see that the length \(c\) can be written in terms of the others.</p>
 		\begin{align}
 		c &= \frac{b + d + l - \pi R}{2} \\
@@ -131,6 +150,9 @@
 		a_\text{pulley} &= -a_1 = \frac{a_2 + a_3}{2} \\
 		a_1 &= -\frac{a_2 + a_3}{2} \\
 		\end{align}
+			</div>
+		</div>
+
 		<p>Now that we have all the necessary equations, it is simply a matter of algebra before we find the final answers.</p>
 		\begin{align}
 		T &= m_1a_1 + m_1g \\
@@ -193,7 +215,6 @@
 		<h3>Notes</h3>
 		<div class = "footnote">
 			<p><sup>1</sup> The tension \(T\) must be the same at all points along the rope because the rope is massless. Given a small piece of rope, if the tensions on either side of this rope were unequal, then the piece would accelerate at an infinite rate.</p>
-			<p><sup>2</sup> For example, \(\frac{d^2 b}{dt^2}\) is the acceleration of the portion of the rope connected to \(m_2\). Since the rope is always rigid, \(\frac{d^2 b}{dt^2} = a_2\).</p>
 		</div>
 
 	</div>

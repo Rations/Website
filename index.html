@@ -2,141 +2,77 @@
 <html lang = "en">
 
 <head>
-    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
-    <meta name = "Author" content = "Owen Zhang"/>
-    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Raskolnikov's Realm</title>
-	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
-	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!--//JQuery, JQuery UI, D3, MathJax-->		
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src = "http://mbostock.github.com/d3/d3.js"></script>
+    <script src = "jQuery.js"></script>
+    <script src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script>MathJax.Hub.Config({"HTML-CSS": {scale: 80}});</script>
+
+    <meta charset = "utf-8"/> 
+    <meta name = "description" content = "Physics fun, musical musings, and other drifting thoughts brought to you by a humble undergrad."/>
+
+    <link rel = "shortcut icon" href = "White queen.ico"/>
+    <link rel = "stylesheet" href = "stylesheet.css"/>
+
+    <title>Wondergrad: Home</title>
 </head>
 
 <body>
-	<div ID = "header">
-		<div ID = "masthead_background">
-			<img ID = "masthead_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/>
-			<h1>Raskolnikov's Realm</h1>
-			<p><em>Physics, music, writing, and more!</em></p>
+	<div id = "header">
+		<div id = "masthead_background">
+			<img id = "masthead_image" src = "Black queen.svg"/>
+			<h1 style = "font-size: 3em">Wondergrad</h1>
+			<p><em>Brought to you by a humble undergrad</em></p>
 		</div>
-		</div>
+	</div>
 
 	<div class = "left outer">
 		<a href = "physicsFun.html" class = "button_link"><div class = "button_outer" style = "margin-top: 0px"><div class = "button h_center_inner v_center_inner">Physics Fun</div></div></a>
-		<a href = "mmm.html" class = "button_link"><div class = "button_outer"><div class = "button h_center_inner v_center_inner">Math, Music, and More</div></div></a>
-		<a href = "index.html" class = "button_link"><div class = "button_outer"><div class = "button h_center_inner v_center_inner">Reflections from Rodion</div></div></a>
+		<a href = "other.html" class = "button_link"><div class = "button_outer"><div class = "button h_center_inner v_center_inner">Assorted Musings</div></div></a>
 		<a href = "about.html" class = "button_link"><div class = "button_outer"><div class = "button h_center_inner v_center_inner">About</div></div></a>
+		<a href = "search.html" class = "button_link"><div class = "button_outer"><div class = "button h_center_inner v_center_inner"><img class = "h_center_inner" style = "height: 25px" src = "Search.svg"/></div></div></a>
 	</div>
 	
 	<div class = "middle"><div class = "divider_right"><h2>Welcome</h2></div></div>
 	<div class = "right">
-		<p>Greetings! You have stumbled upon a website that will (hopefully) come to encompass a variety of useful resources for high-school students and beyond. Ideas and feedback are always welcome. Special thanks to <a href = "http://ruina.tam.cornell.edu/research/MatthewKelly/index.html">M. Kelly</a>.</p>
-		<p style = "text-align: right"><em>—RRR, 2015</em></p>
-	</div>
-	
-	<div class = "divider outer"><div class "v_align_center"><img src = "Rocket.svg" class = "divider_image"/></div><h2>Physics Fun: The Latest</h2></div>
-	<div class = "section">
-		<table>
-			<thead>
-			</thead>
-			<tbody>
-				<tr>
-					<td width = "167.5px" align = "left"><a href = "train.html" class = "button_link"><div class = "button_square"><img src = "Train.svg"/>Trains and free-body diagrams</div></a></td>
-					<td width = "167.5px" align = "center"><a href = "projectileMotion.html" class = "button_link"><div class = "button_square"><img src = "Projectile motion.svg"/>Projectile motion fun</div></a></td>
-					
-					<td width = "167.5px" align = "center"><a href = "ropes.html" class = "button_link"><div class = "button_square"><img src = "Ropes.svg"/>Hanging ropes</div></a></td>
-					<td width = "167.5px" align = "right"><a href = "pulleys.html" class = "button_link"><div class = "button_square"><img src = "Pulleys.svg"/>Atwood's machines</div></a></td>
-				</tr>
-				<tr>	
-					<td width = "167.5px" align = "left"><a href = "bankingCar.html" class = "button_link"><div class = "button_square"><img src = "Car.svg"/>Banking car</div></a></td>
-					<td width = "167.5px" align = "center"><a href = "escapeVelocity.html" class = "button_link"><div class = "button_square"><img src = "Escape velocity.svg"/>Escape velocity</div></a></td>
-					<td width = "167.5px" align = "center"><a href = "ballisticPendulum.html" class = "button_link"><div class = "button_square"><img src = "Ballistic pendulum.svg"/>Ballistic pendulum</div></a></td>
-					<td width = "167.5px" align = "right"><a href = "scale.html" class = "button_link"><div class = "button_square"><img src = "Scale.svg"/>Jumping on a scale</div></a></td>
-				</tr>
-				<tr>	
-					<td width = "167.5px" align = "left"><a href = "balls.html" class = "button_link"><div class = "button_square"><img src = "Superball.svg"/>Big ball and small ball</div></a></td>
-					<td width = "167.5px" align = "center"><a href = "slipping.html" class = "button_link"><div class = "button_square"><img src = "Rolling and slipping.svg"/>Rolling and slipping</div></a></td>
-					<td width = "167.5px" align = "center"><a href = "springs.html" class = "button_link"><div class = "button_square"><img src = "Springs.svg"/>Springs, springs!</div></a></td>
-					<td width = "167.5px" align = "right"><a href = "CM.html" class = "button_link"><div class = "button_square"><img src = "CM.svg"/>Center of mass</div></a></td>
-				</tr>
-				<tr>	
-					<td colspan = "2" align = "left"><a href = "trivialDerivations.html" class = "button_link"><div class = "button_rect"><img src = "Trivial derivations 2.svg"/>Trivial derivations</div></a></td>
-					<td colspan = "2" align = "right"><a href = "lab.html" class = "button_link"><div class = "button_rect">The Laboratory, a.k.a. in-development stuff</div></a></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	
-	<div class = "divider outer"><div class "v_align_center"><img src = "https://dl.dropboxusercontent.com/u/31253437/Piano%20keys.png" class = "divider_image"/></div><h2>Music Madness: The Latest</h2></div>
-	<div class = "section">
-		<table>
-			<thead>
-			</thead>
-			<tbody>
-				<tr>	
-					<td width = "167.5px" align = "left"><a href = "hallway.html" class = "button_link"><div class = "button_square"><img src = "Hallway.svg"/>Hallway problem</div></a></td>
-					<td width = "167.5px" align = "center"><a href = "tetrahedrons.html" class = "button_link"><div class = "button_square"><img src = "Tetrahedrons.svg"/>Tetrahedron angles</div></a></td>
-					<td width = "167.5px" align = "center"></td>
-					<td width = "167.5px" align = "right"></td>
-				</tr>
-			</tbody>
-		</table>
+		<p>Please note that this site is currently in testing mode. The accuracy and quality of certain content cannot be guaranteed at this time.</p>
+		<h4>Recent articles</h4>
 		<a href = "desertIslandDisks.html">Desert Island Disks</a><br>
-		<a href = "dvorak.html">Recommended Records: Dvorak Cello Concerto</a>
+		<a href = "dvorak.html">Recommended Records: Dvorak Cello Concerto</a><br>
+		<a href = "how.html">How It's Made: This Website</a>
 	</div>
 	
-	<div class = "divider outer"><div class "v_align_center"><img src = "Pen.svg" class = "divider_image"/></div><h2>Reflections from Rodion: The Latest</h2></div>
+	<div class = "divider outer"><div class "v_align_center"><img class = "divider_image" src = "Train.svg"/></div><h2>Rookie Article Spotlight</h2></div>
 	<div class = "section">
-		<h3><em>Ithaca Voice</em> publications:</h3>
-		<ul>
-		<li><a href = "http://ithacavoice.com/2015/04/inside-look-ithaca-high-schools-500000-student-run-tv-studio/">An inside look at Ithaca High School's $500,000 student-run TV studio</a></li>
-		<li><a href = "http://ithacavoice.com/2014/08/sunbathing-sharks-sci-fi-robots-colorful-snails-give-ithacas-electrical-boxes-new-power/">Colorful snails, sci-fi robots, and sunbathing sharks give Ithaca's electrical boxes new power</a></li>
-		<li><a href = "http://ithacavoice.com/2014/07/ithaca-officials-simeons-crash-factors-delay-completion-date-commons-redesign/">Officials: Simeon’s crash, other factors again delay completion date for Commons redesign</a></li>
-		<li><a href = "http://ithacavoice.com/2014/07/don-quixote-coming-ithaca-will-probably-get-lost-tcat/">Don Quixote coming to Ithaca</a></li>
-		<li><a href = "http://ithacavoice.com/2014/07/trumansburgs-first-clothesline-art-show-relaxed-unpretentious/">Trumansburg's first Clothesline Art Show to be "relaxed, unpretentious"</a></li>
-		<li><a href = "http://ithacavoice.com/2014/07/swordfights-soliloquies-stagecraft-ithaca-summer-shakespeare/">Sword fights, soliloquies and stagecraft: An Ithaca summer of Shakespeare</a></li>
-		<li><a href = "http://ithacavoice.com/2014/07/number-booths-ithaca-artists-market-doubling-year-popularity-surges/">As popularity surges, Ithaca Artists Market substantially increases number of artists</a></li>
-		<li><a href = "http://ithacavoice.com/2014/07/indie-rock-band-spoon-coming-ithacas-state-theatre-august/">Indie rock band Spoon coming to Ithaca's State Theatre this August</a></li>
-		<li><a href = "http://ithacavoice.com/2014/07/art-heart-city-11-new-exhibits-unveiled-ithaca-tonight/">"Art in the Heart of the City": 11 new exhibits to be unveiled in Ithaca tonight</a></li>
-		<li><a href = "http://ithacavoice.com/2014/07/groucho-marxs-next-act-reincarnation-58-ithacans/">Groucho Marx's next act: Reincarnation as 58 Ithacans</a></li>
-		<li><a href = "http://ithacavoice.com/2014/07/ithacas-purple-valley/">Ithaca's Purple Valley: "Play the music you love with people you really, really like"</a></li>
-		</ul>
+		<h3>The "Free-Body" Train</h3>
+		<p>Say we have a locomotive of mass \(M\) attached to \(N\) boxcars of mass \(m\) accelerating at \(a\). In a perfect (read: frictionless) world, what forces would each car experience?</p>
+		<p>This seemingly simple example actually illustrates the importance of choosing the most convenient system to analyze.</p>
+		<u>Force generated by the locomotive</u>
+		<img class = "diagram_s" src = "Train 1.svg"/>
+		<p>We can sometimes define our system as one big unit, ignoring the small parts within it. In this case, the entire train is like one big "block" being accelerated by a single external force, \(F\). . . . 
+			<a href = "train.html"><span class = "continue">Continue →</span></a></p>
+	</div>
+	<div class = "divider outer"><div class "v_align_center"><img class = "divider_image" src = "Spotlight.svg"/></div><h2>Veteran Article Spotlight</h2></div>
+	<div class = "section">
+		<h3>The Ballistic Pendulum</h3>
+		<p>You're having a Nerf gun war in physics class. Suddenly, Bobby interrupts with an intriguing inquiry: <em>How fast does a Nerf bullet travel?</em></p>
+		<p>Unfortunately, since we're in high-school physics, we don't have any fancy radar guns or echolocation gizmos. Fortunately, we do have basic lab items. But how exactly can we determine the speed of something as fast as a Nerf bullet?</p>
+		
+		<p><em>A ballistic pendulum!</em></p>
+		
+		<u><em>How</em> it works:</u>
+		<img class = "diagram_m" src = "Ballistic pendulum 4.svg"/>
+		<ol>
+			<li>Measure the mass \(m\) of your bullet, the mass \(M\) of the pendulum bob (whatever block or cannister hangs from it), and the length \(L\) of your pendulum.</li>
+			<li>Fire your bullet at the bob (and hope it sticks<sup>[1]</sup>)!</li>
+			<li>Measure the angle \(\theta\) the pendulum sweeps out with respect to the vertical axis.</li>
+			<li>Plug your data into this: <a href = "ballisticPendulum.html"><span class = "continue">Continue →</span></a></li>
+		</ol>
 	</div>
 	
-	<div class = "divider"><img src = "https://dl.dropboxusercontent.com/u/31253437/Link.png" class = "divider_image"/><h2><em>Still</em> reading? Here, have some cool links!</h2></div>
-		<div class = "section" style = "border-radius: 0px; margin-bottom: 0px">
-			<a href = "http://betterexplained.com/">BetterExplained:</a>
-				Better explanations with better intuition. <br>
-			<a href = "http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html">HyperPhysics:</a>
-				The high-school physics quick-reference Bible. <br>
-			<a href = "http://imslp.org/wiki">IMSLP:</a>
-				Free and <em>legal</em> classical music scores! <br>
-			<a href = "https://www.khanacademy.org/">Khan Academy:</a>
-				The future of education? <br>
-			<a href = "http://www.politifact.com/truth-o-meter/">PolitiFact:</a>
-				Fact-checking politics: a must in today's society. <br>
-			<a href = "https://projecteuler.net/archives">Project Euler:</a>
-				If AP CS was/is too easy for you. . . .<br>
-			<a href = "http://codingbat.com/">CodingBat:</a>
-				If AP CS was/is not so easy for you. . . .<br>
-			<a href = "http://protobowl.com/">Protobowl:</a>
-				Think you're good at trivia? Try your hand at academic quiz bowl. <br>
-			<a href = "http://stackexchange.com/">Stack Exchange:</a>
-				The best nerd forums. <br>
-			<a href = "http://existentialcomics.com/">Existential Comics:</a>
-				Nerd humor. <br>
-			<a href = "http://www.reddit.com/">Reddit:</a>
-				Don't get hooked! <br>
-			<a href = "http://www.wegmans.com/webapp/wcs/stores/servlet/ProductDisplay?langId=-1&storeId=10052&catalogId=10002&productId=359001">Elixir of life:</a>
-			<em>Highly compatible with <a href = "http://www.almondbreeze.com/?navid=329&pid=574">this</a>.</em>
-			<hr>
-			<strong>Fabulous freebies:</strong><br>
-				<a href = "https://eclipse.org/users/">Eclipse</a>, <em>a flexible IDE great for Java, Python, etc.</em><br>
-				<a href = "http://www.foobar2000.org/">foobar2000</a>, <em>a minimalist, speedy music player</em><br>
-				<a href = "https://www.google.com/fonts">Google Fonts</a>, <em>free importable fonts!</em><br>
-				<a href = "https://inkscape.org/en/">InkScape</a> <em>for vector graphics</em><br>
-				<a href = "https://www.mathjax.org/#docs">MathJax</a> <em>for in-browser LaTeX (like on this site!)</em><br>
-				<a href = "http://www.sublimetext.com/">Sublime Text</a> <em>for editing plain-text documents</em><br>
-				<a href = "http://www.texstudio.org/">TeXstudio</a> <em>for editing LaTeX documents</em><br>
-		</div>
+	
 <div><script>
   (function() {
     var cx = '003999373978686264051:nwnpvxdg95a';

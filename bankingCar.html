@@ -2,25 +2,32 @@
 <html lang = "en">
 
 <head>
-    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
-    <meta name = "Author" content = "Owen Zhang"/>
-    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>Banking Car</title>
-	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
-	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-	<script type = "text/JavaScript">    
-  		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
-	</script>
+    <!--//JQuery, JQuery UI, D3, MathJax-->		
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src = "http://mbostock.github.com/d3/d3.js"></script>
+    <script src = "jQuery.js"></script>
+    <script src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script>MathJax.Hub.Config({"HTML-CSS": {scale: 80}});</script>
+
+    <meta charset = "utf-8"/> 
+    <meta name = "description" content = "Physics fun, musical musings, and other drifting thoughts brought to you by a humble undergrad."/>
+
+    <link rel = "shortcut icon" href = "White queen.ico"/>
+    <link rel = "stylesheet" href = "stylesheet.css"/>
+	
+	<title>Banking Car</title>
 </head>
 
 <body>
 	<div class = "divider_subpage">
-		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
+		<a href = "index.html"><img class = "divider_image" src = "Black queen.svg"/></a>
+		<img class = "divider_image" src = "Arrow.svg"/>
+		<a href = "physicsFun.html"><img class = "divider_image" src = "Rocket.svg"/></a>
+		<img class = "divider_image" src = "Arrow.svg"/>
 		<img class = "divider_image" src = "Car.svg"/>
-		<h2>Banking Car</h2></div>
+		<h2>Banking Car</h2>
+	</div>
 	<div class = "section_subpage">
 		<p>While driving your Prius, you encounter a turn. A law-abiding citizen, you obey the speed limit and rest assured that you will complete the turn without issue. But what if you were an extreme driver? Would you really be risking your safety by rounding the turn at an improper speed?</p>
 		<hr>
@@ -34,7 +41,7 @@
 		</ol>
 		
 		<p>Because we are looking for the boundary ("extreme") cases, we can utilize \(f_\text{max} = \mu N\). Then, examining our FBD, we can translate words into equations:</p>
-		<img class = "diagram" src = "Car 1.svg"/>
+		<img class = "diagram_m" src = "Car 1.svg"/>
 			\begin{align}
 			\frac{mv^2}{r} &= N\sin\theta + \mu N\cos\theta \\
 			mg &= N\cos\theta - \mu N\sin\theta \\
@@ -85,7 +92,7 @@
 		<p>Naturally you might wonder, <em>is there a minimum speed?</em></p>
 		<p>Probably the easiest way to justify the fact that a minimum speed limit could exist is thinking about a stationary car on a steep slope—the most extreme case of "slow-moving car" there is. You could easily imagine this parked car slipping. Indeed, the only thing that can prevent it from doing so is static friction.</p>
 		<p>Again, drawing a FBD helps:</p> 
-		<img class = "diagram" src = "Car 2.svg"/>
+		<img class = "diagram_m" src = "Car 2.svg"/>
 		<p>The most important thing to notice is that in the case of the slow-moving car, static friction now helps the car "fight" gravity by acting <em>upwards</em> along the bank. Once you understand this, the computations are familiar:</p>
 		\begin{align}
 			\frac{mv^2}{r} &= N\sin\theta - \mu N\cos\theta \\
@@ -138,7 +145,7 @@
 		<hr>
 		<h3>The Invincible \(\mu\)</h3>
 		<p>Wait—you've seen cars parked successfully on slopes. Clearly, it seems possible for a friction force to counteract gravity entirely. Examining a FBD, we can easily solve for the smallest maximum static friction force \(f_\text{max} = \mu N\) and static friction coefficient \(\mu\) we need given a bank of angle \(\theta\).</p>
-		<img class = "diagram" src = "Car 3.svg"/>
+		<img class = "diagram_m" src = "Car 3.svg"/>
 		<p>If the car is in equilibrium,</p>
 		\begin{align}
 		N &= mg\cos\theta \\
@@ -150,7 +157,7 @@
 		<h3>What about flat roads?</h3>
 		
 		<p>Due to costs, lagging infrastructure, practicality issues, etc., not all roads are banked. How do turns on flat roads compare to their banked counterparts? Again, a FBD makes determining our force equations easy:</p>
-		<img class = "diagram" src = "Car 4.svg"/>
+		<img class = "diagram_m" src = "Car 4.svg"/>
 		<p>Knowing that our car is in uniform circular motion on one plane,</p>
 		\begin{align}
 			N &= mg \\

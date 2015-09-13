@@ -2,27 +2,35 @@
 <html lang = "en">
 
 <head>
-    <meta http-equiv = "content-type" content = "text/html; charset = utf-8"/>
-    <meta name = "Author" content = "Owen Zhang"/>
-    <link type = "text/css" rel = "stylesheet" href = "stylesheet.css"/>
-    <title>The Laboratory</title>
-	<link rel = "shortcut icon" href = "https://dl.dropboxusercontent.com/u/31253437/White%20queen.ico"/>
-	<script type = "text/JavaScript" src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-	<script type = "text/JavaScript">    
-  		MathJax.Hub.Config({"HTML-CSS": {scale: 80}});    
-	</script>
-	<script type = "text/javascript" src = "http://mbostock.github.com/d3/d3.js"></script>
+    <!--//JQuery, JQuery UI, D3, MathJax-->		
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src = "http://mbostock.github.com/d3/d3.js"></script>
+    <script src = "jQuery.js"></script>
+    <script src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script>MathJax.Hub.Config({"HTML-CSS": {scale: 80}});</script>
+
+    <meta charset = "utf-8"/> 
+    <meta name = "description" content = "Physics fun, musical musings, and other drifting thoughts brought to you by a humble undergrad."/>
+
+    <link rel = "shortcut icon" href = "White queen.ico"/>
+    <link rel = "stylesheet" href = "stylesheet.css"/>
+	
+	<title>The Laboratory</title>
+
 </head>
 
 <body>
 	<div class = "divider_subpage">
-		<a href = "index.html"><img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Black%20queen.png"/></a>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-		<a href = "physicsFun.html"><img src = "https://dl.dropboxusercontent.com/u/31253437/Rocket.png" class = "divider_image"/></a>
-		<img class = "divider_image" src = "https://dl.dropboxusercontent.com/u/31253437/Arrow.png"/>
-		D3
-		<h2>D3 Animation Tests</h2></div>
+		<a href = "index.html"><img class = "divider_image" src = "Black queen.svg"/></a>
+		<img class = "divider_image" src = "Arrow.svg"/>
+		<a href = "physicsFun.html"><img class = "divider_image" src = "Rocket.svg"/></a>
+		<img class = "divider_image" src = "Arrow.svg"/>
+		<img class = "divider_image" src = ""/>
+		<h2>The Laboratory</h2>
+	</div>
 	<div class = "section_subpage">
+		Flux: Av = volume / time 
 	<h4>Circle in uniform circular motion</h4>
 	<hr>
 	
@@ -73,11 +81,28 @@
 	</div>
 	Degree vs order: Degree of polynomial: largest sum of exponents on variables in monomial
 	Choosing reference frame: friction / conservative
-
-
-
+	Why potential energy negative
+	Derive a = s/r
+	derive riocket equation
+<h3>\({n \choose k}p^k\left(1 - p\right)^{n - k}\): binomial probability</h3>
+					<div>
+						<p>We use binomial probability to find the probability that one of two events (with probabilities \(p\) and \(1 - p\), respectively) will occur exactly \(k\) times when \(n\) trials are performed. The formula seems a little arcane, but it's not too hard to understand intuitively. Note that the probability from trial to trial must remain unchanged.</p>
+						<p>The standard example is flipping a coin multiple times. Say you wanted to find the probability that, given 10 flips, exactly 5 would be heads. There are clearly many ways this could happen—you could flip five heads then five tails; five tails then five heads; two heads, five tails, then 3 heads; etc.—but the probability of each scenario happening is the same, since the trials are independent. To find the probability of any given sequence, you will be multiplying a bunch of 0.5s together.</p>
+						<p>Given \(n\) coins and \(k\) heads, there will be \(n - k\) tails. The total number of unique sequences in which you can flip five heads and five tails is thus \(n \choose k\).</p>
+						<p>Imagine ten slots in a line representing one possible outcome. From these ten, you want to choose five in which a head should appear<sup>2</sup>.</p>
+						<p>If \(p\) is the probability of flipping a head, then \(1 - p\) is the probability of flipping a tail, as we have only two events possible.</p>
+						<p>The total probability is thus the product of the number of "good" sequences and the probability of each individual sequence happening.</p>
+						<div class = "answer">$${n \choose k}p^k\left(1 - p\right)^{n - k}$$</div>
+					</div>
+					<p><sup>2</sup> Note that in the case of binomial probability, \(n \choose k\) is equivalent to the number of permutations with indistinguishable objects, \(\frac{n!}{k_1!k_2! \cdots k_n!}\).</p>
+<tr>	
+					<td width = "167.5px" align = "left"><a href = "hallway.html" class = "button_link"><div class = "button_square"><img src = "Hallway.svg"/>Hallway problem</div></a></td>
+					<td width = "167.5px" align = "center"><a href = "tetrahedrons.html" class = "button_link"><div class = "button_square"><img src = "Tetrahedrons.svg"/>Tetrahedron angles</div></a></td>
+					<td width = "167.5px" align = "center"></td>
+					<td width = "167.5px" align = "right"></td>
+				</tr>
 	<div class = "button_square"><img src = "Double pendulum.svg"/>Double pendulum</div>
-	<td width = "167.5px" align = "center"><a href = "waterRocket.html" class = "button_link"><div class = "button_square"><img src = "Water rocket.svg"/>Water rocket</div></a></td>
+	<td width = "167.5px" align = "right"><a href = "CM.html" class = "button_link"><div class = "button_square"><img src = "CM.svg"/>Center of mass</div></a></td>
 	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
 		<div class = "v_center_inner">
 		<em>
