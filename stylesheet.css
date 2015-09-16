@@ -3,6 +3,7 @@
 Section border: #a7c8e1 
 Orange: #ff9643;
 Section background: #f0f0e6;
+Button background: #e1ffff;
 */
 
 body
@@ -12,6 +13,7 @@ body
 	margin: auto;
 	font-family: "Roboto";
 	font-weight: 300;
+	color: #323232;
 }
 
 hr
@@ -35,7 +37,6 @@ hr
 #masthead_background
 {
 	width: 690px;
-
 	background-color: #e1ffff;
 	float: left;
 	margin-right: 15px;
@@ -91,14 +92,19 @@ hr
 
 } 
 
+.divider, .divider_subpage, .divider_right
+{
+	height: 50px;
+	width: 720px;
+	background-color: #aadcdc;
+	display: table;
+}
+
 .divider
 {
 	clear: both;
+	margin-top: 10px;
 	display: table;
-	height: 50px;
-	width: 100%;
-	background-color: #aadcdc;
-
 }
 
 .divider_subpage
@@ -106,27 +112,20 @@ hr
 	clear: both;
 	position: fixed;
 	display: table;
-	height: 50px;
-	width: 720px;
 	z-index: 100;
-	background-color: #aadcdc;
-
 }
 
 .divider_right 
 {
 	float: right;
 	width: 480px;
-	display: table;
-	height: 50px;
-	background-color: #aadcdc;
-
 }
 
 .divider_image
 {
 	float: left;
 	height: 40px;
+	max-width: 80px;
 	margin: 5px;
 }
 
@@ -146,28 +145,26 @@ hr
 	margin: 5px;
 }
 
-.diagram
+.diagram, .diagram_m, .diagram_s
 {
 	width: 600px;
-	max-height: 300px;
 	display: table;
 	margin: 0 auto;
+}
+
+.diagram
+{
+	max-height: 300px;
 }
 
 .diagram_m
 {
-	width: 600px;
 	max-height: 200px;
-	display: table;
-	margin: 0 auto;
 }
 
 .diagram_s
 {
-	width: 600px;
 	max-height: 100px;
-	display: table;
-	margin: 0 auto;
 }
 
 .continue
@@ -188,11 +185,6 @@ hr
 	display: inline-block;
 	padding: 15px 30px 15px 30px;
 	width: 658px;
-}
-
-.section
-{
-	margin-bottom: 10px;
 }
 
 .section_subpage
@@ -313,7 +305,7 @@ li
 
 a 
 {
-    color: #5050c8;
+    color: deepskyblue;
     text-decoration: none;
 }
 
@@ -361,7 +353,7 @@ a:hover
 
 .button_rect
 {
-	height: 45px;
+	height: 50px;
 	width: 320px;
 	background-color: #e1ffff;
 	border-color: #64d2dc;
@@ -396,16 +388,17 @@ a:hover
 .button_rect img
 {
 	margin-top: 10px;
-	max-height: 80px;
+	max-height: 15px;
 	max-width: 300px;
 }
 
 
-.padded_image
+.diagram_p
 {
 	max-height: 200px;
 	float: left;
 	clear: both;
+	margin: 10px;
 }
 
 .spotlight
@@ -420,7 +413,20 @@ a:hover
 	height: 50px;
 	width: 100%;
 	background-color: #ff9643;
+	text-align: center;
+}
 
+#comments
+{
+	background-color: lightskyblue;
+	padding: 1px 3px 1px 3px;
+	border-radius: 0px 0px 5px 5px;
+	color: white;
+}
+
+#comments:hover
+{
+	font-weight: 400;
 }
 
 -------------
@@ -1294,10 +1300,10 @@ body .ui-tooltip {
 	border: 1px solid #a7c8e1;
 	border-top: 0px;
 	background: #f0f0e6 url("images/ui-bg_inset-hard_100_fcfdfd_1x100.png") 50% bottom repeat-x;
-	color: #222222;
+	color: #323232;
 }
 .ui-widget-content a {
-	color: #222222;
+	color: #323232;
 }
 .ui-widget-header {
 	border: 1px solid #4297d7;

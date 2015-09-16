@@ -31,17 +31,17 @@
 	<div class = "section_subpage">
 	<p>A pyramid with all equilateral-triangle faces, the regular tetrahedron is, in my opinion, one of the most aesthetically appealing solids. In fact, it appears quite frequently in nature.</p>
 	<hr>
-	<h3>The face-vertex-edge angle</h3>
-	
-	<p>Divide the base triangle into three smaller triangles formed by intersecting the three angle bisectors at the center. By 30-60-90-triangle properties, we have:</p>
+	<h3>The face-vertex-edge angle, \(\angle DBC\)</h3>
+	<img class = "diagram_m" src = "Tetrahedrons 1.svg"/>
+	<p>By 30-60-90-triangle properties, we have:</p>
 	\begin{align}
-	b &= 2 \left(\frac{0.5a}{\sqrt{3}}\right) = \frac{a\sqrt{3}}{3} \\
-	\alpha &= \arccos\left(\frac{b}{a}\right) = \arccos \left(\frac{\sqrt{3}}{3}\right) \\
+	BE &= 2 \left(\frac{0.5s}{\sqrt{3}}\right) = \frac{s\sqrt{3}}{3} \\
+	\alpha &= \arccos\left(\frac{BE}{s}\right) = \arccos \left(\frac{\sqrt{3}}{3}\right) \\
 	\end{align}
 	<div class = "answer">$$\alpha \approx 54.7°$$</div>
 	<hr>
 	<h3>The face-edge-face angle</h3>
-	
+	<img class = "diagram_m" src = "Tetrahedrons 2.svg"/>
 	<p>Draw a plane through one of the vertices. From 30-60-90-triangle properties again, we have:</p>
 	$$h = \frac{a\sqrt{3}}{2}$$
 	<p>Now we have formed a triangle with side lengths \(a\), \(h\), and \(h\). Using geometry to find the angle in question is then easy. Here is one way: consider the sub-triangle with base \(0.5a\) and hypotenuse \(h\).</p>
@@ -75,15 +75,10 @@
 	\theta &= \arccos \left(-\frac{1}{3}\right) \\
 	\end{align}
 	<div class = "answer">$$\theta \approx 109.5°$$</div>
-
+	<div id = "comments"></div>
+		<div id = "disqus_thread"></div>
 	</div>
 
-	<div ID = "footer"><img src = "https://dl.dropboxusercontent.com/u/31253437/Chrome.png" class = "divider_image"/>
-		<div class = "v_center_inner">
-		<em>
-			<script src = "lastModified.js"></script>
-		</em>
-		</div>
-	</div>
+	<div id = "footer"></div>
 </body>
 </html>
